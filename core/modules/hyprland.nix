@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
 
   programs.hyprland = {
     # Install the packages from nixpkgs
