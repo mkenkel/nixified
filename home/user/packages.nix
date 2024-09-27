@@ -9,5 +9,6 @@
     pkgs.tree
     pkgs.zsh
     pkgs.zsh-autosuggestions
+    pkgs.gcc
   ];
 }
