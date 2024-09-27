@@ -8,6 +8,7 @@
     neovim
     zsh
     git
+    fastfetch
   ];
 
   # Set the default editor to vim
