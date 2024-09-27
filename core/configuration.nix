@@ -3,6 +3,11 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, inputs, ... }: {
+
+  # make sure to also set the portal package, so that they are in sync
+  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
