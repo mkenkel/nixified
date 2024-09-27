@@ -5,6 +5,5 @@
     BROWSER = "firefox";
     EDITOR = "nvim";
     TERM = "alacritty";
-    STARSHIP_CONFIG="${config.xdg.dataHome}/starship/starship.toml";
   };
 }
