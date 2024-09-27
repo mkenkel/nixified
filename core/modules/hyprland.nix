@@ -1,11 +1,12 @@
-{ inputs, pkgs, ... }: {
+{ config, pkgs, ... }: {
 
   programs.hyprland = {
     # Install the packages from nixpkgs
     enable = true;
     # Whether to enable XWayland
     xwayland.enable = true;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  #  portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
 
     environment.systemPackages = with pkgs; [
       hyprpaper
@@ -21,6 +22,5 @@
       wofi
       waybar
     ];
-  };
 
 }
