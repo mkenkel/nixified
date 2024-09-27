@@ -1,27 +1,5 @@
-{ config, lib, pkgs, ... }: {
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    neovim
-    zsh
-    git
-    fastfetch
-  ];
-
-  # Set the default editor to vim
-  environment.variables.EDITOR = "nvim";
-
-  # Set your time zone.
-  time.timeZone = "America/Indianapolis";
-  # Hardware clock sync for dual boot systems.
-  time.hardwareClockInLocalTime = true;
-
-  # Enabling the use of Flakes and nix-command.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+{ config, lib, pkgs, ... }: 
+{
   # Use the systemd-boot EFI boot loader.
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -29,10 +7,20 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.useOSProber = true;
 
-  # Hostname for the system
-  networking.hostName = "upshot";
+  # Enabling the use of Flakes and nix-command.
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Wireless configuration
+  # Enabling Automatic Upgrades (Periodically)
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+
+  environment.variables.EDITOR = "nvim";
+
+  time.timeZone = "America/Indianapolis";
+  time.hardwareClockInLocalTime = true; # Hardware clock sync for dual boot systems.
+
+  networking.firewall.enable = false;
+  networking.hostName = "upshot";
   networking.wireless.enable = true;
 
   # Select internationalisation properties.
@@ -41,21 +29,4 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  # Enabling Automatic Upgrades (Periodically)
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
-
-  # Enable sound.
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
-  }
+}

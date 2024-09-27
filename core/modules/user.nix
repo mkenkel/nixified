@@ -4,10 +4,6 @@
   users.users.matt = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      tree
-    ];
     shell = pkgs.bash;
   };
   }

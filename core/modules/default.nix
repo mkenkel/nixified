@@ -3,8 +3,10 @@
 {
   imports = [
     ./fonts.nix
-    ./user.nix
-    ./syscfg.nix
     ./hyprland.nix
+    ./services.nix
+    ./syscfg.nix
+    ./systemPackages.nix
+    ./user.nix
   ];
 }
