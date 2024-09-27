@@ -10,5 +10,6 @@
     pkgs.zsh
     pkgs.zsh-autosuggestions
     pkgs.gcc
+    pkgs.nodejs
   ];
 }
