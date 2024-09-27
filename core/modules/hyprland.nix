@@ -6,8 +6,7 @@
     # Whether to enable XWayland
     xwayland.enable = true;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-  # ...
+
     environment.systemPackages = with pkgs; [
       hyprpaper
       kitty
@@ -22,5 +21,6 @@
       wofi
       waybar
     ];
+  };
 
 }
