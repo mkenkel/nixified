@@ -7,6 +7,9 @@
       save = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
+    shellAliases = {
+      "vi" = "nvim";
+    };
   };
 
   programs.starship = {
