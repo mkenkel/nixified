@@ -9,11 +9,12 @@
     pkgs.tree
     pkgs.zsh
     pkgs.zsh-autosuggestions
-    pkgs.gcc
     pkgs.nodejs
     pkgs.cargo
     pkgs.rustc
     pkgs.fzf
+    pkgs.gnumake
+    pkgs.gcc
     pkgs.starship
     pkgs.lsd
     pkgs.python3
@@ -23,5 +24,6 @@
     pkgs.ansible-navigator
     pkgs.podman
     pkgs.podman-desktop
+    pkgs.podman-compose
   ];
 }
