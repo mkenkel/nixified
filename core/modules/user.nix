@@ -6,9 +6,4 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
   };
-
-  # Leaving this here for later, but idk where else to put it rn
-  programs.zsh = {
-    enable = true;
-  };
 }

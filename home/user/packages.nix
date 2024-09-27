@@ -16,5 +16,12 @@
     pkgs.fzf
     pkgs.starship
     pkgs.lsd
+    pkgs.python3
+    pkgs.ansible
+    pkgs.ansible-lint
+    pkgs.ansible-builder
+    pkgs.ansible-navigator
+    pkgs.podman
+    pkgs.podman-desktop
   ];
 }
