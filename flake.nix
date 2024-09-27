@@ -23,24 +23,28 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
+
     nixosConfigurations.upshot = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; }; # this is the important part (Hyprland)
-        modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-          ./core/configuration.nix
-        ];
-      };
+      specialArgs = { 
+        inherit inputs; # this is the important part (Hyprland)
+      }; 
+      modules = [
+        ./core/configuration.nix
+      ];
+    };
 
     homeConfigurations."matt" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       # Specify your home configuration modules here, for example,
       # the path to your home.nix.
-      modules = [ ./home ];
+      modules = [ 
+        ./home 
+      ];
         extraspecialArgs = {
           inherit inputs; # Assuming Hyprland as well
         };
       };
+
     };
 
 
