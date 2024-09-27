@@ -4,6 +4,6 @@
   users.users.matt = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
   };
   }

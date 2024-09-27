@@ -11,5 +11,8 @@
     pkgs.zsh-autosuggestions
     pkgs.gcc
     pkgs.nodejs
+    pkgs.cargo
+    pkgs.rustc
+    pkgs.fzf
   ];
 }
