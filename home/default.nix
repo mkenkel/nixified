@@ -4,7 +4,6 @@
   # Recursive dir nix file sourcing
   imports = [
     ./user
-    ./config
   ];
 
   home.username = "matt";
