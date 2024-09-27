@@ -2,7 +2,7 @@
 {
   # Recursive dir nix file sourcing
   imports = [
-    #./hyprland.nix
+    ./hyprland.nix
   ];
 
 }

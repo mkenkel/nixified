@@ -2,12 +2,21 @@
 {
   description = "Flake for Upshot - my desktop env.";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-  inputs.home-manager = {
+  inputs = {
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    hyprland = {
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+  };
 
   outputs = { self, nixpkgs, home-manager, ...} @ inputs:
     let
