@@ -14,5 +14,6 @@
     pkgs.cargo
     pkgs.rustc
     pkgs.fzf
+    pkgs.starship
   ];
 }

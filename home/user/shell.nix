@@ -9,4 +9,10 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
   };
+
+  programs.starship = {
+    enable = true;
+		enableZshIntegration = true;
+  
+  };
 }
