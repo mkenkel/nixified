@@ -5,5 +5,6 @@
     ./packages.nix
     ./sessionVariables.nix
     ./source.nix
+    ./zsh.nix
   ];
 }
