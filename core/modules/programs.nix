@@ -13,6 +13,7 @@
         tmuxPlugins.vim-tmux-navigator
         tmuxPlugins.resurrect
         tmuxPlugins.continuum
+        tmuxPlugins.onedark-theme
         ];
       
       extraConfig = ''
