@@ -53,9 +53,8 @@
     };
 
     # Wofi alternative
-    rofi = {
+    fuzzel = {
       enable = true;
-      terminal = "alacritty";
     };
  };
 }

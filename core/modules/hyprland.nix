@@ -18,7 +18,7 @@
       wlogout
       wl-clipboard
       waybar
-      rofi-wayland 
+      fuzzel
     ];
 
 }
