@@ -5,5 +5,9 @@
     wget
     neovim
     git
+    unzip
+    podman
+    podman-compose
+    tmux
   ];
 }

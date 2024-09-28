@@ -22,5 +22,6 @@
     pkgs.ansible-lint
     pkgs.ansible-builder
     pkgs.ansible-navigator
+    pkgs.cmatrix
   ];
 }
