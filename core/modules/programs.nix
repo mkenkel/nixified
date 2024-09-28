@@ -5,6 +5,7 @@
     zsh.enable = true;
     hyprland.enable = true;
     steam.enable = true;
+    fuzzel.enable = true;
     
     tmux = {
       enable = true;
@@ -50,11 +51,6 @@
         unbind -T copy-mode-vi MouseDragEnd1Pane
 
      '';
-    };
-
-    # Wofi alternative
-    fuzzel = {
-      enable = true;
     };
  };
 }
