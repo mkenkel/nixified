@@ -15,11 +15,11 @@
   };
 
   # Useful other development tools
-  home.packages = [
-    pkgs.dive # look into docker image layers
-    pkgs.podman
-    pkgs.podman-tui # status of containers in the terminal
-    pkgs.podman-desktop
-    pkgs.podman-compose
+  environment.systemPackages = with pkgs; [
+    dive # look into docker image layers
+    podman
+    podman-tui # status of containers in the terminal
+    podman-desktop
+    podman-compose
   ];
 }

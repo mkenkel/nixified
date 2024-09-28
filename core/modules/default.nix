@@ -4,6 +4,7 @@
   imports = [
     ./fonts.nix
     ./hyprland.nix
+    ./podman.nix
     ./programs.nix
     ./services.nix
     ./syscfg.nix

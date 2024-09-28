@@ -22,8 +22,5 @@
     pkgs.ansible-lint
     pkgs.ansible-builder
     pkgs.ansible-navigator
-    pkgs.podman
-    pkgs.podman-desktop
-    pkgs.podman-compose
   ];
 }
