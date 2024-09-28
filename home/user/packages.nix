@@ -2,32 +2,42 @@
 {
   # Allows you to install Nix packages into your env.
   home.packages = [
-    pkgs.alacritty
-    pkgs.fastfetch
-    pkgs.firefox
-    pkgs.ripgrep
-    pkgs.tree
-    pkgs.zsh
-    pkgs.zsh-autosuggestions
-    pkgs.nodejs
-    pkgs.cargo
-    pkgs.rustc
-    pkgs.fzf
-    pkgs.gnumake
-    pkgs.gcc
-    pkgs.starship
-    pkgs.lsd
+    # Development
     pkgs.python3
     pkgs.ansible
     pkgs.ansible-lint
     pkgs.ansible-builder
     pkgs.ansible-navigator
-    pkgs.cmatrix
-    pkgs.lazygit
-    pkgs.brightnessctl
+    pkgs.nodejs
+    pkgs.cargo
+    pkgs.rustc
+
+    # Desktop Configuration
+    pkgs.nwg-look
+    pkgs.greetd
+
+    # Desktop Apps
+    pkgs.obsidian
+    pkgs.firefox
     pkgs.spotify
     pkgs.htop
     pkgs.btop
-    pkgs.obsidian
+    pkgs.ripgrep
+    pkgs.tree
+    pkgs.gnumake
+    pkgs.gcc
+
+    # Terminal
+    pkgs.cmatrix
+    pkgs.lazygit
+    pkgs.lsd
+    pkgs.starship
+    pkgs.alacritty
+    pkgs.fastfetch
+    pkgs.brightnessctl
+    pkgs.fzf
+    pkgs.zsh
+    pkgs.zsh-autosuggestions
+
   ];
 }
