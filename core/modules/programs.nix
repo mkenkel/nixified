@@ -51,5 +51,15 @@
 
      '';
     };
+
+    # Wofi alternative
+    rofi = {
+      enable = true;
+      theme = "arc-dark";
+      terminal = "alacritty";
+      extraConfig = ''
+        rofi.theme: ${pkgs.rofi-themes}/themes/arc-dark.rasi
+      '';
+    };
  };
 }
