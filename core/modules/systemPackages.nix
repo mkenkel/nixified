@@ -9,5 +9,6 @@
     podman
     podman-compose
     tmux
+    qemu-system
   ];
 }
