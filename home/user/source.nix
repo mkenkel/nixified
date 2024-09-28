@@ -5,7 +5,7 @@ in
       ".config/hypr".source = "${cfg}/hypr";
       ".config/alacritty".source = "${cfg}/alacritty";
       ".config/nvim".source = "${cfg}/nvim";
-      # ".config/kitty".source = "${cfg}/kitty";
+      ".config/fuzzel".source = "${cfg}/fuzzel";
       # ".config/neofetch".source = "${cfg}/neofetch";
       # ".config/swayidle".source = "${cfg}/swayidle";
       # ".config/swaylock".source = "${cfg}/swaylock";
