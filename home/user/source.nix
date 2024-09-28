@@ -6,13 +6,9 @@ in
       ".config/alacritty".source = "${cfg}/alacritty";
       ".config/nvim".source = "${cfg}/nvim";
       ".config/fuzzel".source = "${cfg}/fuzzel";
-      # ".config/neofetch".source = "${cfg}/neofetch";
-      # ".config/swayidle".source = "${cfg}/swayidle";
-      # ".config/swaylock".source = "${cfg}/swaylock";
-      # ".config/wlogout".source = "${cfg}/wlogout";
+      ".config/mako".source = "${cfg}/mako";
+      ".config/wallpaper".source = "${cfg}/wallpaper";
       # ".config/waybar".source = "${cfg}/waybar";
       # ".config/btop".source = "${cfg}/btop";
-      # ".config/wofi".source = "${cfg}/wofi";
-      # ".config/mako".source = "${cfg}/mako";
   };
 }
