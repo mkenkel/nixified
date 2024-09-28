@@ -10,5 +10,6 @@
     podman-compose
     tmux
     qemu
+    virtiofsd
   ];
 }
