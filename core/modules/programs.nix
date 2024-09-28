@@ -5,7 +5,6 @@
     zsh.enable = true;
     hyprland.enable = true;
     steam.enable = true;
-    fuzzel.enable = true;
     
     tmux = {
       enable = true;
