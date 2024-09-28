@@ -18,6 +18,9 @@
       enableZshIntegration = true;
       settings = pkgs.lib.importTOML ../config/starship/starship.toml;
     };
+    fzf = {
+      enable = true;
+    };
   };
 
 }
