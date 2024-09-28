@@ -7,6 +7,7 @@
   };
 
     environment.systemPackages = with pkgs; [
+      fuzzel
       hyprpaper
       kitty
       libnotify
@@ -18,7 +19,6 @@
       wlogout
       wl-clipboard
       waybar
-      fuzzel
     ];
 
 }
