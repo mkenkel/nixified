@@ -24,5 +24,6 @@
     pkgs.ansible-navigator
     pkgs.cmatrix
     pkgs.lazygit
+    pkgs.brightnessctl
   ];
 }
