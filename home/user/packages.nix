@@ -25,5 +25,9 @@
     pkgs.cmatrix
     pkgs.lazygit
     pkgs.brightnessctl
+    pkgs.spotify
+    pkgs.htop
+    pkgs.btop
+    pkgs.obsidian
   ];
 }

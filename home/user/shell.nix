@@ -11,6 +11,7 @@
       };
       shellAliases = {
         "vi" = "nvim";
+        "ls" = "lsd";
       };
     };
     starship = {
