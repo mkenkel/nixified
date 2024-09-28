@@ -8,7 +8,7 @@ in
       ".config/fuzzel".source = "${cfg}/fuzzel";
       ".config/mako".source = "${cfg}/mako";
       ".config/wallpaper".source = "${cfg}/wallpaper";
-      # ".config/waybar".source = "${cfg}/waybar";
+      ".config/waybar".source = "${cfg}/waybar";
       # ".config/btop".source = "${cfg}/btop";
   };
 }

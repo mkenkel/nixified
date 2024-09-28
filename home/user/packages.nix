@@ -14,7 +14,6 @@
 
     # Desktop Configuration
     pkgs.nwg-look
-    pkgs.greetd.greetd
 
     # Desktop Apps
     pkgs.obsidian
