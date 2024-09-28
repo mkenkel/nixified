@@ -23,5 +23,6 @@
     pkgs.ansible-builder
     pkgs.ansible-navigator
     pkgs.cmatrix
+    pkgs.lazygit
   ];
 }
