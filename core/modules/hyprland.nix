@@ -11,6 +11,7 @@
       hyprpaper
       hypridle
       hyprlock
+      hyprcursor
       kitty
       libnotify
       mako
