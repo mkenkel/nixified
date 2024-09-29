@@ -14,6 +14,8 @@
 
     # Desktop Configuration
     pkgs.nwg-look
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-wlr
 
     # Desktop Apps
     pkgs.obsidian
