@@ -1,9 +1,25 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","cpu","memory","custom/media","tray"],
-	"modules-center": [""],
-	"modules-right": ["custom/updates","custom/wallpaper","backlight","pulseaudio","clock", "battery","custom/power"],
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["custom/launcher","cpu","memory","custom/media","tray","custom/updates","custom/wallpaper","backlight","pulseaudio","clock", "battery","custom/power"],
 	
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+    },
+
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll" : true,
+    "all-outputs" : true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "1": []
+    }
+  },
+
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 5,
@@ -43,7 +59,7 @@
 		"spacing": 10
 	},
     "clock": {
-        "format": "{: %I:%M %p   %d/%m/%Y}"
+        "format": " {:%I:%M %p   %d/%m/%Y}"
     },
     "cpu": {
         "interval": 15,
