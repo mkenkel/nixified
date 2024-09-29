@@ -48,7 +48,7 @@
        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
        // "format": "{:%I:%M%p}",
         "timezone": "America/Indianapolis",
-        "format": "{: %R   %d/%m}",
+        "format": " {:%R   %d/%m}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
