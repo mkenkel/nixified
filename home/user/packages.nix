@@ -11,6 +11,8 @@
     pkgs.nodejs
     pkgs.cargo
     pkgs.rustc
+    pkgs.gnumake
+    pkgs.gcc
 
     # Desktop Configuration
     pkgs.nwg-look
@@ -19,12 +21,7 @@
     pkgs.obsidian
     pkgs.firefox
     pkgs.spotify
-    pkgs.htop
-    pkgs.btop
-    pkgs.ripgrep
-    pkgs.tree
-    pkgs.gnumake
-    pkgs.gcc
+    pkgs.vesktop
 
     # Terminal
     pkgs.cmatrix
@@ -37,6 +34,10 @@
     pkgs.fzf
     pkgs.zsh
     pkgs.zsh-autosuggestions
+    pkgs.tree
+    pkgs.ripgrep
+    pkgs.htop
+    pkgs.btop
 
   ];
 }
