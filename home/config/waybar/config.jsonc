@@ -16,8 +16,7 @@
         "hyprland/language",
         "pulseaudio",
         "pulseaudio#microphone",
-        "clock",
-        "custom/weather"
+        "clock"
     ],
 
     "hyprland/window": {
@@ -36,13 +35,6 @@
         "format-en": "US",
         "format-ru": "RU",
         "format-ka": "GE"
-    },
-   "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
     },
     "tray": {
         "icon-size": 16,
