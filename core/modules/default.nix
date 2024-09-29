@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./boot.nix
     ./fonts.nix
     ./hyprland.nix
     ./programs.nix
@@ -8,6 +9,7 @@
     ./syscfg.nix
     ./systemPackages.nix
     ./user.nix
+    ./virtualization.nix
   ];
   nixpkgs = {
     config = {
