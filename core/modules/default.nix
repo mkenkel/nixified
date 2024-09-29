@@ -1,18 +1,9 @@
-{ ... }:
-
 {
-  imports = [
-    ./boot.nix
-    ./fonts.nix
-    ./hyprland.nix
-    ./programs.nix
-    ./services.nix
-    ./syscfg.nix
-    ./systemPackages.nix
-    ./user.nix
-    ./virtualization.nix
-  ];
-
+  imports = with builtins;
+    map (fn: ./${fn})
+      (filter (fn: fn != "default.nix") (attrNames (readDir ./.)));
+}
+{
   nixpkgs = {
     config = {
       allowUnfree = true;
