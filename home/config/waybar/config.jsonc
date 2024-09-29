@@ -5,7 +5,7 @@
     "height": 40,
     "spacing": 15,
 
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["tray"],
     "modules-right": ["pulseaudio","custom/sep","temperature","backlight","battery","network","custom/sep","clock"],
 
@@ -15,7 +15,7 @@
     },
 
     // Modules configuration
-     "wlr/workspaces": {
+     "hyprland/workspaces": {
        "on-click": "activate",
        "format": "{icon}",
        "on-scroll-up": "hyprctl dispatch workspace r+1",
@@ -28,7 +28,7 @@
     },
 
     "clock": {
-        "timezone": "America/Louisville",
+        "timezone": "America/Indianapolis",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%I:%M%p}",
         "format-alt": "{:%Y-%m-%d}"
