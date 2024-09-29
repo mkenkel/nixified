@@ -7,6 +7,8 @@
   };
 
     environment.systemPackages = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
       fuzzel
       hyprpaper
       hypridle
