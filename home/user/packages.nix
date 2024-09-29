@@ -40,6 +40,7 @@
     pkgs.btop
     pkgs.grim
     pkgs.slurp
+    pkgs.playerctl
 
   ];
 }
