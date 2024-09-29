@@ -39,6 +39,7 @@
     pkgs.htop
     pkgs.btop
     pkgs.grim
+    pkgs.slurp
 
   ];
 }
