@@ -11,6 +11,8 @@
         device = "nodev";
         useOSProber = true;
         gfxmodeEfi = "3840x2160";
+        font = "${pkgs.hack-font}/share/fonts/hack/Hack-Regular.ttf";
+        fontSize = 36;
       };
     };
   };
