@@ -19,7 +19,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "Lat2-Terminus16";
+    earlySetup = true;
+    font = "${pkgs.tamzen}/share/consolefonts/Tamzen8x16.psf";
+    packages = with pkgs; [ tamzen ];
     keyMap = "us";
   };
 }

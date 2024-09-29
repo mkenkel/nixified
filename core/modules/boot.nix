@@ -10,9 +10,14 @@
         enable = true;
         device = "nodev";
         useOSProber = true;
-        gfxmodeEfi = "3840x2160";
-        font = "${pkgs.grub2}/share/grub/unicode.pf2";
-        fontSize = 32;
+        gfxpayloadEfi = "3840x2160x32"; #TTY resolution (grub > videoinfo)
+        gfxmodeEfi = "auto"; #Grub resolution (overridden by console mode)
+        font = "${pkgs.tamzen}/share/fonts/misc/Tamzen10x20r.otb"; # (pf2/otb/ttf) Invalid font breaks TTY resolution
+        fontSize = 20;
+        extraConfig = "
+          terminal_input console
+          terminal_output console
+        ";
       };
     };
   };
