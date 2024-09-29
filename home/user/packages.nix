@@ -38,6 +38,7 @@
     pkgs.ripgrep
     pkgs.htop
     pkgs.btop
+    pkgs.scrot
 
   ];
 }
