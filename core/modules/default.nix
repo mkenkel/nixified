@@ -1,9 +1,14 @@
+{ ... }:
 {
-  imports = with builtins;
-    map (fn: ./${fn})
-      (filter (fn: fn != "default.nix") (attrNames (readDir ./.)));
-}
-{
+  imports = [
+    ./fonts.nix
+    ./hyprland.nix
+    ./programs.nix
+    ./services.nix
+    ./syscfg.nix
+    ./systemPackages.nix
+    ./user.nix
+  ];
   nixpkgs = {
     config = {
       allowUnfree = true;
