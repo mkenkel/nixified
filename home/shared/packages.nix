@@ -5,31 +5,31 @@
   # List all user-derived packages within here.
   home.packages = [
     # Development
-    pkgs.python3
     pkgs.ansible
-    pkgs.ansible-lint
     pkgs.ansible-builder
+    pkgs.ansible-lint
     pkgs.ansible-navigator
-    pkgs.nodejs
     pkgs.cargo
-    pkgs.rustc
-    pkgs.gnumake
     pkgs.gcc
+    pkgs.gnumake
+    pkgs.nodejs
+    pkgs.python3
+    pkgs.rustc
 
     # Terminal
-    pkgs.lazygit
-    pkgs.lsd
-    pkgs.starship
     pkgs.alacritty
+    pkgs.bat
+    pkgs.btop
     pkgs.fastfetch
     pkgs.fzf
+    pkgs.htop
+    pkgs.lazygit
+    pkgs.lsd
+    pkgs.ripgrep
+    pkgs.starship
+    pkgs.tree
     pkgs.zsh
     pkgs.zsh-autosuggestions
-    pkgs.tree
-    pkgs.ripgrep
-    pkgs.htop
-    pkgs.btop
-    pkgs.bat
 
     # Containerization
     pkgs.podman

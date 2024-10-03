@@ -60,27 +60,27 @@
 ### Hyprland.nix ###
 
   environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
     fuzzel
-    hyprpaper
+    hyprcursor
     hypridle
     hyprlock
-    hyprcursor
+    hyprpaper
     kitty
     libnotify
     mako
     qt5.qtwayland
     qt6.qtwayland
-    wl-clipboard
     waybar
+    wl-clipboard
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
     # Terminal
+    git
+    neovim
+    tmux
+    unzip
     vim 
     wget
-    neovim
-    git
-    unzip
-    tmux
     # Virtualization/Containerization
     podman
     podman-compose
@@ -99,10 +99,10 @@
       enable = true;
       escapeTime = 0;
       plugins = with pkgs; [
-        tmuxPlugins.vim-tmux-navigator
-        tmuxPlugins.resurrect
         tmuxPlugins.continuum
         tmuxPlugins.onedark-theme
+        tmuxPlugins.resurrect
+        tmuxPlugins.vim-tmux-navigator
         ];
       
       extraConfig = ''
