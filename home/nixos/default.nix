@@ -8,6 +8,7 @@ in
     ../shared
   ];
 
+  # We aren't moving this out - Personal OS'es are fine, however I'll have to find something for work...
   home.username = "matt";
   home.homeDirectory = "/home/matt";
   home.stateVersion = "24.05"; # Pls google before changing this
@@ -55,26 +56,26 @@ in
 
   # Manages your env vars through Home Manager.
   home.sessionVariables = {
-    BROWSER = "firefox";
-    MOZ_ENABLE_WAYLAND = "1";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    GTK_USE_PORTAL = "1";
-    WLR_RENDERER = "vulkan";
-      XCURSOR_SIZE = "32";
 	  WLR_NO_HARDWARE_CURSORS = "1"; 
+      XCURSOR_SIZE = "32";
+    BROWSER = "firefox";
+    GTK_USE_PORTAL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
+    WLR_RENDERER = "vulkan";
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
+    XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_DATA_HOME = "\${HOME}/.local/share";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
   };
 
 ### Source.nix ###
 
   home.file = {
-      ".config/hypr".source = "${cfg}/hypr";
       ".config/fuzzel".source = "${cfg}/fuzzel";
+      ".config/hypr".source = "${cfg}/hypr";
       ".config/mako".source = "${cfg}/mako";
       ".config/wallpaper".source = "${cfg}/wallpaper";
       ".config/waybar".source = "${cfg}/waybar";
