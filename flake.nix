@@ -21,7 +21,7 @@
           inherit inputs; # this is the important part (Hyprland)
         }; 
         modules = [
-          ./hosts/desktop/configuration.nix
+          ./hosts/desktop
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
