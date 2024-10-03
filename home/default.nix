@@ -113,7 +113,7 @@ in
     starship = {
       enable = true;
       enableZshIntegration = true;
-      settings = pkgs.lib.importTOML ../config/starship/starship.toml;
+      settings = pkgs.lib.importTOML ./config/starship/starship.toml;
     };
     fzf = {
       enable = true;
