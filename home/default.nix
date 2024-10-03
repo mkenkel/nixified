@@ -1,6 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 let 
-  cfg = ../config;
+  cfg = ./config;
 in
 {
   home.username = "matt";
