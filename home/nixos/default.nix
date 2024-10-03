@@ -1,6 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 let 
-  cfg = ./config;
+  cfg = ../config;
 in
 {
   home.username = "matt";
@@ -113,7 +113,7 @@ in
     starship = {
       enable = true;
       enableZshIntegration = true;
-      settings = pkgs.lib.importTOML ./config/starship/starship.toml;
+      settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
     };
     fzf = {
       enable = true;
