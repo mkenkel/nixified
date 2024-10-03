@@ -12,9 +12,14 @@
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin= {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { self, nixpkgs, nix-darwin, home-manager, ... } @ inputs: {
+
     nixosConfigurations = {
       upshot = nixpkgs.lib.nixosSystem {
         specialArgs = { 
@@ -31,5 +36,19 @@
         ];
       };
     };
+
+    # Build darwin flake using:
+    # $ darwin-rebuild build --flake .#mktogo
+    darwinConfigurations = {
+      mktogo = nix-darwin.lib.darwinSystem {
+        modules = [ ./hosts/mbp ];
+      };
+    };
+
+    darwinPackages = self.darwinConfigurations."mktogo".pkgs;
+  };
+
+
+
   };
 }
