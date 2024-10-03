@@ -1,33 +1,35 @@
 # /etc/nixos/flake.nix
 {
-  description = "Flake for Upshot - my desktop env.";
+  description = "Configuration Hub - Repository of the factotum.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland = {
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
-    nixosConfigurations.upshot = nixpkgs.lib.nixosSystem {
-      specialArgs = { 
-        inherit inputs; # this is the important part (Hyprland)
-      }; 
-      modules = [
-        ./core/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.matt = import ./home;
-        }
-      ];
+    nixosConfigurations = {
+      upshot = nixpkgs.lib.nixosSystem {
+        specialArgs = { 
+          inherit inputs; # this is the important part (Hyprland)
+        }; 
+        modules = [
+          ./core/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.matt = import ./home;
+          }
+        ];
+      };
     };
   };
 }
