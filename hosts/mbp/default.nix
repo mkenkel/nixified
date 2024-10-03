@@ -50,7 +50,7 @@
   programs.zsh.enable = true;  # default shell on catalina
 
   # Set Git commit hash for darwin-version.
-  system.configurationRevision = self.rev or self.dirtyRev or null;
+  # system.configurationRevision = self.rev or self.dirtyRev or null;
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
