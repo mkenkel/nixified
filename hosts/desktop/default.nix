@@ -30,7 +30,6 @@
    boot = {
     loader = {
       efi.canTouchEfiVariables = true;
-
       grub = {
         efiSupport = true;
         enable = true;
@@ -60,34 +59,34 @@
 
 ### Hyprland.nix ###
 
-    environment.systemPackages = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
-      fuzzel
-      hyprpaper
-      hypridle
-      hyprlock
-      hyprcursor
-      kitty
-      libnotify
-      mako
-      qt5.qtwayland
-      qt6.qtwayland
-      wl-clipboard
-      waybar
-      # Terminal
-      vim 
-      wget
-      neovim
-      git
-      unzip
-      tmux
-      # Virtualization/Containerization
-      podman
-      podman-compose
-      qemu
-      virtiofsd
-    ];
+  environment.systemPackages = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
+    fuzzel
+    hyprpaper
+    hypridle
+    hyprlock
+    hyprcursor
+    kitty
+    libnotify
+    mako
+    qt5.qtwayland
+    qt6.qtwayland
+    wl-clipboard
+    waybar
+    # Terminal
+    vim 
+    wget
+    neovim
+    git
+    unzip
+    tmux
+    # Virtualization/Containerization
+    podman
+    podman-compose
+    qemu
+    virtiofsd
+  ];
 
 ### Programs.nix ###
 
