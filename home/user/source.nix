@@ -1,4 +1,5 @@
-let cfg = ../config;
+let 
+  cfg = ../config;
 in
 {
   home.file = {
