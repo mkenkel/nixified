@@ -18,8 +18,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager, ... } @ inputs: {
-
+  outputs = { self, nixpkgs, nix-darwin, home-manager, ... } @ inputs:
+  {
     nixosConfigurations = {
       upshot = nixpkgs.lib.nixosSystem {
         specialArgs = { 
