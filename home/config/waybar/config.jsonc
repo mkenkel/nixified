@@ -1,23 +1,19 @@
 {
 	"layer": "top",
+  "position": "top",
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
-	"modules-right": ["custom/launcher","cpu","memory","custom/media","tray","custom/updates","custom/wallpaper","backlight","pulseaudio","clock", "battery","custom/power"],
+	"modules-right": ["cpu","memory","tray","backlight","pulseaudio","clock", "battery"],
 	
   "hyprland/window": {
-    "format": "{}",
-    "separate-outputs": true
-    },
+  "format": "{}",
+  "separate-outputs": true
+  },
 
   // Modules configuration
-  "hyprland/workspaces": {
-    "disable-scroll" : true,
-    "all-outputs" : true,
+  "wlr/workspaces": {
     "on-click": "activate",
-    "format": "{icon}",
-    "persistent_workspaces": {
-      "1": []
-    }
+    "format": "{icon}"
   },
 
 	"pulseaudio": {
@@ -70,38 +66,5 @@
         "interval": 30,
         "format": " {}%",
         "max-length": 10
-    },
-    "custom/media": {
-        "interval": 30,
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 20,
-        "format-icons": {
-            "spotify": " ",
-            "default": " "
-        },
-        "escape": true,
-        "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
-        "on-click": "playerctl play-pause"
-    },
-    "custom/launcher":{
-        "format": " ",
-        "on-click": "rofi -show drun",
-        "on-click-right": "killall rofi"
-    },
-    "custom/power":{
-        "format": " ",
-        "on-click": "bash ~/.config/rofi/leave/leave.sh",
-    },
-    "custom/updates":{
-        "format": "{} Update(s)",
-        "exec": "checkupdates | wc -l",
-        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
-        "interval": 15,
-        "on-click": "alacritty -e paru -Syu && notify-send 'The system has been updated' "
-    },
-    "custom/wallpaper":{
-        "format":" ",
-        "on-click": "bash ~/.config/system_scripts/pkill_bc"
     }
 }

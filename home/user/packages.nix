@@ -41,6 +41,7 @@
     pkgs.grim
     pkgs.slurp
     pkgs.playerctl
+    pkgs.bat
 
   ];
 }
