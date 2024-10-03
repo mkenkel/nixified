@@ -47,8 +47,4 @@
 
     darwinPackages = self.darwinConfigurations."mktogo".pkgs;
   };
-
-
-
-  };
 }
