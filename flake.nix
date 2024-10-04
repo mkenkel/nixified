@@ -20,11 +20,11 @@
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, ... } @ inputs:
   {
+    # Build nix flake using:
+    # $ nixos-rebuild --flake .#upshot switch
     nixosConfigurations = {
       upshot = nixpkgs.lib.nixosSystem {
-        specialArgs = { 
-          inherit inputs; # this is the important part (Hyprland)
-        }; 
+        specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/desktop
           home-manager.nixosModules.home-manager
@@ -41,7 +41,16 @@
     # $ darwin-rebuild build --flake .#mktogo
     darwinConfigurations = {
       mktogo = nix-darwin.lib.darwinSystem {
-        modules = [ ./hosts/mbp ];
+        specialArgs = { inherit inputs; }; 
+        modules = [
+          ./hosts/mbp
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.matt = import ./home/darwin;
+          }
+        ];
       };
     };
 
