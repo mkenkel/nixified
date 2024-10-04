@@ -19,6 +19,8 @@
   };
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, ... } @ inputs:
+  let
+    macUser = "mkenkel";
   {
     # Build nix flake using:
     # $ nixos-rebuild --flake .#upshot switch
@@ -44,11 +46,11 @@
         specialArgs = { inherit inputs; }; 
         modules = [
           ./hosts/mbp
-          home-manager.nixosModules.home-manager
+          home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.matt = import ./home/darwin;
+            # home-manager.users.'' = import ./home/darwin;
           }
         ];
       };
