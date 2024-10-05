@@ -456,7 +456,24 @@
         "hyprland": "hyprland",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "sarasa-nerd-font": "sarasa-nerd-font"
+      }
+    },
+    "sarasa-nerd-font": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1679588973,
+        "narHash": "sha256-4scQ5DVXAwEz4E7ADzVAEcQaq/zcrlAFtrr+xu4omiA=",
+        "owner": "laishulu",
+        "repo": "homebrew-cask-fonts",
+        "rev": "7e3cd422bff2253219811747c130857251688b31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "laishulu",
+        "repo": "homebrew-cask-fonts",
+        "type": "github"
       }
     },
     "systems": {
