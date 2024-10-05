@@ -43,6 +43,10 @@
       url = "github:nikitabobko/homebrew-tap";
       flake = false;
     };
+    font-sarasa-nerd = {
+      url = "github:laishulu/homebrew-cask-fonts";
+      flake = false;
+    };
 ############################################
   };
 
@@ -55,6 +59,7 @@
               nix-darwin,
               home-manager, 
               aerospace-tap,
+              sarasa-nerd-font,
               ... } @ inputs:
   let
     user = "matt";
@@ -100,6 +105,8 @@
                 "homebrew/homebrew-bundle" = homebrew-bundle;
               # TWM
                 "nikitabobko/homebrew-tap" = aerospace-tap;
+              # SC Font
+                "laishulu/homebrew-cask-fonts" = sarasa-nerd-font;
               };
               # Optional: Enable fully-declarative tap management. With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
               mutableTaps = false;

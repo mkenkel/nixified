@@ -25,6 +25,7 @@ in
       "spotify"
       "visual-studio-code"
       "aerospace"
+      "font-sarasa-nerd"
     ];
   };
 
