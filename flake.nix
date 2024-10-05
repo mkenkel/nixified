@@ -39,10 +39,23 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    aerospace-tap = {
+      url = "github:nikitabobko/homebrew-tap";
+      flake = false;
+    };
 ############################################
   };
 
-  outputs = { self, nixpkgs, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, nix-darwin, home-manager, ... } @ inputs:
+  outputs = { self, 
+              nixpkgs, 
+              nix-homebrew, 
+              homebrew-bundle, 
+              homebrew-core, 
+              homebrew-cask,
+              nix-darwin,
+              home-manager, 
+              aerospace-tap,
+              ... } @ inputs:
   let
     user = "matt";
   in
@@ -75,28 +88,20 @@
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
-            # Equivalent to setting user via Home Manager.
-            users.knownUsers = [ user ];
-            users.users."${user}" = {
-              name = "${user}";
-              home = "/Users/${user}";
-              shell = "/bin/zsh";
-              uid = 501;
-            };
             # Nix-Homebrew
             nix-homebrew = {
               inherit user;
               enable = true;
               # x86 App Compatibility
               enableRosetta = true;
-              # casks = pkgs.callPackage ./homebrew/casks.nix {};
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "homebrew/homebrew-bundle" = homebrew-bundle;
+              # TWM
+                "nikitabobko/homebrew-tap" = aerospace-tap;
               };
-              # Optional: Enable fully-declarative tap management
-              # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
+              # Optional: Enable fully-declarative tap management. With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
               mutableTaps = false;
             };
             # Home Manager

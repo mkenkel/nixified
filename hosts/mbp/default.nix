@@ -1,7 +1,32 @@
 { self, pkgs, ... }:
+let
+  user = "matt";
+in
 {
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
+
+  # Equivalent to setting user via Home Manager.
+  users.knownUsers = [ user ];
+  users.users."${user}" = {
+    name = "${user}";
+    home = "/Users/${user}";
+    shell = "/bin/zsh";
+    uid = 501;
+  };
+  # Homebrew (nix-darwin)
+  homebrew = {
+    enable = true;
+    casks = [
+      "discord"
+      "obsidian"
+      "slack"
+      "firefox"
+      "spotify"
+      "visual-studio-code"
+      "aerospace"
+    ];
+  };
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
