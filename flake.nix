@@ -27,6 +27,10 @@
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -38,7 +42,7 @@
 ############################################
   };
 
-  outputs = { self, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, nix-darwin, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, nix-darwin, home-manager, ... } @ inputs:
   let
     user = "matt";
   in
@@ -68,12 +72,10 @@
       mktogo = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; }; 
         modules = [
-          ./hosts/mbp
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
           {
             # Equivalent to setting user via Home Manager.
-
             users.knownUsers = [ user ];
             users.users."${user}" = {
               name = "${user}";
@@ -87,9 +89,11 @@
               enable = true;
               # x86 App Compatibility
               enableRosetta = true;
+              # casks = pkgs.callPackage ./homebrew/casks.nix {};
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
+                "homebrew/homebrew-bundle" = homebrew-bundle;
               };
               # Optional: Enable fully-declarative tap management
               # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
@@ -102,6 +106,7 @@
               users.${user} = import ./home/darwin;
             };
           }
+          ./hosts/mbp
         ];
       };
     };
