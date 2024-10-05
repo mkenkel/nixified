@@ -43,7 +43,7 @@
       url = "github:nikitabobko/homebrew-tap";
       flake = false;
     };
-    font-sarasa-nerd = {
+    sarasa-nerd-font = {
       url = "github:laishulu/homebrew-cask-fonts";
       flake = false;
     };
