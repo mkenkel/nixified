@@ -4,6 +4,10 @@
 
   # List all user-derived packages within here.
   home.packages = [
+    # Editors
+    pkgs.neovim
+    pkgs.vim
+
     # Development
     pkgs.ansible
     pkgs.ansible-builder
