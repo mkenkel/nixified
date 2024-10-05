@@ -30,8 +30,6 @@ in
     };
     tmux = {
       enable = true;
-      # Mac Fix
-      secureSocket = false;
       escapeTime = 0;
       plugins = with pkgs; [
         tmuxPlugins.continuum
