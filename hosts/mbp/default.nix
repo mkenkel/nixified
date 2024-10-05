@@ -7,31 +7,6 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ 
-
-      # Neovim
-      pkgs.neovim
-      pkgs.ripgrep
-      pkgs.fzf
-      pkgs.lazygit
-      pkgs.yamllint
-
-      # Development
-      pkgs.python3
-      pkgs.ansible
-      pkgs.ansible-lint
-      pkgs.ansible-builder
-      pkgs.ansible-navigator
-      pkgs.nodejs
-      pkgs.cargo
-      pkgs.rustc
-      pkgs.gnumake
-      pkgs.gcc
-
-      # Terminal
-      pkgs.lsd
-      pkgs.starship
-      pkgs.fastfetch
-      pkgs.vim
     ];
 
   environment.interactiveShellInit = ''

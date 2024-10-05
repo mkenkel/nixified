@@ -13,6 +13,11 @@ italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 bold_italic = { family = "JetBrainsMono Nerd Font", style = "bold_italic" }
 size = 18.0
 
+[mouse]
+bindings = [
+{ mouse = "Right", mods = "Control", action = "Paste" },
+]
+
 [window]
 opacity = 1.0
 option_as_alt = "Both"
