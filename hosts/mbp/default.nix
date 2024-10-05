@@ -38,11 +38,39 @@
   system = {
     defaults = {
       NSGlobalDomain = {
+        # 120, 90, 60, 30, 12, 6, 2
         KeyRepeat = 2;
+
+        # 120, 94, 68, 35, 25, 15
+        InitialKeyRepeat = 15;
         AppleInterfaceStyle = "Dark";
       };
+
+      dock = {
+        autohide = true;
+        show-recents = false;
+        launchanim = true;
+        mouse-over-hilite-stack = true;
+        orientation = "bottom";
+        tilesize = 48;
+      };
+
+      finder = {
+        _FXShowPosixPathInTitle = false;
+      };
+
+      trackpad = {
+        Clicking = true;
+        TrackpadThreeFingerDrag = true;
+      };
+    };
+
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
     };
     stateVersion = 5;
+    startup.chime = false;
   };
 
   # The platform the configuration will be used on.
