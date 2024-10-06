@@ -45,6 +45,7 @@
               ... } @ inputs:
   let
     user = "matt";
+    macHostname = "mktogo";
   in
   {
     # Build nix flake using:
@@ -67,9 +68,9 @@
     };
 
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#mktogo
+    # $ darwin-rebuild build --flake .#whatever-is-set-for-the-hostname
     darwinConfigurations = {
-      mktogo = nix-darwin.lib.darwinSystem {
+      ${macHostname} = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; }; 
         modules = [
           home-manager.darwinModules.home-manager
@@ -107,6 +108,6 @@
       };
     };
 
-    darwinPackages = self.darwinConfigurations."mktogo".pkgs;
+    darwinPackages = self.darwinConfigurations."${macHostname}".pkgs;
   };
 }
