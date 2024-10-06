@@ -28,7 +28,7 @@
     homebrew-cask.url = "github:homebrew/homebrew-cask"; homebrew-cask.flake = false;
     aerospace-tap.url = "github:nikitabobko/homebrew-tap"; aerospace-tap.flake = false;
     sarasa-nerd-font.url = "github:laishulu/homebrew-cask-fonts"; sarasa-nerd-font.flake = false;
-    sketchy-bar.url = "github:FelixKratz/homebrew-formulae"; sketchy-bar.flake = false;
+    # sketchy-bar.url = "github:FelixKratz/homebrew-formulae"; sketchy-bar.flake = false;
 ############################################
   };
 
@@ -42,7 +42,6 @@
               home-manager, 
               aerospace-tap,
               sarasa-nerd-font,
-              sketchy-bar,
               ... } @ inputs:
   let
     user = "matt";
@@ -91,7 +90,7 @@
               # SC Font
                 "laishulu/homebrew-cask-fonts" = sarasa-nerd-font;
               # Bar
-                "FelixKratz/homebrew-formulae" = sketchy-bar;
+              # "FelixKratz/homebrew-formulae" = sketchy-bar;
               };
               # Optional: Enable fully-declarative tap management. With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
               mutableTaps = false;
