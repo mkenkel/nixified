@@ -27,7 +27,7 @@ in
       "slack"
       "spotify"
       "visual-studio-code"
-      "sketchybar"
+      # "sketchybar"
     ];
   };
 
