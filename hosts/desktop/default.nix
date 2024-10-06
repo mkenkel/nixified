@@ -13,18 +13,6 @@
   system.stateVersion = "24.05"; # Did you read the comment?
   # Abbreviated version of the wall of text that was once above - DON'T CHANGE THIS EVER (Unless you know what you're doing).
 
-/* 
-      Pulling back together all the broken out modules... The problem with the layout
-      so broken apart like it was previously is that while it catered towards flexibility
-      under a single host, it also makes things incredibly difficult when planning to add
-      the following as extra systems/hosts:
-
-      - MBP (M1/Personal)
-      - MBP (M1Pro/ Work)
-      - OKD Cluster (4x Nodes)
-
-*/
-
 ### Boot.nix ###
 
    boot = {
