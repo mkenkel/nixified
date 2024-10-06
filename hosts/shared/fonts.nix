@@ -1,15 +1,17 @@
 { lib, pkgs, ... }:
 let
-    sarasa-term-sc-nerd = import ./sarasa.nix {
+    sarasa-term-nerdfont = import ./sarasa.nix {
     inherit lib;
     fetchurl = pkgs.fetchurl;
+    unzip = pkgs.unzip;
+    stdenvNoCC = pkgs.stdenvNoCC;
     };
 in
 {
   fonts.packages = with pkgs; [
     font-awesome 
     jetbrains-mono
-    sarasa-term-sc-nerd
+    sarasa-term-nerdfont
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
