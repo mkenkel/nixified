@@ -6,6 +6,10 @@
 let
   user = "matt";
   hostname = "upshot";
+  sarasa-sc-nerd-font = import ../../flakes/git-fonts.nix {
+    inherit lib;
+    fetchurl = pkgs.fetchurl;
+    };
 in
 {
   imports =
