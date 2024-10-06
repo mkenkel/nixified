@@ -22,7 +22,7 @@
 
     # Git
     pkgs.gh
-    pkgs.git-flow
+    pkgs.gitflow
 
     # Terminal
     pkgs.alacritty
