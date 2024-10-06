@@ -5,10 +5,12 @@
 { config, lib, pkgs, inputs, ... }:
 let
   user = "matt";
+  hostname = "upshot";
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
+      ../shared
       ./hardware-configuration.nix
     ];
 
@@ -38,15 +40,6 @@ in
       allowUnfree = true;
     };
   };
-
-### Fonts.nix ###
-
-  fonts.packages = with pkgs; [
-    font-awesome 
-    jetbrains-mono
-
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
 
 ### Hyprland.nix ###
 
@@ -82,7 +75,6 @@ in
 ### Programs.nix ###
 
   programs = {
-    zsh.enable = true;
     hyprland.enable = true;
     steam.enable = true;
   };
@@ -118,13 +110,11 @@ in
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
-  environment.variables.EDITOR = "nvim";
-
   time.timeZone = "America/Indianapolis";
   time.hardwareClockInLocalTime = true; # Hardware clock sync for dual boot systems.
 
   networking.firewall.enable = false;
-  networking.hostName = "upshot";
+  networking.hostName = "${hostname}";
   networking.wireless.enable = true;
 
   # Select internationalisation properties.
