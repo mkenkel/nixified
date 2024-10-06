@@ -20,33 +20,15 @@
     };
 ############################################
     # Darwin-Specific
-    nix-darwin= {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-homebrew = {
-      url = "github:zhaofengli-wip/nix-homebrew";
-    };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    aerospace-tap = {
-      url = "github:nikitabobko/homebrew-tap";
-      flake = false;
-    };
-    sarasa-nerd-font = {
-      url = "github:laishulu/homebrew-cask-fonts";
-      flake = false;
-    };
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-bundle.url = "github:homebrew/homebrew-bundle"; homebrew-bundle.flake = false;
+    homebrew-core.url = "github:homebrew/homebrew-core"; homebrew-core.flake = false;
+    homebrew-cask.url = "github:homebrew/homebrew-cask"; homebrew-cask.flake = false;
+    aerospace-tap.url = "github:nikitabobko/homebrew-tap"; aerospace-tap.flake = false;
+    sarasa-nerd-font.url = "github:laishulu/homebrew-cask-fonts"; sarasa-nerd-font.flake = false;
+    sketchy-bar.url = "github:FelixKratz/homebrew-formulae"; sketchy-bar.flake = false;
 ############################################
   };
 
@@ -60,6 +42,7 @@
               home-manager, 
               aerospace-tap,
               sarasa-nerd-font,
+              sketchy-bar,
               ... } @ inputs:
   let
     user = "matt";
@@ -107,6 +90,8 @@
                 "nikitabobko/homebrew-tap" = aerospace-tap;
               # SC Font
                 "laishulu/homebrew-cask-fonts" = sarasa-nerd-font;
+              # Bar
+                "FelixKratz/homebrew-formulae" = sketchy-bar;
               };
               # Optional: Enable fully-declarative tap management. With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
               mutableTaps = false;
