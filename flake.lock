@@ -457,7 +457,8 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3",
-        "sarasa-nerd-font": "sarasa-nerd-font"
+        "sarasa-nerd-font": "sarasa-nerd-font",
+        "sketchy-bar": "sketchy-bar"
       }
     },
     "sarasa-nerd-font": {
@@ -473,6 +474,22 @@
       "original": {
         "owner": "laishulu",
         "repo": "homebrew-cask-fonts",
+        "type": "github"
+      }
+    },
+    "sketchy-bar": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710407834,
+        "narHash": "sha256-nFfpcreYCqE/jCzY0mNeO+ZArUF9oMasG1r+R019MI4=",
+        "owner": "FelixKratz",
+        "repo": "homebrew-formulae",
+        "rev": "135452bb73f5fee5b31ca726b9eecdedb5f6492e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FelixKratz",
+        "repo": "homebrew-formulae",
         "type": "github"
       }
     },
