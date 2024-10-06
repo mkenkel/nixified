@@ -122,6 +122,19 @@ return {
           },
         })
       end,
+      ["nil_ls"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["nil_ls"].setup({
+          settings = {
+            ['nil'] = {
+              formatting = {
+                command = { "nixfmt" },
+              },
+            },
+            },
+          },
+        })
+      end,
     })
   end,
 }

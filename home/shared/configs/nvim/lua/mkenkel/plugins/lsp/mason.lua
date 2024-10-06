@@ -33,19 +33,20 @@ return {
         "docker_compose_language_service",
         "dockerls",
         "lua_ls",
+        "nil_ls",
         "terraformls",
       },
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier",
-        "yamlfmt",
-        "isort",
-        "black",
-        -- Linters below
         "ansible-lint",
+        "black",
+        "isort",
+        "nixpkgs-fmt",
+        "prettier",
         "pylint",
+        "yamlfmt",
         "yamllint",
       }
     })
