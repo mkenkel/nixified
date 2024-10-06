@@ -3,6 +3,9 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, inputs, ... }:
+let
+  user = "matt";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -99,7 +102,7 @@
       settings = rec {
         initial_session = {
           command = "${pkgs.hyprland}/bin/hyprland";
-          user = "matt";
+          user = "${user}";
         };
         default_session = initial_session;
       };
@@ -139,7 +142,7 @@
 ### User.nix ###
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.matt = {
+  users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;

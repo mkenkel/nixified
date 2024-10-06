@@ -18,16 +18,19 @@ in
   homebrew = {
     enable = true;
     casks = [
+      # General
       "aerospace"
-      "discord"
       "firefox"
       "font-sarasa-nerd"
       "keeper-password-manager"
       "obsidian"
-      "slack"
-      "spotify"
       "visual-studio-code"
       # "sketchybar"
+
+      # Personal
+      "discord"
+      "slack"
+      "spotify"
     ];
   };
 
