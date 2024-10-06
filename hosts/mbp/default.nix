@@ -42,8 +42,6 @@ in
     alias vi='nvim'
   '';
 
-  # system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
-
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
@@ -90,6 +88,7 @@ in
         Clicking = true;
         TrackpadThreeFingerDrag = true;
       };
+      universalaccess.reduceTransparency = true;
     };
 
     keyboard = {
