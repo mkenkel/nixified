@@ -131,7 +131,6 @@ return {
                 command = { "nixfmt" },
               },
             },
-            },
           },
         })
       end,
