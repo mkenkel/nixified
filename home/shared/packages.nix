@@ -20,6 +20,10 @@
     pkgs.python3
     pkgs.rustc
 
+    # Git
+    pkgs.gh
+    pkgs.git-flow
+
     # Terminal
     pkgs.alacritty
     pkgs.bat
