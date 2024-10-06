@@ -3,10 +3,10 @@ let
   user = "matt";
 in
 {
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-
-  # Equivalent to setting user via Home Manager.
+  imports = [
+    ../shared
+  ];
+  # Sets user for Home Manager.
   users.knownUsers = [ user ];
   users.users."${user}" = {
     name = "${user}";
