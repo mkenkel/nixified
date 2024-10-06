@@ -68,7 +68,9 @@
     };
 
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#whatever-is-set-for-the-hostname
+    #  darwin-rebuild switch --flake .#$(scutil --get LocalHostName)
+    #  or if running on a fresh-system, run the following:
+    #  nix run nix-darwin -- switch --flake .#$(scutil --get LocalHostName)
     darwinConfigurations = {
       ${macHostname} = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; }; 
