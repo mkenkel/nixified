@@ -86,6 +86,9 @@ in
         default_session = initial_session;
       };
     };
+    openssh = {
+      enable = true;
+    };
   };
 
 ### Syscfg.nix ###

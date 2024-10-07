@@ -18,6 +18,7 @@ in
       shellAliases = {
         "vi" = "nvim";
         "ls" = "lsd";
+        "TERM" = "xterm-256color";
       };
     };
     starship = {

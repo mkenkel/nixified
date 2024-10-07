@@ -3,6 +3,8 @@ let
   user = "delegate";
   # Somehow I've gotta figure out how to automate based on X nodes...
   # hostname = "upshot";
+  KubeController= "testing";
+  KubeWorkers= "testing";
 in
 {
   imports =
@@ -26,12 +28,38 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    kompose
+    kubectl
+    kubernetes
+  ];
   programs = {};
-  services = {};
 
-  ###################################### TBD; change to NetworkManager enable. ######################################
-  networking.hostName = "${hostname}";
+  services = {
+    openssh = {
+      enable = true;
+    };
+  };
+
+# Helpful URL: https://nixos.wiki/wiki/Networking
+  networking = {
+    hostName = "${hostname}";
+    hosts = {
+        /* /etc/hosts goes in here */
+    };
+    interfaces = {
+      eth0 = {
+        ipv4 = {
+          addresses = [
+          {
+            address = "192.168.5.200";
+            prefixLength = "23";
+          }
+          ];
+        };
+      };
+    };
+  };
 
   users.users.${user} = {
     isNormalUser = true;

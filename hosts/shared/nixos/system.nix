@@ -6,12 +6,6 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
 
-  services = {
-    openssh = {
-      enable = true;
-    };
-  };
-
   time.timeZone = "America/Indianapolis";
   time.hardwareClockInLocalTime = true; # Hardware clock sync for dual boot systems.
   networking.firewall.enable = false;
