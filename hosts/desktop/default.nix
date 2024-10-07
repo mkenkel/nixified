@@ -6,10 +6,6 @@
 let
   user = "matt";
   hostname = "upshot";
-  sarasa-sc-nerd-font = import ../../flakes/git-fonts.nix {
-    inherit lib;
-    fetchurl = pkgs.fetchurl;
-    };
 in
 {
   imports =
@@ -107,27 +103,8 @@ in
 
 ### Syscfg.nix ###
 
-  # Enabling the use of Flakes and nix-command.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Enabling Automatic Upgrades (Periodically)
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
-
-  time.timeZone = "America/Indianapolis";
-  time.hardwareClockInLocalTime = true; # Hardware clock sync for dual boot systems.
-
-  networking.firewall.enable = false;
   networking.hostName = "${hostname}";
   networking.wireless.enable = true;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true; 
-  };
 
 ### SystemPackages.nix ###
 
