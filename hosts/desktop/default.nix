@@ -11,6 +11,7 @@ in
   imports =
     [ 
       ../shared
+      ../shared/nixos
       ./hardware-configuration.nix
     ];
 
@@ -19,7 +20,6 @@ in
   # Abbreviated version of the wall of text that was once above - DON'T CHANGE THIS EVER (Unless you know what you're doing).
 
 ### Boot.nix ###
-
    boot = {
     loader = {
       efi.canTouchEfiVariables = true;
@@ -34,7 +34,6 @@ in
   };
 
 ### Default.nix ###
-
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -58,13 +57,6 @@ in
     wl-clipboard
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
-    # Terminal
-    git
-    neovim
-    tmux
-    unzip
-    vim 
-    wget
     # Virtualization/Containerization
     podman
     podman-compose
@@ -73,21 +65,16 @@ in
   ];
 
 ### Programs.nix ###
-
   programs = {
     hyprland.enable = true;
     steam.enable = true;
   };
 
 ### Services.nix ###
-
   services = {
     pipewire = {
       enable = true;
       pulse.enable = true;
-    };
-    openssh = {
-      enable = true;
     };
     greetd = {
       enable = true;
@@ -102,16 +89,10 @@ in
   };
 
 ### Syscfg.nix ###
-
   networking.hostName = "${hostname}";
   networking.wireless.enable = true;
 
-### SystemPackages.nix ###
-
-/* MOVED ABOVE */
-
 ### User.nix ###
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
@@ -120,7 +101,6 @@ in
   };
 
 ### Virtualization.nix ###
-
   # Enable common container config files in /etc/containers
   virtualisation = {
     containers.enable = true;
