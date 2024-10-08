@@ -13,12 +13,13 @@
     pkgs.ansible-builder
     pkgs.ansible-lint
     pkgs.ansible-navigator
-    pkgs.cargo
     pkgs.gcc
     pkgs.gnumake
     pkgs.nodejs
     pkgs.python3
-    pkgs.rustc
+    # pkgs.rustc
+    # pkgs.cargo
+    pkgs.rustup
 
     # Git
     pkgs.gh
