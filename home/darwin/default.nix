@@ -1,7 +1,4 @@
 { config, pkgs, lib, home-manager, ... }:
-let
-  cfg = ./configs;
-in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -21,13 +18,6 @@ in
     ../shared
   ];
   
-
-  home.file = {
-      ".cargo".source = "${cfg}/.cargo";
-  };
-
-
-
   home = {
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
