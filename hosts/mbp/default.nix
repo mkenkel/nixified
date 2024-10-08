@@ -16,7 +16,7 @@ in
     name = "${user}";
     home = "/Users/${user}";
     shell = "/bin/zsh";
-    uid = 501;
+    uid = 502;
   };
   # Homebrew (nix-darwin)
   homebrew = {
@@ -32,9 +32,9 @@ in
       # "sketchybar"
 
       # Personal
-      "discord"
-      "slack"
-      "spotify"
+      # "discord"
+      # "slack"
+      # "spotify"
     ];
   };
 

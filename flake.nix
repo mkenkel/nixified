@@ -44,8 +44,8 @@
               sarasa-nerd-font,
               ... } @ inputs:
   let
-    user = "matt.kenkelkroger.com";
-    macHostname = "OF0146VMD9D590Z";
+    user = "matt";
+    macHostname = "mktogo";
   in
   {
     # Build nix flake using:
