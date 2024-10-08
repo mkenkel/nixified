@@ -17,8 +17,6 @@
     pkgs.gnumake
     pkgs.nodejs
     pkgs.python3
-    # pkgs.rustc
-    # pkgs.cargo
     pkgs.rustup
 
     # Git

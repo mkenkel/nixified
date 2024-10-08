@@ -17,6 +17,10 @@
   imports = [
     ../shared
   ];
+
+  home.sessionVariables = {
+    PATH = "/usr/bin/:$PATH";
+  };
   
   home = {
     enableNixpkgsReleaseCheck = false;
