@@ -1,6 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 let 
   cfg = ./configs;
+  user = "matt";
 in
 {
   # Recursive dir nix file sourcing
@@ -9,8 +10,8 @@ in
   ];
 
   # We aren't moving this out - Personal OS'es are fine, however I'll have to find something for work...
-  home.username = "matt";
-  home.homeDirectory = "/home/matt";
+  home.username = "${user}";
+  home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.05"; # Pls google before changing this
 
   # Let Home Manager install and manage itself.
@@ -49,7 +50,7 @@ in
   # Moreso personal account here - Dunno if this'll go any higher than NixOS.
   programs.git = {
     enable = true;
-    userName = "whipplash";
+    userName = "mkenkel";
     userEmail = "mattsnoopy2@gmail.com";
   };
 
