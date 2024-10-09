@@ -2,9 +2,9 @@ return {
   {
     "hrsh7th/nvim-cmp"
   },
-  {
-    "github/copilot.vim"
-  },
+  -- {
+  --   "github/copilot.vim"
+  -- },
   event = "InsertEnter",  -- Whenever heading into insert mode, activate the extension.
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in the buffer.

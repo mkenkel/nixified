@@ -35,6 +35,7 @@ in
     pkgs.firefox
     pkgs.spotify
     pkgs.vesktop
+    pkgs.arduino-ide
     # Terminal
     pkgs.cmatrix
     pkgs.brightnessctl
