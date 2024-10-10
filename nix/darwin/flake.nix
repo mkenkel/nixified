@@ -1,25 +1,10 @@
-# /etc/nixos/flake.nix
 {
-  description = "Configuration Hub - Repository of the factotum.";
+  description = "Configuration Hub - Darwin Master Flake";
 
   inputs = {
-    ############################################
-    # Core Nix
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ############################################
-    # NixOS-Specific
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ############################################
-    # Darwin-Specific
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
@@ -33,8 +18,6 @@
     aerospace-tap.flake = false;
     sarasa-nerd-font.url = "github:laishulu/homebrew-cask-fonts";
     sarasa-nerd-font.flake = false;
-    # sketchy-bar.url = "github:FelixKratz/homebrew-formulae"; sketchy-bar.flake = false;
-    ############################################
   };
 
   outputs =
@@ -52,35 +35,12 @@
       ...
     }@inputs:
     let
-      user = "matt";
+      personalUser = "matt";
       macHostname = "mktogo";
     in
     {
-      # Build nix flake using:
-      # $ nixos-rebuild --flake .#upshot switch
-      nixosConfigurations = {
-        upshot = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/desktop
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.${user} = import ./home/nixos;
-              };
-            }
-          ];
-        };
-      };
-
-      # Build darwin flake using:
-      #  darwin-rebuild switch --flake .#$(scutil --get LocalHostName)
-      #  or if running on a fresh-system, run the following:
-      #  nix run nix-darwin -- switch --flake .#$(scutil --get LocalHostName)
+      #  darwin-rebuild switch --flake .#$(HOST)
+      #  nix run nix-darwin -- switch --flake .#$HOST
       darwinConfigurations = {
         ${macHostname} = nix-darwin.lib.darwinSystem {
           specialArgs = {
@@ -92,7 +52,7 @@
             {
               # Nix-Homebrew
               nix-homebrew = {
-                inherit user;
+                inherit personalUser;
                 enable = true;
                 # x86 App Compatibility
                 enableRosetta = true;
@@ -100,21 +60,15 @@
                   "homebrew/homebrew-core" = homebrew-core;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
-                  # TWM
                   "nikitabobko/homebrew-tap" = aerospace-tap;
-                  # SC Font
                   "laishulu/homebrew-cask-fonts" = sarasa-nerd-font;
-                  # Bar
-                  # "FelixKratz/homebrew-formulae" = sketchy-bar;
                 };
-                # Optional: Enable fully-declarative tap management. With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
                 mutableTaps = false;
               };
-              # Home Manager
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${user} = import ./home/darwin;
+                users.${personalUser} = import ./home/darwin;
               };
             }
             ./hosts/mbp
