@@ -26,7 +26,6 @@ in
       "keeper-password-manager"
       "obsidian"
       "visual-studio-code"
-      "sketchybar"
       "discord"
       "slack"
       "spotify"
