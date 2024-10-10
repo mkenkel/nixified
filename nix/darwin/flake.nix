@@ -35,7 +35,7 @@
       ...
     }@inputs:
     let
-      personalUser = "matt";
+      user = "matt";
       macHostname = "mktogo";
     in
     {
@@ -51,7 +51,7 @@
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
-                inherit personalUser;
+                inherit user;
                 enable = true;
                 enableRosetta = true; # x86 App Compatibility
                 taps = {
@@ -66,7 +66,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${personalUser} = import ./personal-mbp/home.nix;
+                users.${user} = import ./personal-mbp/home.nix;
               };
             }
             ./personal-mbp
