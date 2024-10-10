@@ -25,6 +25,7 @@
   ];
 
   home.sessionVariables = {
+    # Fixes Rust Compiling the LSP
     PATH = "/usr/bin/:$PATH";
   };
 

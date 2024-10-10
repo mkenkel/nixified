@@ -3,8 +3,6 @@ let
   cfg = ./configs;
 in
 
-### Shell.nix ###
-
 {
   programs = {
     zsh = {

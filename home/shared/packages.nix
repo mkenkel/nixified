@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  ### Packages.nix ###
-
-  # List all user-derived packages within here.
   home.packages = [
     # Editors
     pkgs.neovim
