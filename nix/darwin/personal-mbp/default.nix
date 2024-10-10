@@ -14,7 +14,7 @@ in
     name = "${user}";
     home = "/Users/${user}";
     shell = "/bin/zsh";
-    uid = 502;
+    uid = 501;
   };
 
   homebrew = {
