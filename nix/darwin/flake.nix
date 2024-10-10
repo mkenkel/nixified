@@ -2,36 +2,36 @@
   description = "Configuration Hub - Darwin Master Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    homebrew-bundle.url = "github:homebrew/homebrew-bundle";
-    homebrew-bundle.flake = false;
-    homebrew-core.url = "github:homebrew/homebrew-core";
-    homebrew-core.flake = false;
-    homebrew-cask.url = "github:homebrew/homebrew-cask";
-    homebrew-cask.flake = false;
-    aerospace-tap.url = "github:nikitabobko/homebrew-tap";
     aerospace-tap.flake = false;
-    sarasa-nerd-font.url = "github:laishulu/homebrew-cask-fonts";
+    aerospace-tap.url = "github:nikitabobko/homebrew-tap";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    homebrew-bundle.flake = false;
+    homebrew-bundle.url = "github:homebrew/homebrew-bundle";
+    homebrew-cask.flake = false;
+    homebrew-cask.url = "github:homebrew/homebrew-cask";
+    homebrew-core.flake = false;
+    homebrew-core.url = "github:homebrew/homebrew-core";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     sarasa-nerd-font.flake = false;
+    sarasa-nerd-font.url = "github:laishulu/homebrew-cask-fonts";
   };
 
   outputs =
     {
-      self,
-      nixpkgs,
-      nix-homebrew,
-      homebrew-bundle,
-      homebrew-core,
-      homebrew-cask,
-      nix-darwin,
-      home-manager,
       aerospace-tap,
+      home-manager,
+      homebrew-bundle,
+      homebrew-cask,
+      homebrew-core,
+      nix-darwin,
+      nix-homebrew,
+      nixpkgs,
       sarasa-nerd-font,
+      self,
       ...
     }@inputs:
     let
@@ -50,28 +50,26 @@
             home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
             {
-              # Nix-Homebrew
               nix-homebrew = {
                 inherit personalUser;
                 enable = true;
-                # x86 App Compatibility
-                enableRosetta = true;
+                enableRosetta = true; # x86 App Compatibility
                 taps = {
-                  "homebrew/homebrew-core" = homebrew-core;
-                  "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-bundle" = homebrew-bundle;
-                  "nikitabobko/homebrew-tap" = aerospace-tap;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-core" = homebrew-core;
                   "laishulu/homebrew-cask-fonts" = sarasa-nerd-font;
+                  "nikitabobko/homebrew-tap" = aerospace-tap;
                 };
                 mutableTaps = false;
               };
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${personalUser} = import ./home/darwin;
+                users.${personalUser} = import ./personal-mbp/home.nix;
               };
             }
-            ./hosts/mbp
+            ./personal-mbp
           ];
         };
       };
