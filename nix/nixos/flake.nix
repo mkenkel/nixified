@@ -3,11 +3,11 @@
   description = "Configuration Hub - NixOS's Master Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    home-manager.url = "github:nix-community/home-manager";
     hyprland.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs =
