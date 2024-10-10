@@ -14,7 +14,6 @@
     {
       self,
       nixpkgs,
-      nix-homebrew,
       home-manager,
       ...
     }@inputs:
