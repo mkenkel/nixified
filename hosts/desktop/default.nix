@@ -62,6 +62,8 @@ in
     podman-compose
     qemu
     virtiofsd
+    # Nix Formatter
+    nixfmt-rfc-style
   ];
 
 ### Programs.nix ###
