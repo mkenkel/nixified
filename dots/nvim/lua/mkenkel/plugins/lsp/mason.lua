@@ -43,7 +43,6 @@ return {
         "ansible-lint",
         "black",
         "isort",
-        "nixpkgs-fmt",
         "prettier",
         "pylint",
         "yamlfmt",

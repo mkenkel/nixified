@@ -38,6 +38,7 @@ in
     # I know it's specified 2x... I just wanna make sure it's around :)
     pkgs.neovim
     pkgs.chafa
+    pkgs.nixfmt-rfc-style # Nixfmt
   ];
 
   # Auto upgrade nix package and the daemon service.
