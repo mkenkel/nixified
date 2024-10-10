@@ -9,9 +9,6 @@ let
   cfg = ../../../dots;
 in
 {
-  imports = [
-    ../shared
-  ];
 
   home = {
     enableNixpkgsReleaseCheck = false;
