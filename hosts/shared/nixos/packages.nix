@@ -6,7 +6,7 @@
     neovim
     tmux
     unzip
-    vim 
+    vim
     wget
   ];
 }

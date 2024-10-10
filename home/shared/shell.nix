@@ -1,5 +1,5 @@
-{ config, pkgs, ... }: 
-let 
+{ config, pkgs, ... }:
+let
   cfg = ./configs;
 in
 
@@ -37,8 +37,8 @@ in
         tmuxPlugins.onedark-theme
         tmuxPlugins.resurrect
         tmuxPlugins.vim-tmux-navigator
-        ];
-      
+      ];
+
       extraConfig = ''
         set -g default-terminal "xterm-256color"
         set -g prefix C-a
@@ -71,11 +71,11 @@ in
         bind-key -T copy-mode-vi 'y' send -X copy-selection
 
         unbind -T copy-mode-vi MouseDragEnd1Pane
-        
+
         # Pane sync / Mult-SSH Session Sync
         bind-key b set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
 
-     '';
+      '';
     };
   };
 }

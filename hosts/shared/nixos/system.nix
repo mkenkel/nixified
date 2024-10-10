@@ -1,7 +1,10 @@
 { ... }:
 {
   # Enabling the use of Flakes and nix-command.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # Enabling Automatic Upgrades (Periodically)
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
@@ -15,6 +18,6 @@
 
   console = {
     font = "Lat2-Terminus16";
-    useXkbConfig = true; 
+    useXkbConfig = true;
   };
 }

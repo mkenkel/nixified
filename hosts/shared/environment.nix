@@ -4,9 +4,9 @@
     variables = {
       EDITOR = "nvim";
     };
-  interactiveShellInit = ''
-    alias ls='lsd'
-    alias vi='nvim'
-  '';
+    interactiveShellInit = ''
+      alias ls='lsd'
+      alias vi='nvim'
+    '';
   };
 }

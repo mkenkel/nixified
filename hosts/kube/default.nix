@@ -1,23 +1,28 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   user = "delegate";
   # Somehow I've gotta figure out how to automate based on X nodes...
   # hostname = "upshot";
-  KubeController= "testing";
-  KubeWorkers= "testing";
+  KubeController = "testing";
+  KubeWorkers = "testing";
 in
 {
-  imports =
-    [ 
-      ../shared
-      ../shared/nixos
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ../shared
+    ../shared/nixos
+    ./hardware-configuration.nix
+  ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
   # Abbreviated version of the wall of text that was once above - DON'T CHANGE THIS EVER (Unless you know what you're doing).
 
-   boot = {
+  boot = {
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
@@ -33,7 +38,7 @@ in
     kubectl
     kubernetes
   ];
-  programs = {};
+  programs = { };
 
   services = {
     openssh = {
@@ -41,20 +46,20 @@ in
     };
   };
 
-# Helpful URL: https://nixos.wiki/wiki/Networking
+  # Helpful URL: https://nixos.wiki/wiki/Networking
   networking = {
     hostName = "${hostname}";
     hosts = {
-        /* /etc/hosts goes in here */
+      # /etc/hosts goes in here
     };
     interfaces = {
       eth0 = {
         ipv4 = {
           addresses = [
-          {
-            address = "192.168.5.200";
-            prefixLength = "23";
-          }
+            {
+              address = "192.168.5.200";
+              prefixLength = "23";
+            }
           ];
         };
       };

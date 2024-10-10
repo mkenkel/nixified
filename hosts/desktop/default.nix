@@ -2,25 +2,30 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   user = "matt";
   hostname = "upshot";
 in
 {
-  imports =
-    [ 
-      ../shared
-      ../shared/nixos
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ../shared
+    ../shared/nixos
+    ./hardware-configuration.nix
+  ];
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
   # Abbreviated version of the wall of text that was once above - DON'T CHANGE THIS EVER (Unless you know what you're doing).
 
-### Boot.nix ###
-   boot = {
+  ### Boot.nix ###
+  boot = {
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
@@ -33,14 +38,14 @@ in
     };
   };
 
-### Default.nix ###
+  ### Default.nix ###
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
   };
 
-### Hyprland.nix ###
+  ### Hyprland.nix ###
 
   environment.systemPackages = with pkgs; [
     fuzzel
@@ -66,13 +71,13 @@ in
     nixfmt-rfc-style
   ];
 
-### Programs.nix ###
+  ### Programs.nix ###
   programs = {
     hyprland.enable = true;
     steam.enable = true;
   };
 
-### Services.nix ###
+  ### Services.nix ###
   services = {
     pipewire = {
       enable = true;
@@ -93,11 +98,11 @@ in
     };
   };
 
-### Syscfg.nix ###
+  ### Syscfg.nix ###
   networking.hostName = "${hostname}";
   networking.wireless.enable = true;
 
-### User.nix ###
+  ### User.nix ###
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
@@ -105,7 +110,7 @@ in
     shell = pkgs.zsh;
   };
 
-### Virtualization.nix ###
+  ### Virtualization.nix ###
   # Enable common container config files in /etc/containers
   virtualisation = {
     containers.enable = true;

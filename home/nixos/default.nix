@@ -1,5 +1,11 @@
-{ config, lib, pkgs, inputs, ... }:
-let 
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+let
   cfg = ./configs;
   user = "matt";
 in
@@ -17,7 +23,7 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-### Desktop-env.nix ###
+  ### Desktop-env.nix ###
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -25,7 +31,7 @@ in
     xwayland.enable = true;
   };
 
-### Packages.nix ###
+  ### Packages.nix ###
 
   # Making sure these are NixOS-specific.
   home.packages = [
@@ -45,7 +51,7 @@ in
     pkgs.playerctl
   ];
 
-### Programs.nix ###
+  ### Programs.nix ###
 
   # Moreso personal account here - Dunno if this'll go any higher than NixOS.
   programs.git = {
@@ -54,12 +60,12 @@ in
     userEmail = "mattsnoopy2@gmail.com";
   };
 
-### SessionVariables.nix ###
+  ### SessionVariables.nix ###
 
   # Manages your env vars through Home Manager.
   home.sessionVariables = {
-	  WLR_NO_HARDWARE_CURSORS = "1"; 
-      XCURSOR_SIZE = "32";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    XCURSOR_SIZE = "32";
     BROWSER = "firefox";
     GTK_USE_PORTAL = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -73,13 +79,13 @@ in
     XDG_SESSION_TYPE = "wayland";
   };
 
-### Source.nix ###
+  ### Source.nix ###
 
   home.file = {
-      ".config/fuzzel".source = "${cfg}/fuzzel";
-      ".config/hypr".source = "${cfg}/hypr";
-      ".config/mako".source = "${cfg}/mako";
-      ".config/wallpaper".source = "${cfg}/wallpaper";
-      ".config/waybar".source = "${cfg}/waybar";
+    ".config/fuzzel".source = "${cfg}/fuzzel";
+    ".config/hypr".source = "${cfg}/hypr";
+    ".config/mako".source = "${cfg}/mako";
+    ".config/wallpaper".source = "${cfg}/wallpaper";
+    ".config/waybar".source = "${cfg}/waybar";
   };
 }

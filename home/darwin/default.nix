@@ -1,4 +1,10 @@
-{ config, pkgs, lib, home-manager, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  home-manager,
+  ...
+}:
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -21,7 +27,7 @@
   home.sessionVariables = {
     PATH = "/usr/bin/:$PATH";
   };
-  
+
   home = {
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
