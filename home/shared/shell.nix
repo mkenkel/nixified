@@ -71,6 +71,9 @@ in
         bind-key -T copy-mode-vi 'y' send -X copy-selection
 
         unbind -T copy-mode-vi MouseDragEnd1Pane
+        
+        # Pane sync / Mult-SSH Session Sync
+        bind-key b set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
 
      '';
     };
