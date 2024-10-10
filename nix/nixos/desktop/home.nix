@@ -8,11 +8,6 @@ let
   user = "matt";
 in
 {
-  # Recursive dir nix file sourcing
-  imports = [
-    ./home-tmp
-  ];
-
   # We aren't moving this out - Personal OS'es are fine, however I'll have to find something for work...
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
