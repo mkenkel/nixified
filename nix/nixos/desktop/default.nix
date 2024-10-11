@@ -12,16 +12,14 @@ in
 
   nix.settings = {
     experimental-features = [
-    "nix-command"
-    "flakes"
+      "nix-command"
+      "flakes"
     ];
-    # Cachix for Hyprland
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
   imports = [
     ../shared
+    ./hyprland.nix
     ./hardware-configuration.nix
   ];
 
@@ -47,37 +45,17 @@ in
   };
 
   programs = {
-    hyprland = {
-      enable = true;
-      # set the flake package
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # make sure to also set the portal package, so that they are in sync
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
     steam.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    fuzzel
-    hyprcursor
-    hypridle
-    hyprlock
-    hyprpaper
-    kitty
-    libnotify
-    mako
     nixfmt-rfc-style
     podman
     podman-compose
     qemu
-    qt5.qtwayland
-    qt6.qtwayland
     virtiofsd
     waybar
     wl-clipboard
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
   ];
 
   services = {
@@ -85,16 +63,6 @@ in
       enable = true;
       pulse.enable = true;
     };
-    # greetd = {
-    #   enable = true;
-    #   settings = rec {
-    #     initial_session = {
-    #       command = "${pkgs.stdenv.hostPlatform.system}.hyprland;/bin/hyprland";
-    #       user = "${user}";
-    #     };
-    #     default_session = initial_session;
-    #   };
-    # };
     openssh = {
       enable = true;
     };
@@ -108,7 +76,6 @@ in
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
-
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
