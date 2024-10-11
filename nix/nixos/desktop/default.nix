@@ -78,7 +78,7 @@ in
       enable = true;
       settings = rec {
         initial_session = {
-          command = "${pkgs.hyprland}/bin/hyprland";
+          command = "${pkgs.stdenv.hostPlatform.system}.hyprland;/bin/hyprland";
           user = "${user}";
         };
         default_session = initial_session;
