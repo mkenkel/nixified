@@ -9,6 +9,17 @@ let
   hostname = "upshot";
 in
 {
+
+  nix.settings = {
+    experimental-features = [
+    "nix-command"
+    "flakes"
+    ];
+    # Cachix for Hyprland
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
+
   imports = [
     ../shared
     ./hardware-configuration.nix
@@ -98,10 +109,6 @@ in
     shell = pkgs.zsh;
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
