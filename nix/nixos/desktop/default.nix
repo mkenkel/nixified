@@ -74,16 +74,16 @@ in
       enable = true;
       pulse.enable = true;
     };
-    greetd = {
-      enable = true;
-      settings = rec {
-        initial_session = {
-          command = "${pkgs.stdenv.hostPlatform.system}.hyprland;/bin/hyprland";
-          user = "${user}";
-        };
-        default_session = initial_session;
-      };
-    };
+    # greetd = {
+    #   enable = true;
+    #   settings = rec {
+    #     initial_session = {
+    #       command = "${pkgs.stdenv.hostPlatform.system}.hyprland;/bin/hyprland";
+    #       user = "${user}";
+    #     };
+    #     default_session = initial_session;
+    #   };
+    # };
     openssh = {
       enable = true;
     };
