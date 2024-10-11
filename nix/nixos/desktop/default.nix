@@ -34,6 +34,13 @@ in
     };
   };
 
+  programs = {
+    hyprland = {
+      enable = true;
+    };
+    steam.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     fuzzel
     hyprcursor
@@ -55,11 +62,6 @@ in
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
   ];
-
-  programs = {
-    hyprland.enable = true;
-    steam.enable = true;
-  };
 
   services = {
     pipewire = {
