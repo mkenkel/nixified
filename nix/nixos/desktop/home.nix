@@ -84,14 +84,15 @@ in
   ### Source.nix ###
 
   home.file = {
+    ".config/alacritty".source = "${cfg}/alacritty";
+    ".config/fastfetch".source = "${cfg}/fastfetch";
     ".config/fuzzel".source = "${cfg}/fuzzel";
     ".config/hypr".source = "${cfg}/hypr";
     ".config/mako".source = "${cfg}/mako";
+    ".config/nvim".source = "${cfg}/nvim";
+    ".config/pfp".source = "${cfg}/pfp";
     ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
-    ".config/alacritty".source = "${cfg}/alacritty";
-    ".config/nvim".source = "${cfg}/nvim";
-    ".config/fastfetch".source = "${cfg}/fastfetch";
   };
 
   programs = {
