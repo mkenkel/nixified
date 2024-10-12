@@ -20,6 +20,7 @@ in
 
   home.packages = [
     pkgs.alacritty
+    pkgs.alacritty-theme
     pkgs.ansible
     pkgs.ansible-builder
     pkgs.ansible-lint
