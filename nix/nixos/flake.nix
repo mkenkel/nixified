@@ -7,6 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     hyprland.url = "github:hyprwm/Hyprland";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -14,6 +15,7 @@
       self,
       nixpkgs,
       home-manager,
+      catppuccin,
       ...
     }@inputs:
     let
@@ -27,13 +29,20 @@
             inherit inputs;
           };
           modules = [
-            ./desktop
+            catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
+            ./desktop
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.${user} = import ./desktop/home.nix;
+                users.${user} = {
+                  imports = [
+                    ./desktop/home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+
+                };
               };
             }
           ];

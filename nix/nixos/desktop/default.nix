@@ -44,6 +44,9 @@ in
     };
   };
 
+  # Seems a little too easy to go theming everything like this...
+  catppuccin.enable = true;
+
   programs = {
     steam.enable = true;
   };
