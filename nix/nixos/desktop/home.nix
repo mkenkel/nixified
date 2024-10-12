@@ -129,11 +129,12 @@ in
       escapeTime = 0;
       plugins = with pkgs; [
         tmuxPlugins.continuum
-        tmuxPlugins.onedark-theme
         tmuxPlugins.resurrect
         tmuxPlugins.vim-tmux-navigator
+        tmuxPlugins.catppuccin
       ];
 
+      # https://nix.dev/manual/nix/2.18/language/builtins.html?highlight=readFile#built-in-functions
       extraConfig = builtins.readFile ("${cfg}/tmux/tmux.conf");
     };
   };
