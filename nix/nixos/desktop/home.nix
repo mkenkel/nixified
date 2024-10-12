@@ -93,6 +93,7 @@ in
     ".config/pfp".source = "${cfg}/pfp";
     ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
+    ".config/tmux".source = "${cfg}/tmux";
   };
 
   programs = {
@@ -133,43 +134,7 @@ in
         tmuxPlugins.vim-tmux-navigator
       ];
 
-      extraConfig = ''
-        set -g default-terminal "xterm-256color"
-        set -g prefix C-a
-        unbind C-b
-        bind-key C-a send-prefix
-
-        unbind %
-        bind | split-window -h
-
-        unbind '"'
-        bind - split-window -v
-
-        unbind r
-        bind r source-file ~/.tmux.conf
-
-        bind -r j resize-pane -D 5
-        bind -r k resize-pane -U 5
-        bind -r l resize-pane -R 5
-        bind -r h resize-pane -L 5
-
-        bind -r m resize-pane -Z
-
-        set -g mouse on
-
-        set-window-option -g mode-keys vi
-
-
-        # Copy mode vi
-        bind-key -T copy-mode-vi 'v' send -X begin-selection
-        bind-key -T copy-mode-vi 'y' send -X copy-selection
-
-        unbind -T copy-mode-vi MouseDragEnd1Pane
-
-        # Pane sync / Mult-SSH Session Sync
-        bind-key b set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
-
-      '';
+      extraConfig = builtins.readFile ("${cfg}/tmux/tmux.conf");
     };
   };
 }
