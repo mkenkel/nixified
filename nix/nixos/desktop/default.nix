@@ -64,6 +64,8 @@ in
     curl
     openssl
     git
+    # Essentials
+    unzip
   ];
 
   services = {
