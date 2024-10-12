@@ -56,6 +56,11 @@ in
     virtiofsd
     waybar
     wl-clipboard
+    # Kube-the-hard-way
+    wget
+    curl
+    openssl
+    git
   ];
 
   services = {
