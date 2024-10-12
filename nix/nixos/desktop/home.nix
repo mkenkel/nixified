@@ -93,7 +93,6 @@ in
     ".config/pfp".source = "${cfg}/pfp";
     ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
-    ".config/tmux".source = "${cfg}/tmux";
   };
 
   programs = {
