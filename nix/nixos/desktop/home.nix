@@ -279,7 +279,7 @@ in
         "$mod SHIFT, q, killactive"
         "$mod SHIFT CONTROL, e, exit"
         "$mod SHIFT, l, exec, ${pkgs.hyprlock}/bin/hyprlock"
-        "$mod d, exec, ${pkgs.fuzzel}/bin/fuzzel"
+        "$mod d, exec, fuzzel"
 
         # Screen focus
         "$mod, v, togglefloating"
