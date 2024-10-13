@@ -35,7 +35,7 @@
       "$menu" = "${pkgs.fuzzel}/bin/fuzzel";
 
       monitor = [
-        "DP-1,3840x2160@144,0x0,1"
+        "DP-1,3840x2160@144,0x0,1.5"
         ",prefered,auto,1"
       ];
 
