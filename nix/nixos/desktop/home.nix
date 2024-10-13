@@ -96,13 +96,15 @@ in
     fuzzel = {
       enable = true;
       settings = {
-        font = "JetBrainsMono";
-        dpi-aware = "auto";
-        use-bold = "yes";
-        match-mode = "fzf";
-        show-actions = "yes";
-        terminal = "alacritty";
-        width = 45;
+        main = {
+          font = "JetBrainsMono";
+          dpi-aware = "auto";
+          use-bold = "yes";
+          match-mode = "fzf";
+          show-actions = "yes";
+          terminal = "alacritty";
+          width = 45;
+        };
         border.width = 1;
         border.radius = 10;
       };
