@@ -7,10 +7,8 @@
   };
 
   home.packages = [
-    pkgs.banana-cursor
     pkgs.fuzzel
     pkgs.glib
-    pkgs.hyprcursor
     pkgs.hypridle
     pkgs.hyprlock
     pkgs.hyprpaper
