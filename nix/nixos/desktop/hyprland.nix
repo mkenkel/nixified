@@ -6,18 +6,6 @@
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
-  home.pointerCursor = {
-    x11.enable = true;
-    gtk.enable = true;
-    package = pkgs.banana-cursor;
-    size = 64;
-    name = "banana-cursor";
-  };
-
-  gtk = {
-
-  };
-
   home.packages = [
     pkgs.banana-cursor
     pkgs.fuzzel
@@ -230,10 +218,6 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "XDG_CURRENT_DESKTOP,Hyprland"
-        "XCURSOR_THEME,banana-cursor"
-        "HYPRCURSOR_THEME,banana-cursor"
-        "HYPRCURSOR_SIZE,64"
-        "XCURSOR_SIZE,64"
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
@@ -241,10 +225,6 @@
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.waybar}/bin/waybar"
-      ];
-      exec = [
-        ''gsettings set org.gnome.desktop.interface cursor-theme "banana-cursor"''
-        ''gsettings set org.gnome.desktop.interface cursor-size 64''
       ];
 
       plugin = {
