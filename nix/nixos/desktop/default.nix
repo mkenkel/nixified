@@ -83,12 +83,6 @@ in
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
-    # enable sway window manager
-    sway = {
-      enable = true;
-      # Seems sways' the only one allowing GTK wrapper for Hypr?
-      wrapperFeatures.gtk = true;
-    };
   };
 
   environment.systemPackages = with pkgs; [
