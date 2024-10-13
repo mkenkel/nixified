@@ -86,6 +86,7 @@ in
 
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
+    ".config/btop".source = "${cfg}/btop";
     ".config/fastfetch".source = "${cfg}/fastfetch";
     ".config/fuzzel".source = "${cfg}/fuzzel";
     ".config/hypr".source = "${cfg}/hypr";
