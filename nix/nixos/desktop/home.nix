@@ -166,6 +166,7 @@ in
       "$terminal" = "alacritty";
       "$mod" = "ALT";
       "$wrkspcmod" = "ALT CONTROL";
+      "$menu" = "fuzzel";
 
       monitor = [
         "DP-1,3840x2160@144,0x0,1"
@@ -279,7 +280,7 @@ in
         "$mod SHIFT, q, killactive"
         "$mod SHIFT CONTROL, e, exit"
         "$mod SHIFT, l, exec, ${pkgs.hyprlock}/bin/hyprlock"
-        "$mod d, exec, fuzzel"
+        "$mod d, exec, $menu"
 
         # Screen focus
         "$mod, v, togglefloating"
