@@ -6,6 +6,14 @@
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
+  home.pointerCursor = {
+    x11.enable = true;
+    gtk.enable = true;
+    package = pkgs.catppuccin-cursors.mochaMauve;
+    size = 48;
+    name = "Catppuccin-Mocha-Mauve";
+  };
+
   home.packages = [
     pkgs.catppuccin-cursors.mochaMauve
     pkgs.fuzzel
@@ -23,8 +31,6 @@
   home.sessionVariables = {
     HYPRCURSOR_SIZE = "48";
     HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
-    XCURSOR_SIZE = "48";
-    XCURSOR_THEME = "Catppuccin-Mocha-Mauve";
   };
 
   wayland.windowManager.hyprland = {
