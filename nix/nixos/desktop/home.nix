@@ -74,18 +74,11 @@ in
     BROWSER = "firefox";
     EDITOR = "nvim";
     GTK_USE_PORTAL = "1";
-    #MOZ_ENABLE_WAYLAND = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     TERM = "xterm-256color";
-    #WLR_NO_HARDWARE_CURSORS = "1";
-    #WLR_RENDERER = "vulkan";
-    XCURSOR_SIZE = "32";
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
-    #XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_DATA_HOME = "\${HOME}/.local/share";
-    #XDG_SESSION_DESKTOP = "Hyprland";
-    #XDG_SESSION_TYPE = "wayland";
   };
 
   ### Source.nix ###

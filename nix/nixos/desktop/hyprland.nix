@@ -25,16 +25,6 @@ in
   programs.hyprland.portalPackage =
     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
-  # greetd = {
-  #   enable = true;
-  #   settings = rec {
-  #     initial_session = {
-  #       command = "${pkgs.stdenv.hostPlatform.system}.hyprland;/bin/hyprland";
-  #       user = "${user}";
-  #     };
-  #     default_session = initial_session;
-  #   };
-  # };
   services.greetd = {
     enable = true;
     settings = {
@@ -46,6 +36,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    catppuccin-cursors.mochaMauve
     fuzzel
     hyprcursor
     hypridle
@@ -57,4 +48,13 @@ in
     waybar
     wl-clipboard
   ];
+
+  environment = {
+    variables = {
+      HYPRCURSOR_SIZE = "24";
+      HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
+      XCURSOR_SIZE = "24";
+      XCURSOR_THEME = "Catppuccin-Mocha-Mauve";
+    };
+  };
 }
