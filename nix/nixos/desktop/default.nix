@@ -45,7 +45,7 @@ in
 
   stylix = {
     enable = true;
-    # image = ../../config/wallpapers/beautifulmountainscape.jpg;
+    image = ../../../dots/wallpaper/mocha-nix.png;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor.package = pkgs.bibata-cursors;
@@ -72,9 +72,6 @@ in
       };
     };
   };
-
-  # Seems a little too easy to go theming everything like this...
-  catppuccin.enable = true;
 
   programs = {
     steam.enable = true;

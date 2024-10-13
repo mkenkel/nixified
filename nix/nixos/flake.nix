@@ -11,13 +11,11 @@
       inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
     stylix.url = "github:danth/stylix";
   };
 
   outputs =
     {
-      catppuccin,
       home-manager,
       hyprland,
       nixpkgs,
@@ -36,7 +34,6 @@
             inherit inputs;
           };
           modules = [
-            catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
             ./desktop
@@ -50,7 +47,6 @@
                 users.${user} = {
                   imports = [
                     ./desktop/home.nix
-                    catppuccin.homeManagerModules.catppuccin
                   ];
 
                 };
