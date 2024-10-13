@@ -97,7 +97,6 @@ in
       enable = true;
       settings = {
         main = {
-          font = "JetBrainsMono";
           dpi-aware = "auto";
           use-bold = "yes";
           match-mode = "fzf";
