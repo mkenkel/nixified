@@ -30,7 +30,8 @@
 
   home.sessionVariables = {
     HYPRCURSOR_SIZE = "48";
-    #HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
+    HYPRCURSOR_THEME = "banana-cursor";
+    XCURSOR_THEME = "banana-cursor";
   };
 
   wayland.windowManager.hyprland = {
@@ -231,6 +232,7 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "XDG_CURRENT_DESKTOP,Hyprland"
+        "XCURSOR_THEME,banana-cursor"
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
