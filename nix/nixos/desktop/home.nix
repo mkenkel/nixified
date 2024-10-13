@@ -90,7 +90,6 @@ in
     ".config/mako".source = "${cfg}/mako";
     ".config/nvim".source = "${cfg}/nvim";
     ".config/pfp".source = "${cfg}/pfp";
-    ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
   };
 
