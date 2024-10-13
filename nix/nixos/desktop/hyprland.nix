@@ -10,7 +10,7 @@
     x11.enable = true;
     gtk.enable = true;
     package = pkgs.banana-cursor;
-    size = 48;
+    size = 64;
     name = "banana-cursor";
   };
 
@@ -235,15 +235,19 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XCURSOR_THEME,banana-cursor"
         "HYPRCURSOR_THEME,banana-cursor"
-        "HYPRCURSOR_SIZE,48"
+        "HYPRCURSOR_SIZE,64"
+        "XCURSOR_SIZE,64"
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "hyprctl setcursor banana-cursor 48"
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.waybar}/bin/waybar"
+      ];
+      exec = [
+        ''gsettings set org.gnome.desktop.interface cursor-theme "banana-cursor"''
+        ''gsettings set org.gnome.desktop.interface cursor-size 64''
       ];
 
       plugin = {
