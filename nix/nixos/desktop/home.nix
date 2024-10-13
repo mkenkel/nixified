@@ -85,7 +85,6 @@ in
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
     ".config/fastfetch".source = "${cfg}/fastfetch";
-    ".config/fuzzel".source = "${cfg}/fuzzel";
     #".config/hypr".source = "${cfg}/hypr";
     ".config/mako".source = "${cfg}/mako";
     ".config/nvim".source = "${cfg}/nvim";
@@ -94,6 +93,10 @@ in
   };
 
   programs = {
+    fuzzel = {
+      enable = true;
+      settings = builtins.readFile ("${cfg}/fuzzel/fuzzel.ini");
+    };
     git = {
       enable = true;
       userName = "mkenkel";
