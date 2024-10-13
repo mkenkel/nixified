@@ -102,7 +102,7 @@ in
           match-mode = "fzf";
           show-actions = "yes";
           terminal = "alacritty";
-          width = 45;
+          width = 30;
         };
         border.width = 1;
         border.radius = 10;
