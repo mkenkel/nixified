@@ -13,6 +13,9 @@
          "format-icons": {
              "default": "",
          },
+      "persistent-workspaces": {
+        "*": 5, // 5 workspaces by default on every monitor
+      },
      },
     "tray": {
         "icon-size": 21,
