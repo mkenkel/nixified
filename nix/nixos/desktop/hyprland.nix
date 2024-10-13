@@ -32,9 +32,9 @@
   ];
 
   home.sessionVariables = {
-    HYPRCURSOR_SIZE = "24";
+    HYPRCURSOR_SIZE = "48";
     HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
-    XCURSOR_SIZE = "24";
+    XCURSOR_SIZE = "48";
     XCURSOR_THEME = "Catppuccin-Mocha-Mauve";
   };
 
@@ -150,7 +150,6 @@
       dwindle = {
         pseudotile = true;
         preserve_split = true;
-        no_gaps_when_only = 0;
         smart_split = false;
         smart_resizing = false;
       };
