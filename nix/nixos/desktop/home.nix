@@ -17,7 +17,7 @@ in
   programs.home-manager.enable = true;
 
   imports = [
-    ../hyprland.nix
+    ./hyprland.nix
   ];
 
   nix.settings = {
