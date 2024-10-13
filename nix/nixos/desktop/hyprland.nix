@@ -1,6 +1,7 @@
 # Help is available in the configuration.nix(5) man page, on https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
   inputs,
+  config,
   pkgs,
   ...
 }:
@@ -15,6 +16,8 @@
     substituters = [ "https://hyprland.cachix.org" ];
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
+
+  home.homeDirectory = "/home/matt";
 
   home.packages = [
     pkgs.catppuccin-cursors.mochaMauve

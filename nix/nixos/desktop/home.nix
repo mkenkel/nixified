@@ -8,7 +8,6 @@ let
   user = "matt";
 in
 {
-  # We aren't moving this out - Personal OS'es are fine, however I'll have to find something for work...
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.05"; # Pls google before changing this
@@ -62,8 +61,6 @@ in
     pkgs.zsh
     pkgs.zsh-autosuggestions
   ];
-
-  # Moreso personal account here - Dunno if this'll go any higher than NixOS.
 
   # Manages your env vars through Home Manager.
   home.sessionVariables = {

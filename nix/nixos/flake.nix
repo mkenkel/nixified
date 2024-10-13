@@ -16,10 +16,11 @@
 
   outputs =
     {
-      self,
-      nixpkgs,
-      home-manager,
       catppuccin,
+      home-manager,
+      hyprland,
+      nixpkgs,
+      self,
       ...
     }@inputs:
     let
