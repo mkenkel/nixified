@@ -7,6 +7,7 @@
 let
   user = "matt";
   hostname = "upshot";
+  cfg = ../../../dots;
 in
 {
 
@@ -53,6 +54,10 @@ in
       # make sure to also set the portal package, so that they are in sync
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
+    fuzzel = {
+      enable = true;
+      settings = builtins.readFile ("${cfg}/fuzzel/fuzzel.ini");
     };
   };
 
