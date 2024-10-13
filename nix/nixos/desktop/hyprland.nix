@@ -16,6 +16,7 @@
 
   home.packages = [
     pkgs.catppuccin-cursors.mochaMauve
+    pkgs.banana-cursor
     pkgs.fuzzel
     pkgs.hyprcursor
     pkgs.hypridle
@@ -233,6 +234,8 @@
         "XDG_SESSION_DESKTOP,Hyprland"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XCURSOR_THEME,banana-cursor"
+        "HYPRCURSOR_THEME,banana-cursor"
+        "HYPRCURSOR_SIZE,48"
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
