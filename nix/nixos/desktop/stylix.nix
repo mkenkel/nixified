@@ -27,6 +27,9 @@
         desktop = 11;
         popups = 12;
       };
+      targets = {
+        fzf.enable = false;
+      };
     };
   };
 }
