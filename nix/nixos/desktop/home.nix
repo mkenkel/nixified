@@ -21,7 +21,11 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
+    extraConfig = ''
+      plugin = ${
+        inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
+      }/lib/libhypr-dynamic-cursors.so
+    '';
   };
 
   home.packages = [
