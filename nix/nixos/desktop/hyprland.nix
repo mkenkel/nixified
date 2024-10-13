@@ -14,10 +14,14 @@
     name = "banana-cursor";
   };
 
+  gtk = {
+
+  };
+
   home.packages = [
-    pkgs.catppuccin-cursors.mochaMauve
     pkgs.banana-cursor
     pkgs.fuzzel
+    pkgs.glib
     pkgs.hyprcursor
     pkgs.hypridle
     pkgs.hyprlock
@@ -29,15 +33,8 @@
     pkgs.wl-clipboard
   ];
 
-  home.sessionVariables = {
-    HYPRCURSOR_SIZE = "48";
-    HYPRCURSOR_THEME = "banana-cursor";
-    XCURSOR_THEME = "banana-cursor";
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
-    catppuccin.enable = true;
     plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
     xwayland = {
       enable = true;
