@@ -7,7 +7,6 @@
   };
 
   home.packages = [
-    # Goddamn
     pkgs.catppuccin-cursors.mochaMauve
     pkgs.fuzzel
     pkgs.hyprcursor
@@ -22,9 +21,9 @@
   ];
 
   home.sessionVariables = {
-    HYPRCURSOR_SIZE = "24";
+    HYPRCURSOR_SIZE = "48";
     HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
-    XCURSOR_SIZE = "24";
+    XCURSOR_SIZE = "48";
     XCURSOR_THEME = "Catppuccin-Mocha-Mauve";
   };
 
@@ -235,6 +234,37 @@
         "${pkgs.waybar}/bin/waybar"
       ];
 
+      plugin = {
+        dynamic-cursors = {
+          enabled = true;
+          mode = "stretch";
+          threshold = 2;
+          rotate = {
+            length = 20;
+            offset = 0.0;
+          };
+          tilt = {
+            limit = 5000;
+            function = "negative_quadratic";
+          };
+          stretch = {
+            limit = 3000;
+            function = "quadratic";
+          };
+          shake = {
+            enabled = true;
+            nearest = true;
+            threshold = 6.0;
+            base = 4.0;
+            speed = 4.0;
+            influence = 0.0;
+            limit = 0.0;
+            timeout = 2000;
+            effects = false;
+            ipc = false;
+          };
+        };
+      };
     };
     systemd = {
       enable = true;
