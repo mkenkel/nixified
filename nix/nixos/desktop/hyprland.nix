@@ -9,9 +9,9 @@
   home.pointerCursor = {
     x11.enable = true;
     gtk.enable = true;
-    package = pkgs.catppuccin-cursors.mochaMauve;
+    package = pkgs.banana-cursor;
     size = 48;
-    name = "Catppuccin-Mocha-Mauve";
+    name = "banana-cursor";
   };
 
   home.packages = [
@@ -30,7 +30,7 @@
 
   home.sessionVariables = {
     HYPRCURSOR_SIZE = "48";
-    HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
+    #HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
   };
 
   wayland.windowManager.hyprland = {
@@ -235,7 +235,7 @@
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "hyprctl setcursor Catppuccin-Mocha-Mauve 48"
+        "hyprctl setcursor banana-cursor 48"
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.waybar}/bin/waybar"
