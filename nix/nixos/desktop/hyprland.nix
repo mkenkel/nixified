@@ -26,18 +26,18 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    catppuccin-cursors.mochaMauve
-    fuzzel
-    hyprcursor
-    hypridle
-    hyprlock
-    hyprpaper
-    kitty
-    libnotify
-    mako
-    waybar
-    wl-clipboard
+  home.packages = [
+    pkgs.catppuccin-cursors.mochaMauve
+    pkgs.fuzzel
+    pkgs.hyprcursor
+    pkgs.hypridle
+    pkgs.hyprlock
+    pkgs.hyprpaper
+    pkgs.kitty
+    pkgs.libnotify
+    pkgs.mako
+    pkgs.waybar
+    pkgs.wl-clipboard
   ];
 
   environment = {
