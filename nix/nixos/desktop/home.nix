@@ -27,6 +27,8 @@ in
     ];
   };
 
+  stylix.targets.fzf.enable = false;
+
   home.packages = [
     pkgs.alacritty
     pkgs.alacritty-theme

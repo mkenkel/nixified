@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+
   stylix = {
     enable = true;
     image = ../../../dots/wallpaper/platforms.png;
@@ -26,9 +27,6 @@
         terminal = 15;
         desktop = 11;
         popups = 12;
-      };
-      targets = {
-        fzf.enable = false;
       };
     };
   };
