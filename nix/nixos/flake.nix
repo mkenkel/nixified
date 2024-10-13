@@ -12,6 +12,7 @@
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -20,6 +21,7 @@
       home-manager,
       hyprland,
       nixpkgs,
+      stylix,
       self,
       ...
     }@inputs:
@@ -36,6 +38,7 @@
           modules = [
             catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
             ./desktop
             {
               home-manager = {
