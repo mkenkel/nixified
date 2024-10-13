@@ -101,7 +101,7 @@ in
     ".config/alacritty".source = "${cfg}/alacritty";
     ".config/fastfetch".source = "${cfg}/fastfetch";
     ".config/fuzzel".source = "${cfg}/fuzzel";
-    ".config/hypr".source = "${cfg}/hypr";
+    #".config/hypr".source = "${cfg}/hypr";
     ".config/mako".source = "${cfg}/mako";
     ".config/nvim".source = "${cfg}/nvim";
     ".config/pfp".source = "${cfg}/pfp";
