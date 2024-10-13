@@ -16,16 +16,6 @@
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-        user = "greeter";
-      };
-    };
-  };
-
   home.packages = [
     pkgs.catppuccin-cursors.mochaMauve
     pkgs.fuzzel
@@ -40,13 +30,11 @@
     pkgs.wl-clipboard
   ];
 
-  environment = {
-    variables = {
-      HYPRCURSOR_SIZE = "24";
-      HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
-      XCURSOR_SIZE = "24";
-      XCURSOR_THEME = "Catppuccin-Mocha-Mauve";
-    };
+  home.sessionVariables = {
+    HYPRCURSOR_SIZE = "24";
+    HYPRCURSOR_THEME = "Catppuccin-Mocha-Mauve";
+    XCURSOR_SIZE = "24";
+    XCURSOR_THEME = "Catppuccin-Mocha-Mauve";
   };
 
   wayland.windowManager.hyprland = {
