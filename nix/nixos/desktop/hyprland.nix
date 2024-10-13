@@ -227,7 +227,7 @@
 
       plugin = {
         dynamic-cursors = {
-          enabled = false;
+          enabled = true;
           mode = "stretch";
           threshold = 2;
           rotate = {
