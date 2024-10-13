@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   pkgs,
   ...
 }:
@@ -17,12 +16,9 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  ### Desktop-env.nix ###
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
-  };
+  imports = [
+    ./hyprland.nix
+  ];
 
   home.packages = [
     pkgs.alacritty

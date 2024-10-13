@@ -19,7 +19,6 @@ in
 
   imports = [
     ../shared
-    ./hyprland.nix
     ./hardware-configuration.nix
   ];
 
