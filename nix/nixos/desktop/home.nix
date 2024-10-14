@@ -35,6 +35,7 @@ in
     pkgs.ansible
     pkgs.ansible-builder
     pkgs.ansible-lint
+    pkgs.logseq
     pkgs.ansible-navigator
     pkgs.arduino-ide
     pkgs.bat
