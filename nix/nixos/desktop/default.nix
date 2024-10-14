@@ -71,6 +71,7 @@ in
     git
     # Essentials
     unzip
+    glibc
   ];
 
   services = {
