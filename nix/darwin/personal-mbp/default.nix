@@ -29,6 +29,7 @@ in
       "discord"
       "slack"
       "spotify"
+      "logseq"
     ];
   };
 
