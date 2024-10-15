@@ -43,6 +43,8 @@ in
     pkgs.nodejs
     pkgs.python3
     pkgs.rustup
+    pkgs.yamllint
+    pkgs.yamlfmt
 
     # Git
     pkgs.gh
