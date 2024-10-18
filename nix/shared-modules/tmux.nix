@@ -5,10 +5,9 @@
       enable = true;
       escapeTime = 0;
       plugins = with pkgs; [
-        #tmuxPlugins.continuum
-        #tmuxPlugins.resurrect
         tmuxPlugins.vim-tmux-navigator
         tmuxPlugins.catppuccin
+        tmuxPlugins.online-status
       ];
       # https://nix.dev/manual/nix/2.18/language/builtins.html?highlight=readFile#built-in-functions
       extraConfig = ''
@@ -18,7 +17,8 @@
         # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
         # set-environment -g COLORTERM "truecolor"
         ###############################################################
-        set -as terminal-features ",xterm-256color:RGB"
+        set-option -g default-terminal 'screen-256color'
+        set-option -g terminal-overrides ',xterm-256color:RGB'
         ###############################################################
         set -g prefix C-a
         unbind C-b
@@ -88,20 +88,32 @@
         bind e select-layout tiled
         # ---
         # Configure the catppuccin plugin
-        set -g @catppuccin_flavor "macchiato"
+        set -g @catppuccin_flavor "mocha"
         set -g @catppuccin_window_status_style "rounded"
         # leave this unset to let applications set the window title
-        set -g @catppuccin_window_default_text " #W"
-        set -g @catppuccin_window_current_text " #W"
         set -g @catppuccin_window_status "icon"
         set -g @catppuccin_window_current_background "#{@thm_mauve}"
 
-        run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
+        set -g @catppuccin_window_left_separator ""
+        set -g @catppuccin_window_right_separator " "
+        set -g @catppuccin_window_middle_separator " █"
+        set -g @catppuccin_window_number_position "right"
+        set -g @catppuccin_window_default_fill "number"
+        set -g @catppuccin_window_default_text "#W"
+        set -g @catppuccin_window_current_fill "number"
+        set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
+        set -g @catppuccin_status_modules_right "directory date_time"
+        set -g @catppuccin_status_modules_left "session"
+        set -g @catppuccin_status_left_separator  " "
+        set -g @catppuccin_status_right_separator " "
+        set -g @catppuccin_status_right_separator_inverse "no"
+        set -g @catppuccin_status_fill "icon"
+        set -g @catppuccin_status_connect_separator "no"
+        set -g @catppuccin_directory_text "#{b:pane_current_path}"
+        set -g @catppuccin_meetings_text "#($HOME/.config/tmux/scripts/cal.sh)"
+        set -g @catppuccin_date_time_text "%H:%M"
 
-        # Make the status line pretty and add some modules
-        set -g status-left ""
-        set -g status-right "#{E:@catppuccin_status_user}"
-        set -ag status-right "#{E:@catppuccin_status_directory}"
+        run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
       '';
     };
   };
