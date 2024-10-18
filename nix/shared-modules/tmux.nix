@@ -108,8 +108,6 @@
         set -g @catppuccin_window_status_activity_style "none"
         set -g @catppuccin_window_status_style "rounded"
 
-        set -g
-
         run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
       '';
     };
