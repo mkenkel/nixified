@@ -17,7 +17,7 @@ in
 
   imports = [
     ./hyprland.nix
-    ./tmux.nix
+    ../../shared-modules/tmux.nix
   ];
 
   nix.settings = {
