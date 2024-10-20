@@ -177,7 +177,7 @@ in
     wezterm = {
       enable = true;
       #enableFishIntegration = true;
-      settings = builtins.readFile "${cfg}/wezterm/wezterm.lua";
+      extraConfig = builtins.readFile "${cfg}/wezterm/wezterm.lua";
     };
   };
 
