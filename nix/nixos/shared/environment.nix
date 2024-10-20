@@ -6,7 +6,6 @@
     };
     interactiveShellInit = ''
       alias ls='lsd'
-      alias vi='nvim'
     '';
   };
 }

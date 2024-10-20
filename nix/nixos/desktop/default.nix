@@ -106,7 +106,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   system.autoUpgrade.enable = true;

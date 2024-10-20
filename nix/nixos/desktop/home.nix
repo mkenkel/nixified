@@ -56,7 +56,6 @@ in
     pkgs.htop
     pkgs.lazygit
     pkgs.lsd
-    pkgs.neovim
     pkgs.nodejs
     pkgs.nwg-look
     pkgs.obsidian
@@ -72,9 +71,8 @@ in
     pkgs.tree
     pkgs.vesktop
     pkgs.vim
-    #pkgs.zsh
-    #pkgs.zsh-autosuggestions
     pkgs.fish
+    pkgs.zsh-autosuggestions
   ];
 
   # Manages your env vars through Home Manager.
@@ -120,63 +118,61 @@ in
       userName = "mkenkel";
       userEmail = "mattsnoopy2@gmail.com";
     };
-    # zsh = {
-    #   enable = true;
-    #   enableCompletion = true;
-    #   syntaxHighlighting.enable = true;
-    #   history = {
-    #     save = 10000;
-    #     path = "${config.xdg.dataHome}/zsh/history";
-    #   };
-    #   shellAliases = {
-    #     "vi" = "nvim";
-    #     "ls" = "lsd";
-    #     "TERM" = "xterm-256color";
-    #   };
-    # };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      antidote = {
+        enable = true;
+        plugins = [''
+          zsh-users/zsh-autosuggestions
+        '']; # explanation of "path:..." and other options explained in Antidote README.
+      syntaxHighlighting.enable = true;
+      history = {
+        save = 10000;
+        path = "${config.xdg.dataHome}/zsh/history";
+      };
+      shellAliases = {
+        "ls" = "lsd";
+        "TERM" = "xterm-256color";
+      };
+    };
     ################################################################
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting # Disable greeting
-      '';
-      plugins = [
-        # Enable a plugin (here grc for colorized command output) from nixpkgs
-        {
-          name = "grc";
-          src = pkgs.fishPlugins.grc.src;
-        }
-        {
-          name = "colored-man-pages";
-          src = pkgs.fishPlugins.colored-man-pages.src;
-        }
-        {
-          name = "z";
-          src = pkgs.fishPlugins.z.src;
-        }
-        # Manually packaging and enable a plugin
-        {
-          name = "Catppuccin";
-          src = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "fish";
-            rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
-            sha256 = "udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
-          };
-        }
-      ];
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-    starship = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
-    };
+    # fish = {
+    #   enable = true;
+    #   interactiveShellInit = ''
+    #     set fish_greeting # Disable greeting
+    #   '';
+    #   plugins = [
+    #     # Enable a plugin (here grc for colorized command output) from nixpkgs
+    #     {
+    #       name = "grc";
+    #       src = pkgs.fishPlugins.grc.src;
+    #     }
+    #     {
+    #       name = "colored-man-pages";
+    #       src = pkgs.fishPlugins.colored-man-pages.src;
+    #     }
+    #     {
+    #       name = "z";
+    #       src = pkgs.fishPlugins.z.src;
+    #     }
+    #     # Manually packaging and enable a plugin
+    #     {
+    #       name = "Catppuccin";
+    #       src = pkgs.fetchFromGitHub {
+    #         owner = "catppuccin";
+    #         repo = "fish";
+    #         rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
+    #         sha256 = "udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
+    #       };
+    #     }
+    #   ];
+    # };
+    # starship = {
+    #   enable = true;
+    #   enableFishIntegration = true;
+    #   settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
+    # };
     fzf = {
       enable = true;
     };
