@@ -27,6 +27,7 @@ in
     ];
   };
 
+  stylix.targets.alacritty.enable = false;
   stylix.targets.fzf.enable = false;
   stylix.targets.fish.enable = false;
 
@@ -139,9 +140,30 @@ in
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
       '';
-      plugins = with pkgs.fishPlugins; [
-        grc.src
-        colored-man-pages.src
+      plugins = [
+        # Enable a plugin (here grc for colorized command output) from nixpkgs
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+        {
+          name = "colored-man-pages";
+          src = pkgs.fishPlugins.colored-man-pages.src;
+        }
+        {
+          name = "z";
+          src = pkgs.fishPlugins.z.src;
+        }
+        # Manually packaging and enable a plugin
+        {
+          name = "Catppuccin";
+          src = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "fish";
+            rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
+            sha256 = "udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
+          };
+        }
       ];
     };
     starship = {
