@@ -40,7 +40,6 @@ in
     pkgs.logseq
     pkgs.ansible-navigator
     pkgs.arduino-ide
-    pkgs.bat
     pkgs.brightnessctl
     pkgs.btop
     pkgs.cmatrix
@@ -98,6 +97,15 @@ in
   };
 
   programs = {
+    bat = {
+      enable = true;
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batman
+        batgrep
+        batwatch
+      ];
+    };
     fuzzel = {
       enable = true;
       settings = {
@@ -124,64 +132,71 @@ in
       viAlias = true;
       vimAlias = true;
     };
-    zsh = {
+    # zsh = {
+    #   enable = true;
+    #   enableCompletion = true;
+    #   antidote = {
+    #     enable = true;
+    #     plugins = [
+    #       ''
+    #         zsh-users/zsh-autosuggestions
+    #       ''
+    #     ]; # explanation of "path:..." and other options explained in Antidote README.
+    #   };
+    #   syntaxHighlighting.enable = true;
+    #   history = {
+    #     save = 10000;
+    #     path = "${config.xdg.dataHome}/zsh/history";
+    #   };
+    #   shellAliases = {
+    #     "ls" = "lsd";
+    #     "TERM" = "xterm-256color";
+    #     "diff" = "batdiff";
+    #     "grep" = "batgrep";
+    #     "man" = "batman";
+    #     "watch" = "batwatch";
+    #   };
+    # };
+    # ################################################################
+    fish = {
       enable = true;
-      enableCompletion = true;
-      antidote = {
-        enable = true;
-        plugins = [
-          ''
-            zsh-users/zsh-autosuggestions
-          ''
-        ]; # explanation of "path:..." and other options explained in Antidote README.
-      };
-      syntaxHighlighting.enable = true;
-      history = {
-        save = 10000;
-        path = "${config.xdg.dataHome}/zsh/history";
-      };
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';
+      plugins = [
+        # Enable a plugin (here grc for colorized command output) from nixpkgs
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+        {
+          name = "z";
+          src = pkgs.fishPlugins.z.src;
+        }
+        # Manually packaging and enable a plugin
+        {
+          name = "Catppuccin";
+          src = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "fish";
+            rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
+            sha256 = "udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
+          };
+        }
+      ];
       shellAliases = {
         "ls" = "lsd";
-        "TERM" = "xterm-256color";
+        "diff" = "batdiff";
+        "grep" = "batgrep";
+        "man" = "batman";
+        "watch" = "batwatch";
       };
     };
-    ################################################################
-    # fish = {
-    #   enable = true;
-    #   interactiveShellInit = ''
-    #     set fish_greeting # Disable greeting
-    #   '';
-    #   plugins = [
-    #     # Enable a plugin (here grc for colorized command output) from nixpkgs
-    #     {
-    #       name = "grc";
-    #       src = pkgs.fishPlugins.grc.src;
-    #     }
-    #     {
-    #       name = "colored-man-pages";
-    #       src = pkgs.fishPlugins.colored-man-pages.src;
-    #     }
-    #     {
-    #       name = "z";
-    #       src = pkgs.fishPlugins.z.src;
-    #     }
-    #     # Manually packaging and enable a plugin
-    #     {
-    #       name = "Catppuccin";
-    #       src = pkgs.fetchFromGitHub {
-    #         owner = "catppuccin";
-    #         repo = "fish";
-    #         rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
-    #         sha256 = "udiU2TOh0lYL7K7ylbt+BGlSDgCjMpy75vQ98C1kFcc=";
-    #       };
-    #     }
-    #   ];
-    # };
-    # starship = {
-    #   enable = true;
-    #   enableFishIntegration = true;
-    #   settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
-    # };
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
+      settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
+    };
     fzf = {
       enable = true;
     };
