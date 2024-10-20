@@ -134,78 +134,19 @@ in
     #   };
     # };
     ################################################################
-    # fish = {
-    #   enable = true;
-    #   interactiveShellInit = ''
-    #     set fish_greeting # Disable greeting
-    #   '';
-    #   plugins = [
-    #     # Enable a plugin (here grc for colorized command output) from nixpkgs
-    #     {
-    #       name = "grc";
-    #       src = pkgs.fishPlugins.grc.src;
-    #     }
-    #     # Manually packaging and enable a plugin
-    #     {
-    #       name = "z";
-    #       src = pkgs.fetchFromGitHub {
-    #         owner = "jethrokuan";
-    #         repo = "z";
-    #         rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
-    #         sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
-    #       };
-    #     }
-    #     # Colored Man pages
-    #     {
-    #       name = "colored-man-pages";
-    #       src = pkgs.fishPlugins.colored-man-pages.src;
-    #     }
-    #   ];
-    # };
-    ###############################################################
-    nushell = {
+    fish = {
       enable = true;
-      # The config.nu can be anywhere you want if you like to edit your Nushell with Nu
-      configFile.source = ./.../config.nu;
-      # for editing directly to config.nu 
-      extraConfig = ''
-        let carapace_completer = {|spans|
-        carapace $spans.0 nushell $spans | from json
-        }
-        $env.config = {
-         show_banner: false,
-         completions: {
-         case_sensitive: false # case-sensitive completions
-         quick: true    # set to false to prevent auto-selecting completions
-         partial: true    # set to false to prevent partial filling of the prompt
-         algorithm: "fuzzy"    # prefix or fuzzy
-         external: {
-         # set to false to prevent nushell looking into $env.PATH to find more suggestions
-             enable: true 
-         # set to lower can improve completion performance at the cost of omitting some options
-             max_results: 100 
-             completer: $carapace_completer # check 'carapace_completer' 
-           }
-         }
-        } 
-        $env.PATH = ($env.PATH | 
-        split row (char esep) |
-        prepend /home/myuser/.apps |
-        append /usr/bin/env
-        )
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
       '';
-      shellAliases = {
-        vi = "hx";
-        vim = "hx";
-        nano = "hx";
-      };
+      plugins = with pkgs.fishPlugins; [
+        grc.src
+        colored-man-pages.src
+      ];
     };
-    carapace.enable = true;
-    carapace.enableNushellIntegration = true;
-
     starship = {
       enable = true;
-      enableNushellIntegration = true;
+      enableFishIntegration = true;
       settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
     };
     fzf = {
