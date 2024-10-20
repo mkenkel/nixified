@@ -72,7 +72,6 @@ in
     # Essentials
     unzip
     glibc
-    fishPlugins.colored-man-pages-unstable
   ];
 
   services = {

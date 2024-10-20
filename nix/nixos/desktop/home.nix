@@ -28,6 +28,7 @@ in
   };
 
   stylix.targets.fzf.enable = false;
+  stylix.targets.fish.enable = false;
 
   home.packages = [
     pkgs.alacritty
@@ -50,6 +51,7 @@ in
     pkgs.gitflow
     pkgs.gnumake
     pkgs.grim
+    pkgs.grc
     pkgs.htop
     pkgs.lazygit
     pkgs.lsd
@@ -136,6 +138,38 @@ in
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
       '';
+      plugins = [
+        # Enable a plugin (here grc for colorized command output) from nixpkgs
+        {
+          name = "grc";
+          src = pkgs.fishPlugins.grc.src;
+        }
+        # Manually packaging and enable a plugin
+        {
+          name = "z";
+          src = pkgs.fetchFromGitHub {
+            owner = "jethrokuan";
+            repo = "z";
+            rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
+            sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
+          };
+        }
+        # Colored Man pages
+        {
+          name = "colored-man-pages";
+          src = pkgs.fishPlugins.colored-man-pages.src;
+        }
+        # Catppuccin
+        {
+          name = "Catppuccin";
+          src = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "fish";
+            rev = "cc8e4d8fffbdaab07b3979131030b234596f18da";
+            sha256 = "3YdturwXLr6ZIwLwssELuWQeGfYSsaOCAyKfwvhuZRE=";
+          };
+        }
+      ];
     };
     starship = {
       enable = true;
