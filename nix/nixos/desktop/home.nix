@@ -69,8 +69,9 @@ in
     pkgs.tree
     pkgs.vesktop
     pkgs.vim
-    pkgs.zsh
-    pkgs.zsh-autosuggestions
+    #pkgs.zsh
+    #pkgs.zsh-autosuggestions
+    pkgs.fish
   ];
 
   # Manages your env vars through Home Manager.
@@ -116,23 +117,29 @@ in
       userName = "mkenkel";
       userEmail = "mattsnoopy2@gmail.com";
     };
-    zsh = {
+    # zsh = {
+    #   enable = true;
+    #   enableCompletion = true;
+    #   syntaxHighlighting.enable = true;
+    #   history = {
+    #     save = 10000;
+    #     path = "${config.xdg.dataHome}/zsh/history";
+    #   };
+    #   shellAliases = {
+    #     "vi" = "nvim";
+    #     "ls" = "lsd";
+    #     "TERM" = "xterm-256color";
+    #   };
+    # };
+    fish = {
       enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      history = {
-        save = 10000;
-        path = "${config.xdg.dataHome}/zsh/history";
-      };
-      shellAliases = {
-        "vi" = "nvim";
-        "ls" = "lsd";
-        "TERM" = "xterm-256color";
-      };
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';
     };
     starship = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
       settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
     };
     fzf = {
