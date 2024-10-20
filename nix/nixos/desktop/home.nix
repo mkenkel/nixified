@@ -118,14 +118,23 @@ in
       userName = "mkenkel";
       userEmail = "mattsnoopy2@gmail.com";
     };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
     zsh = {
       enable = true;
       enableCompletion = true;
       antidote = {
         enable = true;
-        plugins = [''
-          zsh-users/zsh-autosuggestions
-        '']; # explanation of "path:..." and other options explained in Antidote README.
+        plugins = [
+          ''
+            zsh-users/zsh-autosuggestions
+          ''
+        ]; # explanation of "path:..." and other options explained in Antidote README.
+      };
       syntaxHighlighting.enable = true;
       history = {
         save = 10000;
