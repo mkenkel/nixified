@@ -174,6 +174,11 @@ in
     fzf = {
       enable = true;
     };
+    wezterm = {
+      enable = true;
+      enableFishIntegration = true;
+      settings = builtins.readFile "${cfg}/wezterm/wezterm.lua";
+    };
   };
 
 }

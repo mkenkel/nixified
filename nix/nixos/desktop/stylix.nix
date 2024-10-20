@@ -2,7 +2,7 @@
 {
 
   stylix = {
-    enable = true;
+    enable = false;
     image = ../../../dots/wallpaper/platforms.png;
     polarity = "dark";
     opacity.terminal = 0.8;
