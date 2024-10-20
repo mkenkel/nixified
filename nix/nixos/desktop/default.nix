@@ -100,7 +100,7 @@ in
   users.users.${user} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
 
   system.autoUpgrade.enable = true;
