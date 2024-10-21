@@ -15,6 +15,9 @@ in
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
+    name = "Vanilla-DMZ";
+    package = pkgs.vanilla-dmz;
+    size = 32;
   };
 
   # Let Home Manager install and manage itself.
