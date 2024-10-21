@@ -17,7 +17,7 @@ in
     x11.enable = true;
     name = "Vanilla-DMZ";
     package = pkgs.vanilla-dmz;
-    size = 32;
+    size = 48;
   };
 
   # Let Home Manager install and manage itself.
@@ -169,7 +169,7 @@ in
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        set fish_tmux_autostart true
+        # set fish_tmux_autostart true
       '';
       plugins = [
         # Enable a plugin (here grc for colorized command output) from nixpkgs
