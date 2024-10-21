@@ -25,6 +25,7 @@ in
 
   imports = [
     ./hyprland.nix
+    ./kitty.nix
     ../../shared-modules/tmux.nix
   ];
 

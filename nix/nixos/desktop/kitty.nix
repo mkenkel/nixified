@@ -10,7 +10,7 @@ in
         package = pkgs.terminus-nerdfont;
         size = 24;
       };
-      settings = builtins.readFile "${cfg}/kitty/kitty.conf";
+      #settings = builtins.readFile "${cfg}/kitty/kitty.conf";
       themeFile = "Catppuccin-Mocha";
     };
   };
