@@ -5,7 +5,7 @@
 }:
 let
   cfg = ../../../dots;
-  shared = ../../shared-modules;
+  shared = ./../../shared-modules;
   user = "matt";
 in
 {
@@ -25,10 +25,10 @@ in
   programs.home-manager.enable = true;
 
   imports = [
-    ./fish.nix
     ./hyprland.nix
-    ./kitty.nix
-    ./${shared}/tmux.nix
+    "${shared}/fish.nix"
+    "${shared}/kitty.nix"
+    "${shared}/tmux.nix"
   ];
 
   nix.settings = {
