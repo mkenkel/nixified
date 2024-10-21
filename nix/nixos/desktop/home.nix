@@ -145,6 +145,8 @@ in
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
+      extraLuaPackages = ps: [ ps.magick ];
+      extraPackages = ps: [ ps.imagemagick ];
     };
     starship = {
       enable = true;
