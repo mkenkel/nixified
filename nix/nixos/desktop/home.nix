@@ -6,6 +6,7 @@
 let
   cfg = ../../../dots;
   umodules = ./../../universal-modules;
+  nmodules = ./../modules;
   user = "matt";
 in
 {
@@ -26,6 +27,7 @@ in
 
   imports = [
     ./hyprland.nix
+    "${nmodules}/foot.nix"
     "${umodules}/fish.nix"
     "${umodules}/kitty.nix"
     "${umodules}/tmux.nix"
