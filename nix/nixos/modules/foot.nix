@@ -3,10 +3,11 @@
   programs = {
     foot = {
       enable = true;
+      enableFishIntegration = true;
       settings = {
         main = {
           term = "xterm-256color";
-          font = "Terminus Nerd Font:size=20";
+          font = "JetBrainsMono Nerd Font Mono:size=20";
           dpi-aware = "yes";
         };
 
