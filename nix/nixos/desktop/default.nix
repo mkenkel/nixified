@@ -7,6 +7,7 @@
 let
   user = "matt";
   hostname = "upshot";
+  nmodules = ./../modules/gaming.nix;
 in
 {
 
@@ -18,8 +19,10 @@ in
   };
 
   imports = [
+    # NixOS Global Defaults (Personal)
     ../modules
-    #    ./stylix.nix
+    # NixOS Modules - Where instead I manually define the nix flakes I want for my desktop instead.
+    "${nmodules}/gaming.nix"
     ./hardware-configuration.nix
   ];
 
@@ -45,7 +48,6 @@ in
   };
 
   programs = {
-    steam.enable = true;
     hyprland = {
       enable = true;
       # set the flake package
