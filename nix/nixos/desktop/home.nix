@@ -49,6 +49,7 @@ in
     pkgs.arduino-ide
     pkgs.brightnessctl
     pkgs.btop
+    pkgs.chafa
     pkgs.cmatrix
     pkgs.fastfetch
     pkgs.firefox
