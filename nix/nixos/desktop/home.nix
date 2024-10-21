@@ -136,7 +136,7 @@ in
     mangohud = {
       enable = true;
       enableSessionWide = true;
-      settings = builtins.readFile ("${cfg}/mangohud/mangohud.conf");
+      # settings = builtins.readFile ("${cfg}/mangohud/mangohud.conf");
     };
     neovim = {
       enable = true;
