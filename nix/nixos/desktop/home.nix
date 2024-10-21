@@ -133,6 +133,11 @@ in
       userName = "mkenkel";
       userEmail = "mattsnoopy2@gmail.com";
     };
+    mangohud = {
+      enable = true;
+      enableSessionWide = true;
+      settings = builtins.readFile ("${cfg}/mangohud/mangohud.conf");
+    };
     neovim = {
       enable = true;
       defaultEditor = true;
@@ -149,7 +154,6 @@ in
     };
     wezterm = {
       enable = true;
-      #enableFishIntegration = true;
       extraConfig = builtins.readFile "${cfg}/wezterm/wezterm.lua";
     };
   };
