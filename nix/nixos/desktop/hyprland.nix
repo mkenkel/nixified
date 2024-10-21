@@ -29,7 +29,7 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     settings = {
-      "$terminal" = "kitty";
+      "$terminal" = "foot";
       "$mod" = "ALT";
       "$wrkspcmod" = "ALT CONTROL";
       "$menu" = "${pkgs.fuzzel}/bin/fuzzel";

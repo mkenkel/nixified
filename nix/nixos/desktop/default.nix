@@ -23,6 +23,7 @@ in
     ../modules
     # NixOS Modules - Where instead I manually define the nix flakes I want for my desktop instead.
     "${nmodules}/gaming.nix"
+    "${nmodules}/foot.nix"
     ./hardware-configuration.nix
   ];
 
