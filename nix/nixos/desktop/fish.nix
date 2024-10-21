@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  environment.variables = {
+    MANGOHUD = 1;
+  };
   programs = {
     fish = {
       enable = true;
