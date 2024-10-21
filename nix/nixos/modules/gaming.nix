@@ -4,6 +4,7 @@
     protonup
     lutris
     vulkan-tools # Troubleshooting Mangohud w/ vkcube
+    mesa-demos # OpenGL Troubleshooting
   ];
 
   hardware.graphics = {
