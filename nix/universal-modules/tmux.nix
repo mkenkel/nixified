@@ -23,7 +23,7 @@
         unbind C-b
         bind-key C-a send-prefix
 
-        allow-passthrough on
+        set-option -g allow-passthrough on
         # --- 
 
         # Set windows to start at 1
