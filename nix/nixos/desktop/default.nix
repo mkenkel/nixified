@@ -18,7 +18,7 @@ in
   };
 
   imports = [
-    ../shared
+    ../modules
     #    ./stylix.nix
     ./hardware-configuration.nix
   ];

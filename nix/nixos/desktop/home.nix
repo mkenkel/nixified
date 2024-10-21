@@ -5,7 +5,7 @@
 }:
 let
   cfg = ../../../dots;
-  shared = ./../../shared-modules;
+  umodules = ./../../universal-modules;
   user = "matt";
 in
 {
@@ -26,9 +26,9 @@ in
 
   imports = [
     ./hyprland.nix
-    "${shared}/fish.nix"
-    "${shared}/kitty.nix"
-    "${shared}/tmux.nix"
+    "${umodules}/fish.nix"
+    "${umodules}/kitty.nix"
+    "${umodules}/tmux.nix"
   ];
 
   nix.settings = {
