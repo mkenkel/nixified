@@ -9,12 +9,13 @@ in
       font = {
         name = "Terminus Nerd Font";
         package = pkgs.terminus-nerdfont;
-        size = 20;
+        size = 16;
       };
       settings = {
-
+        window_border_width = 1;
+        window_padding_width = 5;
+        window_margin_width = 1;
       };
-      extraConfig = builtins.readFile "${cfg}/kitty/kitty.conf";
       themeFile = "Catppuccin-Mocha";
     };
   };
