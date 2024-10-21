@@ -3,7 +3,6 @@
   programs = {
     foot = {
       enable = true;
-      enableFishIntegration = true;
       settings = {
         main = {
           term = "xterm-256color";
