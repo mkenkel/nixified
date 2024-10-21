@@ -74,7 +74,7 @@ in
     pkgs.python3
     pkgs.ripgrep
     pkgs.rustup
-    pkgs.sixel
+    pkgs.haskellPackages.sixel
     pkgs.slurp
     pkgs.spotify
     pkgs.starship
@@ -97,8 +97,6 @@ in
 
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
-    ".config/fastfetch".source = "${cfg}/fastfetch";
-    #".config/hypr".source = "${cfg}/hypr";
     ".config/mako".source = "${cfg}/mako";
     ".config/nvim".source = "${cfg}/nvim";
     ".config/pfp".source = "${cfg}/pfp";
