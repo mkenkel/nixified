@@ -123,7 +123,7 @@ in
           use-bold = "yes";
           match-mode = "fzf";
           show-actions = "yes";
-          terminal = "alacritty";
+          terminal = "foot";
           width = 30;
         };
         border.width = 1;
