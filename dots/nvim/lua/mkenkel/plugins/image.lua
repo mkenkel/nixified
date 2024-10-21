@@ -27,6 +27,7 @@ return {
 
               -- you can call the fallback function to get the default behavior
               return fallback(document_path, image_path)
+            end,
           },
         },
         max_width = nil,
