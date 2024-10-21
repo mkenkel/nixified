@@ -2,8 +2,8 @@ return {
   "HakonHarnes/img-clip.nvim",
   event = "VeryLazy",
   opts = {
-    prompt_for_file_name = false,
-    file_name = "%M-%D-%YYYY-at-%H-%M-%S",
+    prompt_for_file_name = false, ---@type boolean
+    file_name = "%Y-%m-%d-at-%H-%M-%S", ---@type string
     extension = "avif", ---@type string
     process_cmd = "convert - -quality 75 avif:-", ---@type string
     -- drag and drop options
