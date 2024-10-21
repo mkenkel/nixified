@@ -61,6 +61,7 @@ in
     pkgs.grim
     pkgs.grc
     pkgs.htop
+    pkgs.kitty-themes
     pkgs.lazygit
     pkgs.lsd
     pkgs.nodejs

@@ -19,7 +19,7 @@ in
 
   imports = [
     ../shared
-    ./stylix.nix
+    #    ./stylix.nix
     ./hardware-configuration.nix
   ];
 
