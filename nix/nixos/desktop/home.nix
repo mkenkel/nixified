@@ -36,10 +36,6 @@ in
     ];
   };
 
-  stylix.targets.alacritty.enable = false;
-  stylix.targets.fzf.enable = false;
-  stylix.targets.fish.enable = false;
-
   home.packages = [
     pkgs.alacritty
     pkgs.alacritty-theme
