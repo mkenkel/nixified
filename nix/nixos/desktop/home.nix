@@ -64,6 +64,7 @@ in
     pkgs.htop
     pkgs.kitty-themes
     pkgs.lazygit
+    pkgs.libsixel
     pkgs.logseq
     pkgs.lsd
     pkgs.nodejs
