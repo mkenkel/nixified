@@ -12,6 +12,11 @@ in
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.05"; # Pls google before changing this
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -78,7 +83,6 @@ in
   home.sessionVariables = {
     BROWSER = "firefox";
     EDITOR = "nvim";
-    GTK_USE_PORTAL = "1";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     TERM = "xterm-256color";
     XDG_CACHE_HOME = "\${HOME}/.cache";
