@@ -22,6 +22,8 @@
         set -g prefix C-a
         unbind C-b
         bind-key C-a send-prefix
+
+        allow-passthrough on
         # --- 
 
         # Set windows to start at 1
