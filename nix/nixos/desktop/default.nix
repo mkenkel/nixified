@@ -7,7 +7,7 @@
 let
   user = "matt";
   hostname = "upshot";
-  nmodules = ./../modules/gaming.nix;
+  nmodules = ./../modules;
 in
 {
 
