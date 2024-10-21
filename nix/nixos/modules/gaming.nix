@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    mangohud
     protonup
     lutris
+    vulkan-tools # Troubleshooting Mangohud w/ vkcube
   ];
 
   hardware.graphics = {
