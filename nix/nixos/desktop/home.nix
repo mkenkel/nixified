@@ -45,7 +45,6 @@ in
     pkgs.ansible
     pkgs.ansible-builder
     pkgs.ansible-lint
-    pkgs.logseq
     pkgs.ansible-navigator
     pkgs.arduino-ide
     pkgs.brightnessctl
@@ -53,16 +52,18 @@ in
     pkgs.cmatrix
     pkgs.fastfetch
     pkgs.firefox
+    pkgs.fish
     pkgs.fzf
     pkgs.gcc
     pkgs.gh
     pkgs.gitflow
     pkgs.gnumake
-    pkgs.grim
     pkgs.grc
+    pkgs.grim
     pkgs.htop
     pkgs.kitty-themes
     pkgs.lazygit
+    pkgs.logseq
     pkgs.lsd
     pkgs.nodejs
     pkgs.nwg-look
@@ -73,13 +74,13 @@ in
     pkgs.python3
     pkgs.ripgrep
     pkgs.rustup
+    pkgs.sixel
     pkgs.slurp
     pkgs.spotify
     pkgs.starship
     pkgs.tree
     pkgs.vesktop
     pkgs.vim
-    pkgs.fish
     pkgs.zsh-autosuggestions
   ];
 
