@@ -43,6 +43,7 @@
         "grep" = "batgrep";
         "man" = "batman";
         "watch" = "batwatch";
+        "vi" = "nvim";
       };
       functions = {
         ytarchive = ''
