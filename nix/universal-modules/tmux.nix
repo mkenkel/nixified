@@ -20,7 +20,7 @@
         set-option -g terminal-overrides ',xterm-256color:RGB'
         ###############################################################
 
-        # set-option -g default-shell /usr/bin/fish
+        set -g default-command "$SHELL"
 
         set -g prefix C-a
         unbind C-b
