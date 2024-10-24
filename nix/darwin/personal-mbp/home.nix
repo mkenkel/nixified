@@ -69,6 +69,7 @@ in
     pkgs.ripgrep
     pkgs.starship
     pkgs.tree
+    pkgs.fish
     pkgs.zsh
     pkgs.zsh-autosuggestions
 
