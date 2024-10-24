@@ -5,6 +5,7 @@ in
 {
   imports = [
     ../shared
+    ./fish-fix.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";

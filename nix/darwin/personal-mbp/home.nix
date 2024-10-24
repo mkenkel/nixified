@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }:
@@ -18,7 +17,6 @@ in
   programs.home-manager.enable = true;
 
   imports = [
-    ./fish-fix.nix
     "${umodules}/fish.nix"
     "${umodules}/kitty.nix"
     "${umodules}/nvim.nix"
