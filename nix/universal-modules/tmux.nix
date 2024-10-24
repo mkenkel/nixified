@@ -19,6 +19,9 @@
         set-option -g default-terminal 'screen-256color'
         set-option -g terminal-overrides ',xterm-256color:RGB'
         ###############################################################
+
+        # set-option -g default-shell /usr/bin/fish
+
         set -g prefix C-a
         unbind C-b
         bind-key C-a send-prefix
