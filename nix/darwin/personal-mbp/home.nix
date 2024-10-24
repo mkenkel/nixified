@@ -20,25 +20,23 @@ in
   imports = [
     "${umodules}/fish.nix"
     "${umodules}/kitty.nix"
+    "${umodules}/nvim.nix"
     "${umodules}/tmux.nix"
   ];
 
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
-    ".config/nvim".source = "${cfg}/nvim";
     ".config/fastfetch".source = "${cfg}/fastfetch";
   };
 
   home.sessionVariables = {
     # Fixes Rust Compiling the LSP
     PATH = "/usr/bin/:$PATH";
-    EDITOR = "nvim";
     TERM = "xterm-256color";
   };
 
   home.packages = [
     # Editors
-    pkgs.neovim
     pkgs.vim
 
     # Development
@@ -86,18 +84,6 @@ in
         batman
         batgrep
         batwatch
-      ];
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      extraLuaPackages = ps: [
-        ps.magick
-      ];
-      extraPackages = [
-        pkgs.imagemagick
       ];
     };
     starship = {
