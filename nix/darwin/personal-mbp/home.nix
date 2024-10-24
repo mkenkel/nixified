@@ -5,6 +5,8 @@
 }:
 let
   cfg = ../../../dots;
+  umodules = ./../../universal-modules;
+  dmodules = ./../modules;
 in
 {
 
@@ -14,6 +16,12 @@ in
   };
 
   programs.home-manager.enable = true;
+
+  imports = [
+    "${umodules}/fish.nix"
+    "${umodules}/kitty.nix"
+    "${umodules}/tmux.nix"
+  ];
 
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
@@ -71,19 +79,26 @@ in
   ];
 
   programs = {
-    zsh = {
+    bat = {
       enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      history = {
-        save = 10000;
-        path = "${config.xdg.dataHome}/zsh/history";
-      };
-      shellAliases = {
-        "vi" = "nvim";
-        "ls" = "lsd";
-        "TERM" = "xterm-256color";
-      };
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batman
+        batgrep
+        batwatch
+      ];
+    };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      extraLuaPackages = ps: [
+        ps.magick
+      ];
+      extraPackages = [
+        pkgs.imagemagick
+      ];
     };
     starship = {
       enable = true;
@@ -93,18 +108,9 @@ in
     fzf = {
       enable = true;
     };
-    tmux = {
+    wezterm = {
       enable = true;
-      escapeTime = 0;
-      plugins = with pkgs; [
-        tmuxPlugins.continuum
-        tmuxPlugins.resurrect
-        tmuxPlugins.vim-tmux-navigator
-        tmuxPlugins.catppuccin
-      ];
-
-      # https://nix.dev/manual/nix/2.18/language/builtins.html?highlight=readFile#built-in-functions
-      extraConfig = builtins.readFile ("${cfg}/tmux/tmux.conf");
+      extraConfig = builtins.readFile "${cfg}/wezterm/wezterm.lua";
     };
   };
 }
