@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  cfg = ../../dots;
+  cfg = ./../../dots;
 in
 {
   home.file = {
