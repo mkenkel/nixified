@@ -1,15 +1,14 @@
 { pkgs, ... }:
 let
-  cfg = ./../../dots;
+  cfg = ../../dots;
 in
 {
-  home.file = {
-    ".config/nvim".source = "${cfg}/nvim";
-  };
+  home.file =
+    {
+    };
 
   home.sessionVariables = {
     # Fixes Rust Compiling the LSP
-    EDITOR = "nvim";
   };
 
   programs.neovim = {
