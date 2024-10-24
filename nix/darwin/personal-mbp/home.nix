@@ -92,7 +92,7 @@ in
     };
     starship = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
       settings = pkgs.lib.importTOML "${cfg}/starship/starship.toml";
     };
     fzf = {
