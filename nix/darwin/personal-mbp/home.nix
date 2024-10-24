@@ -27,12 +27,14 @@ in
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
     ".config/fastfetch".source = "${cfg}/fastfetch";
+    ".config/nvim".source = "${cfg}/nvim";
   };
 
   home.sessionVariables = {
     # Fixes Rust Compiling the LSP
     PATH = "/usr/bin/:$PATH";
     TERM = "xterm-256color";
+    EDITOR = "nvim";
   };
 
   home.packages = [
@@ -70,6 +72,8 @@ in
     pkgs.tree
     pkgs.zsh
     pkgs.zsh-autosuggestions
+
+    pkgs.grc # Fish
 
     # Containerization
     pkgs.podman

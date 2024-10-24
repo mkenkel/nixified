@@ -13,7 +13,7 @@ in
   users.users."${user}" = {
     name = "${user}";
     home = "/Users/${user}";
-    shell = "/bin/zsh";
+    shell = "/bin/fish";
     uid = 501;
   };
 
