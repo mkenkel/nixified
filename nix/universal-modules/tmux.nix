@@ -74,7 +74,6 @@
         # ---
 
         set -g default-shell /bin/bash
-        set -g default-command "$SHELL"
 
         # Vi-related settings
         set-window-option -g mode-keys vi
