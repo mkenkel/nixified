@@ -70,8 +70,6 @@ in
     pkgs.starship
     pkgs.tree
     pkgs.fish
-    pkgs.zsh
-    pkgs.zsh-autosuggestions
 
     pkgs.grc # Fish
 
