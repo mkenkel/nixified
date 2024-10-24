@@ -1,8 +1,3 @@
 { ... }:
 {
-  programs = {
-    fish = {
-      enable = true;
-    };
-  };
 }

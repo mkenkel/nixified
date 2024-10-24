@@ -69,9 +69,10 @@ in
     pkgs.ripgrep
     pkgs.starship
     pkgs.tree
-    pkgs.fish
 
-    pkgs.grc # Fish
+    # Fish
+    pkgs.fish
+    pkgs.grc
 
     # Containerization
     pkgs.podman

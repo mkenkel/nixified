@@ -9,6 +9,10 @@ in
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  programs.fish.enable = true;
+  environment.shells = [ pkgs.fish ];
+  nix.settings.experimental-features = "nix-command flakes";
+  services.nix-daemon.enable = true;
   users.knownUsers = [ user ];
   users.users."${user}" = {
     name = "${user}";
@@ -38,12 +42,6 @@ in
     pkgs.chafa
     pkgs.nixfmt-rfc-style # Nixfmt
   ];
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
 
   # Set Git commit hash for darwin-version.
   # system.configurationRevision = self.rev or self.dirtyRev or null;
