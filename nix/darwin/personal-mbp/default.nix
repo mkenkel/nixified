@@ -13,7 +13,7 @@ in
   users.users."${user}" = {
     name = "${user}";
     home = "/Users/${user}";
-    shell = "/bin/fish";
+    shell = pkgs.fish;
     uid = 501;
   };
 
