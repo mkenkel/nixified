@@ -73,8 +73,6 @@
         # bind -r m resize-pane -Z
         # ---
 
-        set -g default-shell /bin/bash
-
         # Vi-related settings
         set-window-option -g mode-keys vi
         bind-key -T copy-mode-vi 'v' send -X begin-selection
