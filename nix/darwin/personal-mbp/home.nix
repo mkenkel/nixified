@@ -20,7 +20,7 @@ in
     "${umodules}/fish.nix"
     "${umodules}/kitty.nix"
     "${umodules}/nvim.nix"
-    # "${umodules}/tmux.nix"
+    "${umodules}/tmux.nix"
   ];
 
   home.file = {
