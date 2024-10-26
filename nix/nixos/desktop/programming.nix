@@ -13,6 +13,7 @@
     pkgs.lazygit
     pkgs.lua-language-server
     pkgs.nim
+    pkgs.nimble
     pkgs.nimlangserver
     pkgs.nodejs
     pkgs.podman
