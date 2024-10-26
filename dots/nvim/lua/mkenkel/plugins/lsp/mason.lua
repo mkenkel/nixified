@@ -36,6 +36,7 @@ return {
         "nil_ls",
         "terraformls",
         "nim_langserver",
+        "nimls",
       },
     })
 
