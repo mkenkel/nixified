@@ -22,6 +22,7 @@ in
     # NixOS Global Defaults (Personal)
     ../modules
     # NixOS Modules - Where instead I manually define the nix flakes I want for my desktop instead.
+    "${nmodules}/login.nix"
     "${nmodules}/gaming.nix"
     "${nmodules}/foot.nix"
     ./hardware-configuration.nix
@@ -84,16 +85,6 @@ in
     };
     openssh = {
       enable = true;
-    };
-
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-          user = "greeter";
-        };
-      };
     };
   };
 
