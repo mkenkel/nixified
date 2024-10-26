@@ -27,14 +27,6 @@ return {
           after = [[-- Same as before, but after if you need it]]
         },
         {
-          name = "Catpuccinn Latte",
-          colorscheme = "catppuccin",
-          before = [[
-            vim.opt.background = "light"
-          ]],
-          after = [[-- Same as before, but after if you need it]]
-        },
-        {
           name = "Catpuccinn Mocha",
           colorscheme = "catppuccin",
           before = [[
@@ -42,22 +34,6 @@ return {
           ]],
           after = [[-- Same as before, but after if you need it]]
         },
-        {
-          name = "Kanagawa Wave",
-          colorscheme = "kanagawa",
-          before = [[
-            vim.opt.background = "dark"
-          ]],
-          after = [[-- Same as before, but after if you need it]]
-        },
-        {
-          name = "Kanagawa Lotus",
-          colorscheme = "kanagawa",
-          before = [[
-            vim.opt.background = "light"
-          ]],
-          after = [[-- Same as before, but after if you need it]]
-        }
       },
       livePreview = true, -- Apply theme while picking. Default to true.
     })
