@@ -1,12 +1,8 @@
 return {
-  --- Themes list
-  "sainnhe/sonokai",
   "catppuccin/nvim",
-  "catppuccin/nvim",
-  "ellisonleao/gruvbox.nvim",
   --- Configurations
-  -- name = "catppuccin",
-  -- priority = 1000,
+  name = "catppuccin",
+  priority = 1000,
   config = function()
     require("catppuccin").setup({
       flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -56,7 +52,5 @@ return {
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
       },
     })
-
-    -- vim.cmd.colorscheme "catppuccin"
   end,
 }

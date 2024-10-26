@@ -1,4 +1,10 @@
 return {
+  --- Themes list
+  "sainnhe/sonokai",
+  "catppuccin/nvim",
+  "ellisonleao/gruvbox.nvim",
+  "rebelot/kanagawa.nvim",
+  ---
   "zaldih/themery.nvim",
   lazy = false,
   config = function()
@@ -21,8 +27,8 @@ return {
           after = [[-- Same as before, but after if you need it]]
         },
         {
-          name = "Gruvbox light",
-          colorscheme = "gruvbox",
+          name = "Catpuccinn Latte",
+          colorscheme = "catppuccin",
           before = [[
             vim.opt.background = "light"
           ]],
@@ -35,7 +41,23 @@ return {
             vim.opt.background = "dark"
           ]],
           after = [[-- Same as before, but after if you need it]]
-        }
+        },
+        {
+          name = "Kanagawa Wave",
+          colorscheme = "kanagawa",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[-- Same as before, but after if you need it]]
+        },
+        {
+          name = "Kanagawa Lotus",
+          colorscheme = "kanagawa",
+          before = [[
+            vim.opt.background = "light"
+          ]],
+          after = [[-- Same as before, but after if you need it]]
+        },
       },
       livePreview = true, -- Apply theme while picking. Default to true.
     })
