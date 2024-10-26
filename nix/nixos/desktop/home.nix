@@ -68,6 +68,7 @@ in
     pkgs.logseq
     pkgs.lsd
     pkgs.lua-language-server
+    pkgs.nimlangserver
     pkgs.nodejs
     pkgs.nwg-look
     pkgs.obsidian
