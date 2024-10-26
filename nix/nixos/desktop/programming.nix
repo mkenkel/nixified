@@ -15,6 +15,7 @@
     pkgs.nim
     pkgs.nimble
     pkgs.nimlangserver
+    pkgs.nimlsp
     pkgs.nodejs
     pkgs.podman
     pkgs.podman-compose
