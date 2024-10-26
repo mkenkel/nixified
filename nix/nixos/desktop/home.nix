@@ -27,6 +27,7 @@ in
 
   imports = [
     ./hyprland.nix
+    ./programming.nix
     "${umodules}/fish.nix"
     "${umodules}/kitty.nix"
     "${umodules}/tmux.nix"
@@ -42,11 +43,6 @@ in
   home.packages = [
     pkgs.alacritty
     pkgs.alacritty-theme
-    pkgs.ansible
-    pkgs.ansible-builder
-    pkgs.ansible-lint
-    pkgs.ansible-navigator
-    pkgs.arduino-ide
     pkgs.brightnessctl
     pkgs.btop
     pkgs.chafa
@@ -55,37 +51,22 @@ in
     pkgs.firefox
     pkgs.fish
     pkgs.fzf
-    pkgs.gcc
-    pkgs.gh
-    pkgs.gitflow
-    pkgs.gnumake
     pkgs.grc
     pkgs.grim
     pkgs.htop
     pkgs.kitty-themes
-    pkgs.lazygit
     pkgs.libsixel
-    pkgs.logseq
     pkgs.lsd
-    pkgs.lua-language-server
-    pkgs.nimlangserver
-    pkgs.nodejs
     pkgs.nwg-look
     pkgs.obsidian
     pkgs.playerctl
-    pkgs.podman
-    pkgs.podman-compose
-    pkgs.python3
     pkgs.ripgrep
-    pkgs.rustup
     pkgs.haskellPackages.sixel
     pkgs.slurp
     pkgs.spotify
     pkgs.starship
     pkgs.tree
     pkgs.vesktop
-    pkgs.vim
-    pkgs.zsh-autosuggestions
   ];
 
   # Manages your env vars through Home Manager.
