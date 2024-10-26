@@ -14,7 +14,7 @@
     pkgs.lua-language-server
     pkgs.nim
     pkgs.nimble
-    pkgs.nimlangserver
+    # pkgs.nimlangserver
     pkgs.nimlsp
     pkgs.nodejs
     pkgs.podman
