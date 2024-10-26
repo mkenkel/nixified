@@ -35,7 +35,7 @@ return {
         "lua_ls",
         "nil_ls",
         "terraformls",
-        "nimlangserver",
+        "nim_langserver",
       },
     })
 
