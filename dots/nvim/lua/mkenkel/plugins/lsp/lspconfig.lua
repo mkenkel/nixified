@@ -134,6 +134,15 @@ return {
           },
         })
       end,
+      ["nimls"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["nimls"].setup({
+          settings = {
+            cmd = { 'nimlsp' },
+            filetypes = { 'nim' },
+          },
+        })
+      end,
     })
   end,
 }
