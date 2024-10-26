@@ -67,6 +67,7 @@ in
     pkgs.libsixel
     pkgs.logseq
     pkgs.lsd
+    pkgs.lua-language-server
     pkgs.nodejs
     pkgs.nwg-look
     pkgs.obsidian
