@@ -57,7 +57,7 @@ return {
             vim.opt.background = "light"
           ]],
           after = [[-- Same as before, but after if you need it]]
-        },
+        }
       },
       livePreview = true, -- Apply theme while picking. Default to true.
     })
