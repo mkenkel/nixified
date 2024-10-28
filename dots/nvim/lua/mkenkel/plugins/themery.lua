@@ -1,10 +1,4 @@
 return {
-  --- Themes list
-  "sainnhe/sonokai",
-  "catppuccin/nvim",
-  "ellisonleao/gruvbox.nvim",
-  "rebelot/kanagawa.nvim",
-  ---
   "zaldih/themery.nvim",
   lazy = false,
   config = function()
