@@ -76,6 +76,11 @@ in
     # Essentials
     unzip
     glibc
+    pwvucontrol
+    pipecontrol
+    pw-volume
+    pa-notify
+    pavucontrol
   ];
 
   services = {

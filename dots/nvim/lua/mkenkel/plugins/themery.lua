@@ -28,6 +28,38 @@ return {
           ]],
           after = [[-- Same as before, but after if you need it]]
         },
+        {
+          name = "Catpuccinn Light",
+          colorscheme = "catppuccin",
+          before = [[
+            vim.opt.background = "light"
+          ]],
+          after = [[-- Same as before, but after if you need it]]
+        },
+        {
+          name = "Kanagawa Dark",
+          colorscheme = "kanagawa",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[-- Same as before, but after if you need it]]
+        },
+        {
+          name = "Kanagawa Light",
+          colorscheme = "kanagawa",
+          before = [[
+            vim.opt.background = "light"
+          ]],
+          after = [[-- Same as before, but after if you need it]]
+        },
+        {
+          name = "Sonokai",
+          colorscheme = "sonokai",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[-- Same as before, but after if you need it]]
+        },
       },
       livePreview = true, -- Apply theme while picking. Default to true.
     })
