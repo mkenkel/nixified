@@ -5,6 +5,11 @@
     lutris
     vulkan-tools # Troubleshooting Mangohud w/ vkcube
     mesa-demos # OpenGL Troubleshooting
+    discord
+    discordo
+    discord-sh
+    cordless
+    vesktop
   ];
 
   hardware.graphics = {
