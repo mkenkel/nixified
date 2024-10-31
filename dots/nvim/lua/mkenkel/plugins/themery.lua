@@ -26,7 +26,7 @@ return {
           before = [[
             vim.opt.background = "dark"
           ]],
-          after = [[-- Same as before, but after if you need it]]
+          after = [[]]
         },
         {
           name = "Catpuccinn Light",
@@ -34,23 +34,31 @@ return {
           before = [[
             vim.opt.background = "light"
           ]],
-          after = [[-- Same as before, but after if you need it]]
+          after = [[]]
         },
         {
-          name = "Kanagawa Dark",
-          colorscheme = "kanagawa",
+          name = "Kanagawa Wave",
+          colorscheme = "kanagawa-wave",
           before = [[
             vim.opt.background = "dark"
           ]],
-          after = [[-- Same as before, but after if you need it]]
+          after = [[]]
         },
         {
-          name = "Kanagawa Light",
-          colorscheme = "kanagawa",
+          name = "Kanagawa Dragon",
+          colorscheme = "kanagawa-dragon",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[]]
+        },
+        {
+          name = "Kanagawa Lotus",
+          colorscheme = "kanagawa-lotus",
           before = [[
             vim.opt.background = "light"
           ]],
-          after = [[-- Same as before, but after if you need it]]
+          after = [[]]
         },
         {
           name = "Sonokai",
@@ -58,7 +66,7 @@ return {
           before = [[
             vim.opt.background = "dark"
           ]],
-          after = [[-- Same as before, but after if you need it]]
+          after = [[]]
         },
       },
       livePreview = true, -- Apply theme while picking. Default to true.

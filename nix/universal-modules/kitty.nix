@@ -7,7 +7,7 @@ in
     kitty = {
       enable = true;
       font = {
-        name = "Terminus Nerd Font";
+        name = "Maple Mono SC NF";
         package = pkgs.terminus-nerdfont;
         size = 16;
       };

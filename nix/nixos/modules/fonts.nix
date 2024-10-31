@@ -12,6 +12,7 @@ in
     font-awesome
     jetbrains-mono
     sarasa-term-nerdfont
+    maple-mono-SC-NF
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
