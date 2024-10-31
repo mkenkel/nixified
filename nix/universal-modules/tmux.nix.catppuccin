@@ -10,11 +10,16 @@
       ];
       # https://nix.dev/manual/nix/2.18/language/builtins.html?highlight=readFile#built-in-functions
       extraConfig = ''
+        # General settings
+        # set -g default-terminal "tmux-256color"
+        # set -ga terminal-overrides ",*256col*:Tc"
+        # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+        # set-environment -g COLORTERM "truecolor"
         ###############################################################
         set-option -g default-terminal 'screen-256color'
         set-option -g terminal-overrides ',xterm-256color:RGB'
         ###############################################################
-        set-option -g status-position top
+
         set -g default-command "$SHELL"
 
         set -g prefix C-a
@@ -22,7 +27,6 @@
         bind-key C-a send-prefix
 
         set-option -g allow-passthrough on
-
         # --- 
 
         # Set windows to start at 1
@@ -87,6 +91,29 @@
         unbind e
         bind e select-layout tiled
         # ---
+        # Configure the catppuccin plugin
+        set -g @catppuccin_flavor "macchiato"
+
+        set -g @catppuccin_date_time_text "%I:%M%p"
+        set -g @catppuccin_directory_text "#{b:pane_current_path}"
+        set -g @catppuccin_status_connect_separator "no"
+        set -g @catppuccin_status_fill "icon"
+        set -g @catppuccin_status_left_separator  " "
+        set -g @catppuccin_status_modules_left "session"
+        set -g @catppuccin_status_modules_right "directory date_time"
+        set -g @catppuccin_status_right_separator " "
+        set -g @catppuccin_window_current_fill "number"
+        set -g @catppuccin_window_current_text "#W#{?window_zoomed_flag,(),}"
+        set -g @catppuccin_window_default_fill "number"
+        set -g @catppuccin_window_default_text "#W"
+        set -g @catppuccin_window_left_separator ""
+        set -g @catppuccin_window_middle_separator " █"
+        set -g @catppuccin_window_number_position "right"
+        set -g @catppuccin_window_right_separator " "
+        set -g @catppuccin_window_status_activity_style "none"
+        set -g @catppuccin_window_status_style "rounded"
+
+        run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
       '';
     };
   };
