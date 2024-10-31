@@ -72,6 +72,6 @@ return {
       livePreview = true, -- Apply theme while picking. Default to true.
     })
     local keymap = vim.keymap
-    keymap.set("n", "<leader>tp", "<cmd>ThemeryCR>", { desc = "Launch Themery" })
+    keymap.set("n", "<leader>tp", "<cmd>Themery<CR>", { desc = "Launch Themery" })
   end
 }
