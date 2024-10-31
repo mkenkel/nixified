@@ -1,7 +1,5 @@
 return {
-  --- Themes list
+  --- Themes list (no configurations)
   "sainnhe/sonokai",
-  "catppuccin/nvim",
   "ellisonleao/gruvbox.nvim",
-  "rebelot/kanagawa.nvim",
 }
