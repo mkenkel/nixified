@@ -81,10 +81,7 @@ in
     pw-volume
     pa-notify
     pavucontrol
-    discord
-    discordo
-    discord-sh
-    cordless
+    sshpass
   ];
 
   services = {

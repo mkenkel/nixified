@@ -66,7 +66,6 @@ in
     pkgs.spotify
     pkgs.starship
     pkgs.tree
-    pkgs.vesktop
   ];
 
   # Manages your env vars through Home Manager.
