@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   stylix = {
     enable = false;
     image = ../../../dots/wallpaper/platforms.png;

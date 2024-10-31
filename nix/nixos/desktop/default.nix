@@ -7,7 +7,8 @@
 let
   user = "matt";
   hostname = "upshot";
-  nmodules = ./../modules;
+  nos = ./../modules; # NixOS
+  universal = ./../../universal-modules; # Cross-platform modules
 in
 {
 
@@ -19,12 +20,16 @@ in
   };
 
   imports = [
-    # NixOS Global Defaults (Personal)
-    ../modules
-    # NixOS Modules - Where instead I manually define the nix flakes I want for my desktop instead.
-    "${nmodules}/login.nix"
-    "${nmodules}/gaming.nix"
-    "${nmodules}/foot.nix"
+    # Universal Modules (OS-Agnostic, Nix-centric, non-home-manager modules)
+    "${universal}/fonts.nix"
+
+    # NixOS
+    "${nos}/environment.nix"
+    "${nos}/foot.nix"
+    "${nos}/gaming.nix"
+    "${nos}/login.nix"
+    "${nos}/programs.nix"
+
     ./hardware-configuration.nix
   ];
 

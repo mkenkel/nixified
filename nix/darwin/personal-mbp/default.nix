@@ -1,10 +1,11 @@
 { pkgs, ... }:
 let
   user = "matt";
+  universal = ./../../universal-modules;
 in
 {
   imports = [
-    ../shared
+    "${universal}/fonts.nix"
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -30,8 +31,6 @@ in
       "keeper-password-manager"
       "obsidian"
       "visual-studio-code"
-      "discord"
-      "slack"
       "spotify"
     ];
   };

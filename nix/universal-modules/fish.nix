@@ -44,6 +44,7 @@
         "man" = "batman";
         "watch" = "batwatch";
         "vi" = "nvim";
+        "sshp" = "sshpass -f ~/.config/ssh/.sshpasswd ssh";
       };
       functions = {
         ytarchive = ''

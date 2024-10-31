@@ -5,8 +5,7 @@
 }:
 let
   cfg = ../../../dots;
-  umodules = ./../../universal-modules;
-  nmodules = ./../modules;
+  u-hm = ./../../universal-modules; # universal Home Manager
   user = "matt";
 in
 {
@@ -28,9 +27,9 @@ in
   imports = [
     ./hyprland.nix
     ./programming.nix
-    "${umodules}/fish.nix"
-    "${umodules}/kitty.nix"
-    "${umodules}/tmux.nix"
+    "${u-hm}/fish.nix"
+    "${u-hm}/kitty.nix"
+    "${u-hm}/tmux.nix"
   ];
 
   nix.settings = {

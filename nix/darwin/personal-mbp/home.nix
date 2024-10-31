@@ -4,8 +4,8 @@
 }:
 let
   cfg = ../../../dots;
-  umodules = ./../../universal-modules;
-  dmodules = ./../modules;
+  u-hm = ./../../universal-modules; # universal Home Manager modules
+  nd = ./../modules;
 in
 {
 
@@ -17,10 +17,10 @@ in
   programs.home-manager.enable = true;
 
   imports = [
-    "${umodules}/fish.nix"
-    "${umodules}/kitty.nix"
-    "${umodules}/nvim.nix"
-    "${umodules}/tmux.nix"
+    "${u-hm}/fish.nix"
+    "${u-hm}/kitty.nix"
+    "${u-hm}/nvim.nix"
+    "${u-hm}/tmux.nix"
   ];
 
   home.file = {
@@ -69,6 +69,7 @@ in
     pkgs.ripgrep
     pkgs.starship
     pkgs.tree
+    pkgs.sshpass
 
     # Fish
     pkgs.fish

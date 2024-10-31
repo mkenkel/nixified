@@ -9,11 +9,17 @@ let
 in
 {
   fonts.packages = with pkgs; [
+    _0xproto
     font-awesome
     jetbrains-mono
-    sarasa-term-nerdfont
     maple-mono-SC-NF
+    mononoki
+    sarasa-term-nerdfont
 
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+      ];
+    })
   ];
 }

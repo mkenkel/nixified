@@ -8,7 +8,6 @@ in
       enable = true;
       font = {
         name = "Maple Mono SC NF";
-        package = pkgs.terminus-nerdfont;
         size = 16;
       };
       settings = {
