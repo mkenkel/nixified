@@ -61,6 +61,14 @@ return {
           after = [[]]
         },
         {
+          name = "Moonfly",
+          colorscheme = "moonfly",
+          before = [[
+            vim.g.moonflyCursorColor = true
+          ]],
+          after = [[]]
+        },
+        {
           name = "Sonokai",
           colorscheme = "sonokai",
           before = [[
