@@ -87,6 +87,7 @@ in
     pa-notify
     pavucontrol
     sshpass
+    vlc
   ];
 
   services = {
