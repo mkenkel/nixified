@@ -55,6 +55,7 @@ in
     grim
     haskellPackages.sixel
     htop
+    inkscape
     kitty-themes
     libsixel
     lsd
