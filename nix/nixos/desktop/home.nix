@@ -39,32 +39,33 @@ in
     ];
   };
 
-  home.packages = [
-    pkgs.alacritty
-    pkgs.alacritty-theme
-    pkgs.brightnessctl
-    pkgs.btop
-    pkgs.chafa
-    pkgs.cmatrix
-    pkgs.fastfetch
-    pkgs.firefox
-    pkgs.fish
-    pkgs.fzf
-    pkgs.grc
-    pkgs.grim
-    pkgs.htop
-    pkgs.kitty-themes
-    pkgs.libsixel
-    pkgs.lsd
-    pkgs.nwg-look
-    pkgs.obsidian
-    pkgs.playerctl
-    pkgs.ripgrep
-    pkgs.haskellPackages.sixel
-    pkgs.slurp
-    pkgs.spotify
-    pkgs.starship
-    pkgs.tree
+  home.packages = with pkgs; [
+    alacritty
+    alacritty-theme
+    brightnessctl
+    btop
+    chafa
+    cmatrix
+    fastfetch
+    firefox
+    fish
+    freecad
+    fzf
+    grc
+    grim
+    haskellPackages.sixel
+    htop
+    kitty-themes
+    libsixel
+    lsd
+    nwg-look
+    obsidian
+    playerctl
+    ripgrep
+    slurp
+    spotify
+    starship
+    tree
   ];
 
   nixpkgs.overlays = [
