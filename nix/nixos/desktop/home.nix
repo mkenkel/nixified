@@ -42,6 +42,7 @@ in
   home.packages = with pkgs; [
     alacritty
     alacritty-theme
+    bambu-studio
     brightnessctl
     btop
     chafa
