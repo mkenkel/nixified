@@ -71,6 +71,7 @@ in
   ];
 
   nixpkgs.overlays = [
+    # Fix for Vesktop regarding the 'automatic gain' issues stemming from WebRTC.
     (pkgs.vesktop.overrideAttrs (previousAttrs: {
       patches = previousAttrs.patches ++ [
         (pkgs.fetchpatch {
