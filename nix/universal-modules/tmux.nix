@@ -86,6 +86,11 @@
         unbind e
         bind e select-layout tiled
         # ---
+
+        # ---
+        # Theme/Feel/Look
+        set-option -g status-style bg=default
+        # ---
       '';
     };
   };
