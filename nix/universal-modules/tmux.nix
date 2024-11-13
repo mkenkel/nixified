@@ -89,7 +89,43 @@
 
         # ---
         # Theme/Feel/Look
+        # https://github.com/tmux/tmux/wiki/Getting-Started#list-of-style-and-format-options
+        # General Styles
+        #
         set-option -g status-style bg=default
+        # set-option -g message-style
+        # set-option -g mode-style
+        #
+        # ---
+        # PANES
+        #
+        # set-option -g display-panes-active-colour
+        # set-option -g display-panes-color
+        # set-option -g pane-active-border-style
+        # set-option -g pane-border-format
+        # set-option -g pane-border-style
+        #
+        # STATUS
+        #
+        # set-option -g status-style
+        # 
+        # set-option -g status-left
+        # set-option -g status-left-length-style
+        # set-option -g status-left-style
+        #
+        # set-option -g status-right
+        # set-option -g status-right-length-style
+        # set-option -g status-right-style
+        #
+        # WINDOW
+        #
+        # set-option -g window-active-style
+        # set-option -g window-status-current-format
+        # set-option -g window-status-current-style
+        # set-option -g window-status-format
+        # set-option -g window-status-seperator
+        # set-option -g window-status-style
+        # set-option -g window-style
         # ---
       '';
     };
