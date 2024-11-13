@@ -5,7 +5,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-enable_wayland = false 
+enable_wayland = false
 
 
 -- For example, changing the color scheme:

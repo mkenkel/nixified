@@ -6,7 +6,6 @@
       escapeTime = 0;
       plugins = with pkgs; [
         tmuxPlugins.vim-tmux-navigator
-        tmuxPlugins.catppuccin
       ];
       # https://nix.dev/manual/nix/2.18/language/builtins.html?highlight=readFile#built-in-functions
       extraConfig = ''
