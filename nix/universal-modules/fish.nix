@@ -5,7 +5,7 @@
       enable = true;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        set fish_tmux_autostart true
+        set fish_tmux_autostart false
       '';
       plugins = [
         # Enable a plugin (here grc for colorized command output) from nixpkgs
