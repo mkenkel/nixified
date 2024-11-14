@@ -4,13 +4,19 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
+-- Essentials
 config.enable_wayland = false
-
-
--- For example, changing the color scheme:
-config.color_scheme = 'AdventureTime'
 config.front_end = "WebGpu"
+
+-- Fonts
+config.font = wezterm.font 'Maple Mono SC NF'
+
+-- Animation FPS
+config.animation_fps = 120
+config.cursor_blink_ease_in = 'Constant'
+config.cursor_blink_ease_out = 'Constant'
+
+config.color_scheme = 'Cai'
 
 -- and finally, return the configuration to wezterm
 return config
