@@ -199,6 +199,13 @@
 
         # Screencapture
         "$mod SHIFT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | wl-copy"
+
+        # Start GIF Recording
+        "$mod SHIFT, Y, exec, ${pkgs.giph}/bin/giph -s -t 10 --format webm | curl -F \"file=@-\" 0x0.st | wl-copy"
+
+        # End GIF Recording
+        "$mod , p, exec, pkill --signal SIGINT wf-recorder"
+
       ];
 
       bindm = [
@@ -222,6 +229,13 @@
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.waybar}/bin/waybar"
+      ];
+
+      windowrulev2 = [
+        "float, class:^(io.github.Qalculate.qalculate-qt)$"
+        "size 850 500,class:^(io.github.Qalculate.qalculate-qt)$"
+        "float,class:^(org.pulseaudio.pavucontrol)$"
+        "size 850 500,class:^(org.pulseaudio.pavucontrol)$"
       ];
 
       plugin = {

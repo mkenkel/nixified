@@ -48,10 +48,12 @@ in
     chafa
     cmatrix
     fastfetch
+    ffmpeg
     firefox
     fish
     freecad
     fzf
+    giph
     grc
     grim
     haskellPackages.sixel
@@ -63,11 +65,13 @@ in
     nwg-look
     obsidian
     playerctl
+    qalculate-qt
     ripgrep
     slurp
     spotify
     starship
     tree
+    wf-recorder
   ];
 
   nixpkgs.overlays = [
@@ -100,6 +104,7 @@ in
     ".config/nvim".source = "${cfg}/nvim";
     ".config/pfp".source = "${cfg}/pfp";
     ".config/waybar".source = "${cfg}/waybar";
+    ".config/scripts".source = "${cfg}/scripts";
   };
 
   programs = {
