@@ -201,10 +201,10 @@
         "$mod SHIFT, S, exec, ${pkgs.grim}/bin/grim -g \"$(slurp)\" - | wl-copy"
 
         # Start GIF Recording
-        "$mod SHIFT, Y, exec, ${pkgs.giph}/bin/giph -s -t 10 --format webm | curl -F \"file=@-\" 0x0.st | wl-copy"
+        "$mod SHIFT, Y, exec, /home/matt/.config/scripts/pt1sc.sh"
 
         # End GIF Recording
-        "$mod , p, exec, pkill --signal SIGINT wf-recorder"
+        "$mod SHIFT, P, exec, /home/matt/.config/scripts/pt2sc.sh"
 
       ];
 

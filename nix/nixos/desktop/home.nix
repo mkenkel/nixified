@@ -24,6 +24,20 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  services = {
+    # All valuVes except 'enable' are optional.
+    wlsunset = {
+      enable = true;
+      temperature = {
+        day = 6500;
+        night = 3500;
+      };
+      latitude = "39";
+      longitude = "84.5";
+    };
+
+  };
+
   imports = [
     ./hyprland.nix
     ./programming.nix
