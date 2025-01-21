@@ -29,13 +29,13 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     settings = {
-      "$terminal" = "wezterm";
+      "$terminal" = "kitty";
       "$mod" = "ALT";
       "$wrkspcmod" = "ALT CONTROL";
       "$menu" = "${pkgs.fuzzel}/bin/fuzzel";
 
       monitor = [
-        "DP-1,3840x2160@144,0x0,1.25"
+        "DP-3,3840x2160@144,0x0,1.25"
         ",prefered,auto,1"
       ];
 
