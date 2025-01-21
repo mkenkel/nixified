@@ -1,9 +1,13 @@
 return {
   {
     "vhyrro/luarocks.nvim",
+    "leafo/magick",
+    "nvim-treesitter/nvim-treesitter",
     priority = 1001, -- this plugin needs to run before anything else
     opts = {
-      rocks = { "magick" },
+      rocks = {
+        hererocks = true,
+      },
     },
   },
   {

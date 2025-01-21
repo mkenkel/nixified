@@ -66,28 +66,28 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    nixfmt-rfc-style
-    podman
-    podman-compose
-    qemu
-    virtiofsd
-    waybar
-    wl-clipboard
-    # Kube-the-hard-way
-    wget
     curl
-    openssl
     git
-    # Essentials
-    unzip
     glibc
-    pwvucontrol
-    pipecontrol
-    pw-volume
+    lua5_1
+    luajit
+    nixfmt-rfc-style
+    openssl
     pa-notify
     pavucontrol
+    pipecontrol
+    podman
+    podman-compose
+    pw-volume
+    pwvucontrol
+    qemu
     sshpass
+    unzip
+    virtiofsd
     vlc
+    waybar
+    wget
+    wl-clipboard
   ];
 
   services = {
