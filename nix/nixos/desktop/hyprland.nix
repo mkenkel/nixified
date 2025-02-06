@@ -26,11 +26,11 @@
     splash_offset = 2.0;
 
     preload = [
-      "/share/wallpapers/buttons.png"
+      "/home/matt/.config/wallpaper/purp.jpg"
     ];
 
     wallpaper = [
-      "DP-3,/share/wallpapers/buttons.png"
+      "DP-3,/home/matt/.config/wallpaper/purp.jpg"
     ];
   };
 
