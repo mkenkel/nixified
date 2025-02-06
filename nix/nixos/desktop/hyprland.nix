@@ -241,7 +241,7 @@
       exec-once = [
         "dbus-update-activation-environment --systemd --all"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "${pkgs.hyprpaper}/bin/hyprpaper"
+        #"${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.waybar}/bin/waybar"
       ];
