@@ -35,6 +35,22 @@ in
       latitude = "39";
       longitude = "-84.5";
     };
+    hyprpaper = {
+      enable = true;
+      settings = {
+        ipc = "on";
+        splash = false;
+        splash_offset = 2.0;
+
+        preload = [
+          "/share/wallpapers/buttons.png"
+        ];
+
+        wallpaper = [
+          "DP-3,/share/wallpapers/buttons.png"
+        ];
+      };
+    };
 
   };
 
