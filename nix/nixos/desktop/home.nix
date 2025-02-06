@@ -33,7 +33,7 @@ in
         night = 3500;
       };
       latitude = "39";
-      longitude = "84.5";
+      longitude = "-84.5";
     };
 
   };
@@ -75,7 +75,9 @@ in
     inkscape
     kitty-themes
     libsixel
+    libvirt
     lsd
+    lsof
     nwg-look
     obsidian
     playerctl
@@ -85,6 +87,8 @@ in
     spotify
     starship
     tree
+    virt-manager
+    virt-viewer
     wf-recorder
   ];
 
@@ -117,6 +121,7 @@ in
     ".config/mako".source = "${cfg}/mako";
     ".config/nvim".source = "${cfg}/nvim";
     ".config/pfp".source = "${cfg}/pfp";
+    ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
     ".config/scripts".source = "${cfg}/scripts";
   };

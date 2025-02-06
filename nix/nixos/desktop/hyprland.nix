@@ -19,6 +19,21 @@
     pkgs.wl-clipboard
   ];
 
+  services.hyperpaper.enable = true;
+  services.hyperpaper.settings = {
+    ipc = "on";
+    splash = false;
+    splash_offset = 2.0;
+
+    preload = [
+      "/share/wallpapers/buttons.png"
+    ];
+
+    wallpaper = [
+      "DP-3,/share/wallpapers/buttons.png"
+    ];
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];

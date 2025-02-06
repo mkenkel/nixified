@@ -74,6 +74,7 @@ in
     nixfmt-rfc-style
     openssl
     pa-notify
+    packer
     pavucontrol
     pipecontrol
     podman
@@ -82,6 +83,7 @@ in
     pwvucontrol
     qemu
     sshpass
+    terraform
     unzip
     virtiofsd
     vlc
