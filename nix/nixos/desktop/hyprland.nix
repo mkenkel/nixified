@@ -19,8 +19,8 @@
     pkgs.wl-clipboard
   ];
 
-  services.hyperpaper.enable = true;
-  services.hyperpaper.settings = {
+  services.hyprpaper.enable = true;
+  services.hyprpaper.settings = {
     ipc = "on";
     splash = false;
     splash_offset = 2.0;
