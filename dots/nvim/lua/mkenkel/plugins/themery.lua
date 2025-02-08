@@ -76,6 +76,24 @@ return {
           ]],
           after = [[]]
         },
+        {
+          name = "Jellybeans Dark",
+          colorscheme = "jellybeans",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[]]
+        },
+
+        {
+          name = "Jellybeans Light",
+          colorscheme = "jellybeans",
+          before = [[
+            vim.opt.background = "light"
+          ]],
+          after = [[]]
+        },
+
       },
       livePreview = true, -- Apply theme while picking. Default to true.
     })

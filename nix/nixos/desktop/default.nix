@@ -70,6 +70,7 @@ in
     git
     glibc
     lua5_1
+    lua-language-server
     luajit
     nixfmt-rfc-style
     openssl
