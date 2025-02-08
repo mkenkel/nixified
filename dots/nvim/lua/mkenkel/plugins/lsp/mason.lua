@@ -46,8 +46,8 @@ return {
         "isort",
         "prettier",
         "pylint",
-        "yamlfmt",
         "yamllint",
+        "yamlfmt",
       }
     })
   end,

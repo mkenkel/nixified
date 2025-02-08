@@ -89,6 +89,8 @@ in
     virt-manager
     virt-viewer
     wf-recorder
+    yamlfmt
+    yamllint
   ];
 
   nixpkgs.overlays = [
