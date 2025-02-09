@@ -14,7 +14,7 @@
       ly = {
         enable = true;
         settings = {
-
+          load = true;
         };
       };
     };

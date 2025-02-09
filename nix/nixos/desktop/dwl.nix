@@ -10,6 +10,9 @@ in
 {
   home.packages = [
     pkgs.somebar
+    (pkgs.dwlb.override {
+      configH = builtins.readFile "${cfg}/dwl/patches/dwlb/config.h";
+    })
     pkgs.wbg
     pkgs.wmenu
     (pkgs.dwl.override {
