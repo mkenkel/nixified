@@ -9,14 +9,15 @@ let
 in
 {
   home.packages = [
+    pkgs.somebar
+    pkgs.wbg
+    pkgs.wmenu
     (pkgs.dwl.override {
       # trying to supply config.home.homeDirectory here leads to "impure" usage.
       # so disabling it for now.
       # conf = (builtins.readFile "${config.home.homeDirectory}/.config/dwl/config.h");
       configH = builtins.readFile "${cfg}/dwl/config.h";
     })
-    pkgs.somebar
-    pkgs.wbg
   ];
 
 }
