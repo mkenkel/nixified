@@ -38,7 +38,6 @@ in
   };
 
   imports = [
-    ./dwl.nix
     ./hyprland.nix
     ./programming.nix
     "${u-hm}/fish.nix"
