@@ -10,7 +10,7 @@
       # trying to supply config.home.homeDirectory here leads to "impure" usage.
       # so disabling it for now.
       # conf = (builtins.readFile "${config.home.homeDirectory}/.config/dwl/config.h");
-      conf = ./dwl/config.h;
+      conf = /home/matt/.config/dwl/config.h;
     })
     pkgs.somebar
     pkgs.wbg
