@@ -34,6 +34,7 @@ in
   ];
 
   system.stateVersion = "24.05"; # Did you read the comment? - DONT CHANGE UNLESS GOOGLE
+  security.polkit.enable = true;
 
   boot = {
     loader = {

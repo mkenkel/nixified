@@ -126,6 +126,7 @@ in
     ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
     ".config/scripts".source = "${cfg}/scripts";
+    ".config/dwl".source = "${cfg}/dwl";
   };
 
   programs = {
