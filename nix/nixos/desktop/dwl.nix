@@ -10,9 +10,6 @@ in
 {
   home.packages = [
     pkgs.somebar
-    (pkgs.dwlb.override {
-      configH = builtins.readFile "${cfg}/dwl/patches/dwlb/config.h";
-    })
     pkgs.wbg
     pkgs.wmenu
     (pkgs.dwl.override {
@@ -20,6 +17,9 @@ in
       # so disabling it for now.
       # conf = (builtins.readFile "${config.home.homeDirectory}/.config/dwl/config.h");
       configH = builtins.readFile "${cfg}/dwl/config.h";
+    })
+    (pkgs.dwlb.override {
+      configH = builtins.readFile "${cfg}/dwl/patches/dwlb/config.h";
     })
   ];
 
