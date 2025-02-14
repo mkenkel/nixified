@@ -1,21 +1,18 @@
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    'f-person/git-blame.nvim',
+    'echasnovski/mini.icons',
   },
 
   config = function()
-    local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
-    local git_blame = require('gitblame')
     vim.g.gitblame_display_virtual_text = 0
     require('lualine').setup {
       options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        component_separators = "",
+        section_separators = "",
         disabled_filetypes = {
           statusline = {},
           winbar = {},
@@ -32,7 +29,7 @@ return {
       sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available } },
+        lualine_c = {},
         lualine_x = {
           {
             lazy_status.updates,
