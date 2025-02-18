@@ -10,8 +10,7 @@
     cursor.size = 48;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-        name = "JetBrainsMono Nerd Font Mono";
+        package = pkgs.nerd-fonts.JetBrainsMono;
       };
       sansSerif = {
         package = pkgs.montserrat;

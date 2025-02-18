@@ -93,18 +93,18 @@ in
     yamllint
   ];
 
-  nixpkgs.overlays = [
-    # Fix for Vesktop regarding the 'automatic gain' issues stemming from WebRTC.
-    (pkgs.vesktop.overrideAttrs (previousAttrs: {
-      patches = previousAttrs.patches ++ [
-        (pkgs.fetchpatch {
-          name = "micfix-b0730e139805c4eea0d610be8fac28c1ed75aced.patch";
-          url = "https://gist.githubusercontent.com/jvyden/4aa114a1118a06f3be96710df95f311c/raw/b0730e139805c4eea0d610be8fac28c1ed75aced/micfix.patch";
-          hash = "sha256-EIK7/CtKpruf4/N2vn8XSCNkyDCL8I6ciXOljkvgz5A=";
-        })
-      ];
-    }))
-  ];
+  # nixpkgs.overlays = [
+  #   # Fix for Vesktop regarding the 'automatic gain' issues stemming from WebRTC.
+  #   (pkgs.vesktop.overrideAttrs (previousAttrs: {
+  #     patches = previousAttrs.patches ++ [
+  #       (pkgs.fetchpatch {
+  #         name = "micfix-b0730e139805c4eea0d610be8fac28c1ed75aced.patch";
+  #         url = "https://gist.githubusercontent.com/jvyden/4aa114a1118a06f3be96710df95f311c/raw/b0730e139805c4eea0d610be8fac28c1ed75aced/micfix.patch";
+  #         hash = "sha256-EIK7/CtKpruf4/N2vn8XSCNkyDCL8I6ciXOljkvgz5A=";
+  #       })
+  #     ];
+  #   }))
+  # ];
 
   # Manages your env vars through Home Manager.
   home.sessionVariables = {

@@ -15,11 +15,5 @@ in
     maple-mono-SC-NF
     mononoki
     sarasa-term-nerdfont
-
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-      ];
-    })
   ];
 }
