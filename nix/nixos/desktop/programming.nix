@@ -21,7 +21,14 @@
     (pkgs.python311.withPackages (
       ps: with ps; [
         pip
-        ansible-dev-tools
+        ansible-builder
+        ansible-core
+        ansible-creator
+        ansible-dev-environment
+        ansible-lint
+        ansible-navigator
+        ansible-sign
+        pytest-ansible
       ]
     ))
     pkgs.rustup
