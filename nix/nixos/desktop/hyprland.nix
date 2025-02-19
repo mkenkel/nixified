@@ -99,11 +99,12 @@
           ignore_opacity = false;
         };
 
-        drop_shadow = true;
-        shadow_ignore_window = true;
-        shadow_range = 20;
-        shadow_offset = "0 2";
-        shadow_render_power = 4;
+        # Does Not Exist any more
+        # drop_shadow = true;
+        # shadow_ignore_window = true;
+        # shadow_range = 20;
+        # shadow_offset = "0 2";
+        # shadow_render_power = 4;
       };
 
       animations = {

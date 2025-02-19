@@ -69,6 +69,10 @@ in
     };
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ovftool-4.6.2-22220919"
+  ];
+
   environment.systemPackages = with pkgs; [
     curl
     git
@@ -78,6 +82,7 @@ in
     luajit
     nixfmt-rfc-style
     openssl
+    ovftool
     pa-notify
     packer
     pavucontrol
