@@ -12,6 +12,7 @@
     pkgs.gnumake
     pkgs.lazygit
     pkgs.lua-language-server
+    pkgs.kubectl
     pkgs.nim
     pkgs.nimble
     pkgs.nimlsp
@@ -21,14 +22,8 @@
     (pkgs.python311.withPackages (
       ps: with ps; [
         pip
+        packaging
         ansible-builder
-        ansible-core
-        ansible-creator
-        ansible-dev-environment
-        ansible-lint
-        ansible-navigator
-        ansible-sign
-        pytest-ansible
       ]
     ))
     pkgs.rustup
