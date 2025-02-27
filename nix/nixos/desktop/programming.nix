@@ -1,10 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = [
-    # pkgs.ansible
-    # pkgs.ansible-builder
-    # pkgs.ansible-lint
-    # pkgs.ansible-navigator
+    pkgs.ansible
+    pkgs.ansible-lint
+    pkgs.ansible-navigator
     pkgs.arduino-ide
     pkgs.gcc
     pkgs.gh
