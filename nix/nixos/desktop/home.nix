@@ -62,7 +62,6 @@ in
     cmatrix
     fastfetch
     ffmpeg
-    firefox
     fish
     freecad
     fzf
@@ -136,6 +135,9 @@ in
         batgrep
         batwatch
       ];
+    };
+    firefox = {
+      enable = true;
     };
     fuzzel = {
       enable = true;
