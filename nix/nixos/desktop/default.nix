@@ -70,7 +70,7 @@ in
     };
     gnupg.agent = {
       enable = true;
-      pinentryPackage = lib.mkForce pkgs.pinentry-qt;
+      pinentryPackage = lib.mkForce pkgs.pinentry-curses;
       enableSSHSupport = true;
     };
   };
