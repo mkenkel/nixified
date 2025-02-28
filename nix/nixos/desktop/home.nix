@@ -66,6 +66,7 @@ in
     freecad
     fzf
     giph
+    gnupg
     grc
     grim
     haskellPackages.sixel
@@ -82,6 +83,7 @@ in
     qalculate-qt
     ripgrep
     slurp
+    sops
     spotify
     starship
     tree
