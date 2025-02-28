@@ -67,6 +67,11 @@ in
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
+    gnupg.agent = {
+      enable = true;
+      pinentryFlavor = "curses";
+      enableSSHSupport = true;
+    };
   };
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -112,6 +117,7 @@ in
     openssh = {
       enable = true;
     };
+    pcscd.enable = true;
   };
 
   networking = {

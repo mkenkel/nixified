@@ -66,7 +66,6 @@ in
     freecad
     fzf
     giph
-    gnupg
     grc
     grim
     haskellPackages.sixel
