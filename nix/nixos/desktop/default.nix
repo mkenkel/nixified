@@ -68,11 +68,6 @@ in
       portalPackage =
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
-    gnupg.agent = {
-      enable = true;
-      pinentryPackage = lib.mkForce pkgs.pinentry-curses;
-      enableSSHSupport = true;
-    };
   };
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -93,6 +88,7 @@ in
     ovftool
     pa-notify
     packer
+    paperkey
     pavucontrol
     pipecontrol
     podman
