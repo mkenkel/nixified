@@ -75,6 +75,7 @@ in
     fish
     freecad
     fzf
+    gimp
     giph
     grc
     grim

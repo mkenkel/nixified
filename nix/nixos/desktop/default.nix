@@ -75,6 +75,7 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
+    age
     bashSnippets
     curl
     envsubst
