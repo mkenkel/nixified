@@ -2,6 +2,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }:
 let
@@ -69,7 +70,7 @@ in
     };
     gnupg.agent = {
       enable = true;
-      pinentryPackage = "curses";
+      pinentryPackage = lib.mkForce pkgs.pinentry-qt;
       enableSSHSupport = true;
     };
   };
