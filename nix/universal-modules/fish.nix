@@ -45,7 +45,7 @@
         "watch" = "batwatch";
         "vi" = "nvim";
         "sshp" = "sshpass -f ~/.config/ssh/.sshpasswd ssh";
-        "edit-vault" = "ansible-vault edit {$HOME}/Repos/ansible-vault/kubernetes.yml";
+        "ave" = "ansible-vault edit {$HOME}/Repos/ansible-vault/kubernetes.yml";
 
       };
       functions = {
