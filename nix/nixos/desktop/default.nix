@@ -134,13 +134,7 @@ in
     #   address = "192.168.10.1";
     #   interface = "enp5s0";
     # };
-    extraHosts = ''
-      # Kubernetes The Hard Way
-      192.168.15.5 server.fatnutfarm.com server
-      192.168.15.6 node-0.fatnutfarm.com node-0
-      192.168.15.7 node-1.fatnutfarm.com node-1
-      192.168.15.8 node-2.fatnutfarm.com node-2
-    '';
+    extraHosts = '''';
   };
 
   users.users.${user} = {
