@@ -45,6 +45,7 @@
         "watch" = "batwatch";
         "vi" = "nvim";
         "sshp" = "sshpass -f ~/.config/ssh/.sshpasswd ssh";
+        "kube-vault" = "/home/matt/Repos/ansible-vault/kubernetes.yml";
       };
       functions = {
         ytarchive = ''
