@@ -126,7 +126,6 @@ in
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_DATA_HOME = "\${HOME}/.local/share";
-    KUBE_VAULT = "\${HOME}/Repos/ansible-vault/kubernetes.yml";
   };
 
   home.file = {
