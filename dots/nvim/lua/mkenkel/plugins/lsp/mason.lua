@@ -34,6 +34,7 @@ return {
         "dockerls",
         "lua_ls",
         "nil_ls",
+        "taplo",
         "terraformls",
         "nim_langserver",
       },

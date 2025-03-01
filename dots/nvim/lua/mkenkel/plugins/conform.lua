@@ -8,7 +8,8 @@ return {
       formatters_by_ft = {
         yaml = { "yamlfmt" },
         python = { "isort", "black" },
-        nix = { "nixfmt "},
+        nix = { "nixfmt " },
+        toml = { "taplo" },
       },
       format_on_save = {
         -- These options will be passed to conform.format()

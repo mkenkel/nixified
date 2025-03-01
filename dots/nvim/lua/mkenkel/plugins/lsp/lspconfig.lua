@@ -134,6 +134,13 @@ return {
           },
         })
       end,
+      ["taplo"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["taplo"].setup({
+          cmd = { "taplo", "lsp", "stdio" },
+          filetypes = { "toml" },
+        })
+      end,
     })
   end,
 }
