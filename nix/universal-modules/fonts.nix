@@ -15,5 +15,6 @@ in
     maple-mono-SC-NF
     mononoki
     sarasa-term-nerdfont
+    helvetica-neue-lt-std
   ];
 }
