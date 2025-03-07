@@ -10,12 +10,14 @@ return {
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
+    local util = require 'lspconfig.util'
 
     -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
 
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
 
     local keymap = vim.keymap -- Keybinds for lspconfig
     -- The command below automatically executes on the buffer attach.
@@ -139,6 +141,22 @@ return {
         lspconfig["taplo"].setup({
           cmd = { "taplo", "lsp", "stdio" },
           filetypes = { "toml" },
+        })
+      end,
+      ["helm-ls"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["helm-ls"].setup({
+          cmd = { 'helm_ls', 'serve' },
+          filetypes = { 'helm' },
+          root_dir = util.root_pattern 'Chart.yaml',
+          single_file_support = true,
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
         })
       end,
     })
