@@ -10,7 +10,6 @@ return {
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
-    local util = require 'lspconfig.util'
 
     -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
@@ -148,7 +147,7 @@ return {
         lspconfig["helm_ls"].setup({
           cmd = { 'helm_ls', 'serve' },
           filetypes = { 'helm' },
-          root_dir = util.root_pattern 'Chart.yaml',
+          root_dir = lspconfig.util.root_pattern 'Chart.yaml',
           single_file_support = true,
           capabilities = {
             workspace = {
