@@ -143,9 +143,9 @@ return {
           filetypes = { "toml" },
         })
       end,
-      ["helm-ls"] = function()
+      ["helm_ls"] = function()
         -- configure lua server (with special settings)
-        lspconfig["helm-ls"].setup({
+        lspconfig["helm_ls"].setup({
           cmd = { 'helm_ls', 'serve' },
           filetypes = { 'helm' },
           root_dir = util.root_pattern 'Chart.yaml',
