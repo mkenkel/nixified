@@ -142,42 +142,19 @@ return {
           filetypes = { "toml" },
         })
       end,
-      ["helm_ls"] = function()
-        -- configure lua server (with special settings)
-        lspconfig["helm_ls"].setup({
-          cmd = { 'helm_ls', 'serve' },
-          filetypes = { 'helm', 'helmfile' },
-          root_dir = lspconfig.util.root_pattern("Chart.yaml"),
-          single_file_support = true,
+      ["yamlls"] = function()
+        lspconfig["yamlls"].setup({
           settings = {
-            ['helm-ls'] = {
-              logLevel = "info",
-              valuesFiles = {
-                mainValuesFile = "values.yaml",
-                lintOverlayValuesFile = "values.lint.yaml",
-                additionalValuesFilesGlobPattern = "values*.yaml"
-              },
-              yamlls = {
-                enabled = true,
-                enabledForFilesGlob = "*.{yaml,yml}",
-                diagnosticsLimit = 50,
-                showDiagnosticsDirectly = false,
-                path = "yaml-language-server",
-                config = {
-                  schemas = {
-                    kubernetes = "templates/**",
-                  },
-                  completion = true,
-                  hover = true,
-                  -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
-                }
-              }
-            }
-          },
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
+            yaml = {
+              schemas = {
+                kubernetes = "k8s-*.yaml",
+                ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+                ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+                ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/**/*.{yml,yaml}",
+                ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+                ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+                ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+                ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
               },
             },
           },
