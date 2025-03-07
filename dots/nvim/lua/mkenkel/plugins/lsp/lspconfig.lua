@@ -87,25 +87,25 @@ return {
           capabilities = capabilities,
         })
       end,
-      ["ansiblels"] = function()
-        lspconfig["ansiblels"].setup({
-          cmd = { 'ansible-language-server', '--stdio' },
-          settings = {
-            ansible = {
-              python = { interpreterPath = 'python' },
-              ansible = { path = 'ansible' },
-              executionEnvironment = { enabled = false },
-              validation = {
-                enabled = false,
-                lint = { enabled = true, path = 'ansible-lint' },
-              },
-            },
-          },
-          filetypes = { 'yaml', 'yml', 'ansible' },
-          root_dir = lspconfig.util.root_pattern('**/roles', '**/playbooks', 'ansible.cfg', '.ansible-lint'),
-          single_file_support = false,
-        })
-      end,
+      -- ["ansiblels"] = function()
+      --   lspconfig["ansiblels"].setup({
+      --     cmd = { 'ansible-language-server', '--stdio' },
+      --     settings = {
+      --       ansible = {
+      --         python = { interpreterPath = 'python' },
+      --         ansible = { path = 'ansible' },
+      --         executionEnvironment = { enabled = false },
+      --         validation = {
+      --           enabled = false,
+      --           lint = { enabled = true, path = 'ansible-lint' },
+      --         },
+      --       },
+      --     },
+      --     filetypes = { 'yaml', 'yml', 'ansible' },
+      --     root_dir = lspconfig.util.root_pattern('**/roles', '**/playbooks', 'ansible.cfg', '.ansible-lint'),
+      --     single_file_support = false,
+      --   })
+      -- end,
       ["lua_ls"] = function()
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
