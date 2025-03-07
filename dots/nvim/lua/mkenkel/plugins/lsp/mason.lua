@@ -32,7 +32,6 @@ return {
         "bashls",
         "docker_compose_language_service",
         "dockerls",
-        "helm_ls",
         "lua_ls",
         "nil_ls",
         "taplo",
