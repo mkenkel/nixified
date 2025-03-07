@@ -146,9 +146,34 @@ return {
         -- configure lua server (with special settings)
         lspconfig["helm_ls"].setup({
           cmd = { 'helm_ls', 'serve' },
-          filetypes = { 'helm' },
-          root_dir = lspconfig.util.root_pattern 'Chart.yaml',
+          filetypes = { 'helm', 'helmfile' },
+          root_dir = lspconfig.util.root_pattern("Chart.yaml"),
           single_file_support = true,
+          settings = {
+            ['helm-ls'] = {
+              logLevel = "info",
+              valuesFiles = {
+                mainValuesFile = "values.yaml",
+                lintOverlayValuesFile = "values.lint.yaml",
+                additionalValuesFilesGlobPattern = "values*.yaml"
+              },
+              yamlls = {
+                enabled = true,
+                enabledForFilesGlob = "*.{yaml,yml}",
+                diagnosticsLimit = 50,
+                showDiagnosticsDirectly = false,
+                path = "yaml-language-server",
+                config = {
+                  schemas = {
+                    kubernetes = "templates/**",
+                  },
+                  completion = true,
+                  hover = true,
+                  -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
+                }
+              }
+            }
+          },
           capabilities = {
             workspace = {
               didChangeWatchedFiles = {
