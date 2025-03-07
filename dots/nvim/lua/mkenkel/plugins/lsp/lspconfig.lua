@@ -103,7 +103,7 @@ return {
             },
           },
           filetypes = { 'yaml', 'yml', 'ansible' },
-          root_dir = lspconfig.util.root_pattern("roles", "playbooks"),
+          root_dir = lspconfig.util.root_pattern('**/roles', '**/playbooks', 'ansible.cfg', '.ansible-lint'),
           single_file_support = false,
         })
       end,
