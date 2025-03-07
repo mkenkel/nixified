@@ -77,10 +77,20 @@ in
   environment.systemPackages = with pkgs; [
     age
     bashSnippets
+    cilium-cli
     curl
     envsubst
     git
     glibc
+    (wrapHelm kubernetes-helm {
+      plugins = with pkgs.kubernetes-helmPlugins; [
+        helm-secrets
+        helm-diff
+        helm-s3
+        helm-git
+      ];
+    })
+    hubble
     lua5_1
     lua-language-server
     luajit
