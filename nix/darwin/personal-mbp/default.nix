@@ -2,6 +2,11 @@
 let
   user = "matt";
   universal = ./../../universal-modules;
+  unstable = import inputs.nixpkgs-unstable {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
+    overlays = [ (import ../../universal-modules/new-kitty.nix) ];
+  };
 in
 {
   imports = [
@@ -38,6 +43,7 @@ in
       "obsidian"
       "visual-studio-code"
       "spotify"
+      "raycast"
     ];
   };
 

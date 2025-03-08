@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-let
-  cfg = ../../dots;
-in
+{ ... }:
 {
   programs = {
-    kitty = {
+    unstable.kitty = {
       enable = true;
       font = {
         name = "Maple Mono SC NF";
