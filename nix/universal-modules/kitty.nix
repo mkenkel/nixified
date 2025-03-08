@@ -1,14 +1,6 @@
-{ inputs, ... }:
-let
-  unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-    overlays = [ (import ./new-kitty.nix) ];
-  };
-in
 {
   programs = {
-    ${unstable}.kitty = {
+    kitty = {
       enable = true;
       font = {
         name = "Maple Mono SC NF";

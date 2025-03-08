@@ -11,7 +11,6 @@
       inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -19,7 +18,6 @@
       home-manager,
       hyprland,
       nixpkgs,
-      stylix,
       self,
       ...
     }@inputs:
@@ -35,7 +33,6 @@
           };
           modules = [
             home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
             ./desktop
             {
               home-manager = {
