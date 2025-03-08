@@ -19,7 +19,7 @@ in
   programs.fish.enable = true;
   environment.shells = [ pkgs.fish ];
   nix.settings.experimental-features = "nix-command flakes";
-  services.nix-daemon.enable = true;
+  nix.enable = true;
   users.knownUsers = [ user ];
   users.users."${user}" = {
     name = "${user}";
