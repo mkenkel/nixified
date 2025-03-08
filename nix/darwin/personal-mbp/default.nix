@@ -10,6 +10,12 @@ in
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   programs.fish.enable = true;
   environment.shells = [ pkgs.fish ];
   nix.settings.experimental-features = "nix-command flakes";
