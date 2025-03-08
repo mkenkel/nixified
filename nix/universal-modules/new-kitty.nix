@@ -1,3 +1,9 @@
+{
+  lib,
+  inputs,
+  config,
+  ...
+}:
 final: prev: {
   kitty = prev.kitty.overrideAttrs (old: rec {
     pname = "kitty";
