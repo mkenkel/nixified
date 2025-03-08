@@ -16,8 +16,6 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    sarasa-nerd-font.flake = false;
-    sarasa-nerd-font.url = "github:laishulu/homebrew-cask-fonts";
   };
 
   outputs =
@@ -30,7 +28,6 @@
       nix-darwin,
       nix-homebrew,
       nixpkgs,
-      sarasa-nerd-font,
       self,
       ...
     }@inputs:
@@ -58,7 +55,6 @@
                   "homebrew/homebrew-bundle" = homebrew-bundle;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-core" = homebrew-core;
-                  "laishulu/homebrew-cask-fonts" = sarasa-nerd-font;
                   "nikitabobko/homebrew-tap" = aerospace-tap;
                 };
                 mutableTaps = false;
