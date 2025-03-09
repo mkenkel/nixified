@@ -113,6 +113,7 @@ in
     # Helm stuff
     my-kubernetes-helm
     my-helmfile
+    kompose
     # ---
     hubble
     lua5_1
