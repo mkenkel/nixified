@@ -87,25 +87,25 @@ return {
           capabilities = capabilities,
         })
       end,
-      -- ["ansiblels"] = function()
-      --   lspconfig["ansiblels"].setup({
-      --     cmd = { 'ansible-language-server', '--stdio' },
-      --     settings = {
-      --       ansible = {
-      --         python = { interpreterPath = 'python' },
-      --         ansible = { path = 'ansible' },
-      --         executionEnvironment = { enabled = false },
-      --         validation = {
-      --           enabled = false,
-      --           lint = { enabled = true, path = 'ansible-lint' },
-      --         },
-      --       },
-      --     },
-      --     filetypes = { 'yaml', 'yml', 'ansible' },
-      --     root_dir = lspconfig.util.root_pattern('**/roles', '**/playbooks', 'ansible.cfg', '.ansible-lint'),
-      --     single_file_support = false,
-      --   })
-      -- end,
+      ["ansiblels"] = function()
+        lspconfig["ansiblels"].setup({
+          cmd = { 'ansible-language-server', '--stdio' },
+          settings = {
+            ansible = {
+              python = { interpreterPath = 'python' },
+              ansible = { path = 'ansible' },
+              executionEnvironment = { enabled = false },
+              validation = {
+                enabled = false,
+                lint = { enabled = true, path = 'ansible-lint' },
+              },
+            },
+          },
+          filetypes = { 'yaml', 'yml', 'ansible' },
+          root_dir = lspconfig.util.root_pattern('**/roles/tasks/*.{yml,yaml}', '**/playbooks/*.{yml,yaml}'),
+          single_file_support = false,
+        })
+      end,
       ["lua_ls"] = function()
         -- configure lua server (with special settings)
         lspconfig["lua_ls"].setup({
@@ -148,13 +148,31 @@ return {
             yaml = {
               schemas = {
                 kubernetes = "*.k8s.yaml",
+                -- Github workflows
                 ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+                -- Github Actions
                 ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"] = "roles/tasks/**/*.{yml,yaml}",
+                -- Ansible Lint (Should cover latest)
+                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"] =
+                "roles/tasks/**/*.{yml,yaml}",
+                -- Ansible
+                ["http://json.schemastore.org/ansible"] = "roles/tasks/**/*.{yml,yaml}",
+                -- Prettier
                 ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+                -- Kustomize
                 ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+                -- Helmfile
+                ["http://json.schemastore.org/helmfile"] = "helmfile.{yml,yaml}",
+                -- Helm
+                ["http://json.schemastore.org/helm-values"] = "values.{yml,yaml}",
+                -- Chart
                 ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+                -- CircleCI
                 ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+                -- Docker Compose
+                ["http://json.schemastore.org/compose"] = "docker-compose.{yml,yaml}",
+                -- Dockerfile
+                ["http://json.schemastore.org/dockerfile"] = "Dockerfile",
               },
             },
           },
