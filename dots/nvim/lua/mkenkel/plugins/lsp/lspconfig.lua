@@ -159,8 +159,6 @@ return {
                 -- Github Actions
                 ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
                 "roles/tasks/**/*.{yml,yaml}",
-                -- Ansible-lint
-                ["http://json.schemastore.org/ansible-lint"] = ".ansible-lint.{yml,yaml}",
                 -- Ansible (https://github.com/ansible/ansible-lint/tree/main/src/ansiblelint/schemas)
                 -- Tasks sub-schema
                 ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] =
