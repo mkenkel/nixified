@@ -7,7 +7,7 @@
           (pkgs.fetchpatch {
             name = "fishyfix-4f0f9b9aff427547a726fdcfde5dcd99b897570c.patch";
             url = "https://github.com/kovidgoyal/kitty/commit/4f0f9b9aff427547a726fdcfde5dcd99b897570c.patch";
-            hash = "";
+            hash = "sha256-y9syEd2uFcbixHrHfAzqTF5GnQKB/kY+uRBZ5GbqjC4=";
           })
         ];
       });
