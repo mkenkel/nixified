@@ -98,7 +98,7 @@ in
     glibc
     # Kube stuff
     cilium-cli
-    flux
+    fluxcd
     hubble
     kompose
     kubectl
