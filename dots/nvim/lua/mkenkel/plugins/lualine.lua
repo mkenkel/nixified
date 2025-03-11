@@ -6,6 +6,13 @@ return {
 
   config = function()
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+    local function get_schema()
+      local schema = require("yaml-companion").get_buf_schema(0)
+      if schema.result[1].name == "none" then
+        return ""
+      end
+      return schema.result[1].name
+    end
     vim.g.gitblame_display_virtual_text = 0
     require('lualine').setup {
       options = {
@@ -39,6 +46,7 @@ return {
           { 'encoding' },
           { 'fileformat' },
           { 'filetype' },
+          { get_schema },
         },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
