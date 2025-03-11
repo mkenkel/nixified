@@ -2,6 +2,7 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
     'echasnovski/mini.icons',
+    'cenk1cenk2/schema-companion.nvim',
   },
 
   config = function()
