@@ -5,7 +5,6 @@ return {
     { "nvim-telescope/telescope.nvim" },
   },
   config = function()
-    local schema_companion = require("telescope").extensions.yaml_schema
     require("schema-companion").setup({
       -- if you have telescope you can register the extension
       enable_telescope = true,
@@ -26,6 +25,7 @@ return {
         },
       }
     })
-    vim.keymap.set("n", "<leader>sp", schema_companion.select_schema(), { desc = "Select Schema manually." })
+    vim.keymap.set("n", "<leader>sp", require("telescope").extensions.yaml_schema.select_schema(),
+      { desc = "Select Schema manually." })
   end,
 }
