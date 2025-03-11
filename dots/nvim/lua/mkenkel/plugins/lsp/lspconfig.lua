@@ -153,7 +153,7 @@ return {
                 -- Github Actions
                 ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
                 -- Ansible Lint (Should cover latest)
-                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"] =
+                -- ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"] =
                 "roles/tasks/**/*.{yml,yaml}",
                 -- Ansible
                 ["http://json.schemastore.org/ansible"] = "roles/tasks/**/*.{yml,yaml}",
