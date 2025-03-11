@@ -94,6 +94,7 @@ in
     podman-compose
 
     # Kubernetes
+    cilium-cli
     my-kubernetes-helm
     my-helmfile
     kompose
