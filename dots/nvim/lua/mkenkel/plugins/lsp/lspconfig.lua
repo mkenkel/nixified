@@ -102,8 +102,7 @@ return {
             },
           },
           filetypes = { 'yaml', 'yml', 'ansible' },
-          root_dir = lspconfig.util.root_pattern('**/roles/tasks/*.{yml,yaml}', '**/playbooks/*.{yml,yaml}',
-            'ansible.cfg', '.ansible-lint', '.ansible-lint.yml'),
+          root_dir = lspconfig.util.root_pattern('ansible.cfg', '.ansible-lint', '.ansible-lint.yml'),
           single_file_support = false,
         })
       end,
@@ -147,14 +146,18 @@ return {
         lspconfig["yamlls"].setup({
           settings = {
             yaml = {
+              cmd = { 'yaml-language-server', '--stdio' },
+              filetypes = { 'yaml', 'yaml.docker-compose', 'yaml.gitlab' },
+              root_dir = function(fname)
+                return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
+              end,
+              single_file_support = true,
               schemas = {
-                kubernetes = "*.k8s.yaml",
+                kubernetes = "/*.k8s.yaml",
                 -- Github workflows
                 ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
                 -- Github Actions
                 ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-                -- Ansible Lint (Should cover latest)
-                -- ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json"] =
                 "roles/tasks/**/*.{yml,yaml}",
                 -- Prettier
                 ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
