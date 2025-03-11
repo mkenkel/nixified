@@ -7,7 +7,7 @@ return {
   config = function()
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
     local function get_schema()
-      local schema = require("yaml-companion").get_buf_schema(0)
+      local schema = require("schema-companion").get_buffer_schema(0)
       if schema.result[1].name == "none" then
         return ""
       end
