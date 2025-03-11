@@ -97,6 +97,7 @@ in
     my-kubernetes-helm
     my-helmfile
     kompose
+    kubectl
     hubble
     fluxcd
 
