@@ -102,7 +102,8 @@ return {
             },
           },
           filetypes = { 'yaml', 'yml', 'ansible' },
-          root_dir = lspconfig.util.root_pattern('**/roles/tasks/*.{yml,yaml}', '**/playbooks/*.{yml,yaml}'),
+          root_dir = lspconfig.util.root_pattern('**/roles/tasks/*.{yml,yaml}', '**/playbooks/*.{yml,yaml}',
+            'ansible.cfg', '.ansible-lint', '.ansible-lint.yml'),
           single_file_support = false,
         })
       end,
