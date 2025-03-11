@@ -12,7 +12,7 @@
     pkgs.hypridle
     pkgs.hyprlock
     pkgs.hyprpaper
-    pkgs.kitty
+    #pkgs.kitty
     pkgs.libnotify
     pkgs.mako
     pkgs.waybar
