@@ -159,6 +159,13 @@ return {
                 -- Github Actions
                 ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
                 "roles/tasks/**/*.{yml,yaml}",
+                -- Ansible-lint
+                ["http://json.schemastore.org/ansible-lint"] = ".ansible-lint.{yml,yaml}",
+                -- Ansible (https://github.com/ansible/ansible-lint/tree/main/src/ansiblelint/schemas)
+                -- Tasks sub-schema
+                ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] =
+                "tasks/*.{yml,yaml}",
+                --
                 -- Prettier
                 ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
                 -- Kustomize
@@ -169,8 +176,6 @@ return {
                 ["http://json.schemastore.org/helm-values"] = "values.{yml,yaml}",
                 -- Chart
                 ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-                -- CircleCI
-                ["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
                 -- Docker Compose
                 ["http://json.schemastore.org/compose"] = "docker-compose.{yml,yaml}",
                 -- Dockerfile
