@@ -25,7 +25,7 @@ return {
         },
       }
     })
-    vim.keymap.set("n", "<leader>sp", require("telescope").extensions.yaml_schema.select_schema(),
+    vim.keymap.set("n", "<leader>sp", '<cmd>lua require("telescope").extensions.yaml_schema.select_schema()<CR>',
       { desc = "Select Schema manually." })
   end,
 }
