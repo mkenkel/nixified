@@ -5,6 +5,7 @@ return {
     { "nvim-telescope/telescope.nvim" },
   },
   config = function()
+    require("telescope").load_extension("yaml_schema")
     require("schema-companion").setup({
       -- if you have telescope you can register the extension
       enable_telescope = true,
