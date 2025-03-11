@@ -1,6 +1,10 @@
+{ pkgs, ... }:
 {
   programs = {
     kitty = {
+      package = pkgs.kitty.overrideAttrs (oldAttrs: {
+        makeFlags = [ "app" ];
+      });
       enable = true;
       font = {
         name = "Maple Mono SC NF";
