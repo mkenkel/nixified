@@ -92,17 +92,19 @@ in
   environment.systemPackages = with pkgs; [
     age
     bashSnippets
-    cilium-cli
     curl
     envsubst
     git
     glibc
-    # Helm stuff
-    my-kubernetes-helm
-    my-helmfile
-    kompose
-    # ---
+    # Kube stuff
+    cilium-cli
+    flux
     hubble
+    kompose
+    kubectl
+    my-helmfile
+    my-kubernetes-helm
+    # ---
     lua5_1
     lua-language-server
     luajit

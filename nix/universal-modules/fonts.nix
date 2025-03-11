@@ -16,5 +16,7 @@ in
     mononoki
     sarasa-term-nerdfont
     helvetica-neue-lt-std
+    ibm-plex
+    plemoljp-nf
   ];
 }
