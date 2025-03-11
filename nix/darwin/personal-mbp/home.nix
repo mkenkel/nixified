@@ -6,6 +6,21 @@ let
   cfg = ../../../dots;
   u-hm = ./../../universal-modules; # universal Home Manager modules
   nd = ./../modules;
+
+  my-kubernetes-helm =
+    with pkgs;
+    wrapHelm kubernetes-helm {
+      plugins = with pkgs.kubernetes-helmPlugins; [
+        helm-secrets
+        helm-diff
+        helm-s3
+        helm-git
+      ];
+    };
+
+  my-helmfile = pkgs.helmfile-wrapped.override {
+    inherit (my-kubernetes-helm) pluginsDir;
+  };
 in
 {
 
@@ -36,47 +51,55 @@ in
     EDITOR = "nvim";
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
     # Editors
-    pkgs.vim
+    vim
 
     # Development
-    pkgs.ansible
-    pkgs.ansible-builder
-    pkgs.ansible-lint
-    pkgs.ansible-navigator
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.nodejs
-    pkgs.python3
-    pkgs.rustup
-    pkgs.yamlfmt
+    ansible
+    ansible-builder
+    ansible-lint
+    ansible-navigator
+    gcc
+    gnumake
+    nodejs
+    python3
+    rustup
+    yamlfmt
 
     # Git
-    pkgs.gh
-    pkgs.gitflow
+    gh
+    gitflow
 
     # Terminal
-    pkgs.alacritty
-    pkgs.bat
-    pkgs.btop
-    pkgs.fastfetch
-    pkgs.fzf
-    pkgs.htop
-    pkgs.lazygit
-    pkgs.lsd
-    pkgs.ripgrep
-    pkgs.starship
-    pkgs.tree
-    pkgs.sshpass
+    alacritty
+    bat
+    btop
+    fastfetch
+    fzf
+    htop
+    lazygit
+    lsd
+    ripgrep
+    starship
+    tree
+    sshpass
 
     # Fish
-    pkgs.fish
-    pkgs.grc
+    fish
+    grc
 
     # Containerization
-    pkgs.podman
-    pkgs.podman-compose
+    podman
+    podman-compose
+
+    # Kubernetes
+    my-kubernetes-helm
+    my-helmfile
+    kompose
+    hubble
+    fluxcd
+
   ];
 
   programs = {
