@@ -2,8 +2,14 @@
 {
   programs = {
     kitty = {
-      package = pkgs.kitty.overrideAttrs (oldAttrs: {
-        makeFlags = [ "app" ];
+      package = pkgs.kitty.overrideAttrs (previousAttrs: {
+        patches = previousAttrs.patches ++ [
+          (pkgs.fetchpatch {
+            name = "fishyfix-4f0f9b9aff427547a726fdcfde5dcd99b897570c.patch";
+            url = "https://github.com/kovidgoyal/kitty/commit/4f0f9b9aff427547a726fdcfde5dcd99b897570c.patch";
+            hash = "";
+          })
+        ];
       });
       enable = true;
       font = {
