@@ -5,6 +5,7 @@ return {
     { "nvim-telescope/telescope.nvim" },
   },
   config = function()
+    local telescope = require("telescope")
     require("schema-companion").setup({
       -- if you have telescope you can register the extension
       enable_telescope = true,
@@ -25,7 +26,11 @@ return {
         },
       }
     })
-    -- vim.keymap.set("n", "<leader>sp", '<cmd>lua require("telescope").extensions.yaml_schema.select_schema()<CR>',
-    --   { desc = "Select Schema manually." })
+
+    telescope.load_extension("yaml_schema")
+
+    -- Telescope Keybinds
+    vim.keymap.set("n", "<leader>sp", '<cmd>lua require("telescope").extensions.yaml_schema.select_schema()<CR>',
+      { desc = "Select Schema manually." })
   end,
 }
