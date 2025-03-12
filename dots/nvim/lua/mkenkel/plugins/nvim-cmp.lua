@@ -46,12 +46,38 @@ return {
       }),
       -- Sources for autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" }, -- Snippets
-        { name = "buffer" },  -- Text within the current buffer
-        { name = "path" },    -- Filesystem Pathing
+        {
+          name = "luasnip",
+          group_index = 1,
+          option = { use_show_condition = true },
+          entry_filter = function()
+            local context = require("cmp.config.context")
+            return not context.in_treesitter_capture("string")
+                and not context.in_syntax_group("String")
+          end,
+        },
+        {
+          name = "nvim_lsp",
+          group_index = 2,
+        },
+        {
+          name = "nvim_lua",
+          group_index = 3,
+        },
+        {
+          name = "treesitter",
+          keyword_length = 4,
+          group_index = 4,
+        },
+        {
+          name = "path",
+          keyword_length = 4,
+          group_index = 4,
+        },
         {
           name = "buffer",
+          keyword_length = 3,
+          group_index = 5,
           option = {
             get_bufnrs = function()
               local bufs = {}
