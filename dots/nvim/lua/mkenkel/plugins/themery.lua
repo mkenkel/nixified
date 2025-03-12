@@ -84,10 +84,33 @@ return {
           ]],
           after = [[]]
         },
-
         {
           name = "Jellybeans Light",
           colorscheme = "jellybeans",
+          before = [[
+            vim.opt.background = "light"
+          ]],
+          after = [[]]
+        },
+        {
+          name = "Bamboo Regular",
+          colorscheme = "bamboo",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[]]
+        },
+        {
+          name = "Bamboo Greener",
+          colorscheme = "bamboo",
+          before = [[
+            vim.opt.background = "dark"
+          ]],
+          after = [[]]
+        },
+        {
+          name = "Bamboo Light",
+          colorscheme = "bamboo",
           before = [[
             vim.opt.background = "light"
           ]],
