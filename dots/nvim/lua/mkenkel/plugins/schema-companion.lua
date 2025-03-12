@@ -12,10 +12,10 @@ return {
         require("schema-companion.matchers.kubernetes").setup({ version = "master" }),
       },
       schemas = {
-        {
-          name = "Kubernetes master",
-          uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-standalone-strict/all.json",
-        },
+        -- {
+        --   name = "Kubernetes master",
+        --   uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-standalone-strict/all.json",
+        -- },
       }
     })
     vim.keymap.set("n", "<leader>ss",
