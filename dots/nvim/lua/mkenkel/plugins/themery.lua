@@ -94,7 +94,7 @@ return {
         },
         {
           name = "Bamboo Regular",
-          colorscheme = "bamboo",
+          colorscheme = "bamboo-vulgaris",
           before = [[
             vim.opt.background = "dark"
           ]],
@@ -102,7 +102,7 @@ return {
         },
         {
           name = "Bamboo Greener",
-          colorscheme = "bamboo",
+          colorscheme = "bamboo-multiplex",
           before = [[
             vim.opt.background = "dark"
           ]],
@@ -110,7 +110,7 @@ return {
         },
         {
           name = "Bamboo Light",
-          colorscheme = "bamboo",
+          colorscheme = "bamboo-light",
           before = [[
             vim.opt.background = "light"
           ]],
