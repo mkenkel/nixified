@@ -4,6 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer", -- source for text in the buffer.
     "hrsh7th/cmp-path",   -- source for filesystem pathing.
+    "hrsh7th/cmp-nvim-lua",
     {
       "L3MON4D3/LuaSnip",
       version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
