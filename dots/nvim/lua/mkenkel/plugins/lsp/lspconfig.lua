@@ -3,6 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "cenk1cenk2/schema-companion.nvim",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim",                   opts = {} },
   },
@@ -125,17 +126,55 @@ return {
       end,
       ["yamlls"] = function()
         -- configure lua server (with special settings)
-        lspconfig["yamlls"].setup({
+        lspconfig["yamlls"].setup(require("schema-companion").setup_client({
+          filetypes = {
+            "yaml",
+            "!yaml.ansible",
+            "!yaml.docker-compose",
+          },
           settings = {
+            flags = {
+              debounce_text_changes = 50,
+            },
+            redhat = { telemetry = { enabled = false } },
             yaml = {
+              hover = true,
+              completion = true,
+              validate = true,
+              format = { enable = false },
+              schemaStore = { enable = true, url = "https://www.schemastore.org/api/json/catalog.json" },
+              schemaDownload = { enable = true },
               schemas = {
-                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                -- kubernetes = {
+                --   "templates/*!(.gitlab-ci).{yml,yaml}",
+                --   "workloads/**/*!(kustomization).{yml,yaml}",
+                --   "*.k8s.{yml,yaml}",
+                --   "daemon.{yml,yaml}",
+                --   "manager.{yml,yaml}",
+                --   "restapi.{yml,yaml}",
+                --   "*namespace*.{yml,yaml}",
+                --   "role.{yml,yaml}",
+                --   "role-binding.{yml,yaml}",
+                --   "*onfigma*.{yml,yaml}",
+                --   "*ingress*.{yml,yaml}",
+                --   "*secret*.{yml,yaml}",
+                --   "*deployment*.{yml,yaml}",
+                --   "*service*.{yml,yaml}",
+                --   "kubectl-edit*.yaml",
+                -- },
+                ["http://json.schemastore.org/chart"] = { "Chart.{yml,yaml}" },
+                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
+                  ".gitlab-ci.yml",
+                },
+                ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] = {
+                  "deploy.yml",
+                  "provision.yml",
+                },
               },
             },
-          }
-        })
+          },
+        }))
       end,
-
     })
   end,
 }

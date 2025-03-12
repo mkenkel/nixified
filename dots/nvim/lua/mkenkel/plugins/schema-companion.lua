@@ -23,5 +23,7 @@ return {
         },
       }
     })
+    vim.keymap("n", "<leader>sp",
+      "<cmd>lua require('telescope').extensions.schema_companion.select_from_matching_schemas()<CR>", { desc = "TEST" })
   end,
 }
