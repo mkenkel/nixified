@@ -31,12 +31,14 @@ return {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
-          { function()
-            return ("%s"):format(require("schema-companion.context").get_buffer_schema().name)
-          end,
+          {
+            function()
+              return ("%s"):format(require("schema-companion.context").get_buffer_schema().name)
+            end,
             cond = function()
               return package.loaded["schema-companion"]
-            end, }
+            end,
+          },
         },
         lualine_x = {
           {
