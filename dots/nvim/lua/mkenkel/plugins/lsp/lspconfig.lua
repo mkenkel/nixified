@@ -161,14 +161,14 @@ return {
                 --   "*service*.{yml,yaml}",
                 --   "kubectl-edit*.yaml",
                 -- },
-                ["http://json.schemastore.org/chart"] = { "Chart.{yml,yaml}" },
-                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
-                  ".gitlab-ci.yml",
-                },
-                ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] = {
-                  "deploy.yml",
-                  "provision.yml",
-                },
+                -- ["http://json.schemastore.org/chart"] = { "Chart.{yml,yaml}" },
+                -- ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
+                --   ".gitlab-ci.yml",
+                -- },
+                -- ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] = {
+                --   "deploy.yml",
+                --   "provision.yml",
+                -- },
               },
             },
           },
