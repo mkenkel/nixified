@@ -123,47 +123,19 @@ return {
           filetypes = { "toml" },
         })
       end,
-      --   ["yamlls"] = function()
-      --     lspconfig["yamlls"].setup({
-      --       settings = {
-      --         yaml = {
-      --           cmd = { 'yaml-language-server', '--stdio' },
-      --           filetypes = { 'yaml', 'yaml.docker-compose', 'yaml.gitlab' },
-      --           root_dir = function(fname)
-      --             return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
-      --           end,
-      --           single_file_support = true,
-      --           schemas = {
-      --             kubernetes = "/*.k8s.yaml",
-      --             -- Github workflows
-      --             ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-      --             -- Github Actions
-      --             ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-      --             "roles/tasks/**/*.{yml,yaml}",
-      --             -- Ansible (https://github.com/ansible/ansible-lint/tree/main/src/ansiblelint/schemas)
-      --             -- Tasks sub-schema
-      --             ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] =
-      --             "tasks/*.{yml,yaml}",
-      --             --
-      --             -- Prettier
-      --             ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-      --             -- Kustomize
-      --             ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-      --             -- Helmfile
-      --             ["http://json.schemastore.org/helmfile"] = "helmfile.{yml,yaml}",
-      --             -- Helm
-      --             ["http://json.schemastore.org/helm-values"] = "values.{yml,yaml}",
-      --             -- Chart
-      --             ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-      --             -- Docker Compose
-      --             ["http://json.schemastore.org/compose"] = "docker-compose.{yml,yaml}",
-      --             -- Dockerfile
-      --             ["http://json.schemastore.org/dockerfile"] = "Dockerfile",
-      --           },
-      --         },
-      --       },
-      --     })
-      --   end,
+      ["yamlls"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["yamlls"].setup({
+          settings = {
+            yaml = {
+              schemas = {
+                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+              },
+            },
+          }
+        })
+      end,
+
     })
   end,
 }
