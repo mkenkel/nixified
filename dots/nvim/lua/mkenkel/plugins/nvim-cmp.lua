@@ -8,7 +8,6 @@ return {
     {
       "L3MON4D3/LuaSnip",
       version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-      -- install jsregexp (optional!).
       build = "make install_jsregexp",
     },
     "saadparwaiz1/cmp_luasnip",     -- Autocompletion.
@@ -20,7 +19,6 @@ return {
     local cmp = require("cmp")
     local lspkind = require("lspkind")
 
-    -- Loads VSCode-like snippets from installed plugins (IE: friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
@@ -47,54 +45,36 @@ return {
       }),
       -- Sources for autocompletion
       sources = cmp.config.sources({
-        {
-          name = "luasnip",
-          group_index = 1,
-          option = { use_show_condition = true },
-          entry_filter = function()
-            local context = require("cmp.config.context")
-            return not context.in_treesitter_capture("string")
-                and not context.in_syntax_group("String")
-          end,
-        },
-        {
-          name = "nvim_lsp",
-          group_index = 2,
-        },
-        {
-          name = "nvim_lua",
-          group_index = 3,
-        },
-        {
-          name = "treesitter",
-          keyword_length = 4,
-          group_index = 4,
-        },
-        {
-          name = "path",
-          keyword_length = 4,
-          group_index = 4,
-        },
-        {
-          name = "buffer",
-          keyword_length = 3,
-          group_index = 5,
-          option = {
-            get_bufnrs = function()
-              local bufs = {}
-              for _, win in ipairs(vim.api.nvim_list_wins()) do
-                bufs[vim.api.nvim_win_get_buf(win)] = true
-              end
-              return vim.tbl_keys(bufs)
-            end,
-          },
-        },
+        { name = "nvim_lsp" },
+        { name = "nvim_lua", priority = 100 },
+        { name = "vsnip" },
+        { name = "buffer" },
+        { name = "emoji" },
+        { name = "path" },
+        { name = "crates" },
+        { name = "snippets" },
+        { name = "projects", priority = 100 },
       }),
       -- Below configures LSPKind
       formatting = {
+        expandable_indicator = true,
+        fields = {
+          "abbr",
+          "kind",
+          "menu",
+        },
         format = lspkind.cmp_format({
-          maxwidth = 50,
-          ellipsis_char = "...",
+          mode = "symbol_text",  -- Use "symbol" to only show the icon or "symbol_text" for both icon and text
+          maxwidth = 50,         -- Optional, for max width of the displayed item
+          ellipsis_char = "...", -- Optional, truncate the item if it's too long
+          menu = {
+            buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            nvim_lua = "[Lua]",
+            projects = "[Projects]",
+            emoji = "[Emoji]",
+            vsnip = "[Snippet]",
+          },
         }),
       },
       sorting = {
