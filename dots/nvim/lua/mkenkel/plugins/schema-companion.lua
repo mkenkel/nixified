@@ -23,7 +23,11 @@ return {
         },
       }
     })
-    vim.keymap.set("n", "<leader>sp",
+    vim.keymap.set("n", "<leader>ss",
+      "<cmd>lua require('telescope').extensions.schema_companion.select_schema()<CR>",
+      { desc = "Select from all Schemas." })
+
+    vim.keymap.set("n", "<leader>sms",
       "<cmd>lua require('telescope').extensions.schema_companion.select_from_matching_schemas()<CR>",
       { desc = "Select from matching Schemas." })
   end,
