@@ -36,10 +36,6 @@ return {
           uri =
           "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.30.3-standalone-strict/all.json",
         },
-        {
-          name = "Gitlab CI",
-          uri = "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json",
-        },
       }
     })
     vim.keymap.set("n", "<leader>ss",
