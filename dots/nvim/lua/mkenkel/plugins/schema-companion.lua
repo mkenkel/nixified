@@ -16,11 +16,6 @@ return {
           name = "Kubernetes master",
           uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-standalone-strict/all.json",
         },
-        {
-          name = "Kubernetes v1.30",
-          uri =
-          "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.30.3-standalone-strict/all.json",
-        },
       }
     })
     vim.keymap.set("n", "<leader>ss",

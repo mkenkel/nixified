@@ -155,7 +155,6 @@ return {
                   "*namespace*.{yml,yaml}",
                   "role.{yml,yaml}",
                   "role-binding.{yml,yaml}",
-                  "*onfigma*.{yml,yaml}",
                   "*ingress*.{yml,yaml}",
                   "*secret*.{yml,yaml}",
                   "*deployment*.{yml,yaml}",
