@@ -1,13 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = "nvim-tree/nvim-web-devicons",
-  keys = {
-    { "n", "<leader>ef", "<cmd>NvimTreeToggle<CR>",         { desc = "Toggle file explorer" } },
-    { "n", "<leader>ed", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" } },
-    { "n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>",       { desc = "Collapse file explorer" } },
-    { "n", "<leader>er", "<cmd>NvimTreeRefresh<CR>",        { desc = "Refresh file explorer" } },
-
-  },
   config = function()
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
@@ -44,5 +37,9 @@ return {
         ignore = false,
       },
     })
-  end
+  end,
+  vim.keymap.set('n', "<leader>ef", "<cmd>NvimTreeToggle<CR>", { desc = "NVIMTree - Toggle" }),
+  vim.keymap.set('n', "<leader>ed", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "NVIMTree - Find File" }),
+  vim.keymap.set('n', "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "NVIMTree - Tree Collapse" }),
+  vim.keymap.set('n', "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "NVIMTree - Refresh" }),
 }
