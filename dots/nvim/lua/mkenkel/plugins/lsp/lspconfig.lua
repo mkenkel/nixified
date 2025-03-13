@@ -15,8 +15,8 @@ return {
     local mason_lspconfig = require("mason-lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local capabilities = cmp_nvim_lsp.default_capabilities()
-
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -30,8 +30,7 @@ return {
       end,
 
       ["lua_ls"] = function()
-        -- configure lua server (with special settings)
-        require('lspconfig').lua_ls.setup {
+        lspconfig["lua_ls"].setup({
           capabilities = capabilities,
           settings = {
             Lua = {
@@ -44,10 +43,10 @@ return {
               },
             },
           },
-        }
+        })
       end,
+
       ["nil_ls"] = function()
-        -- configure lua server (with special settings)
         lspconfig["nil_ls"].setup({
           settings = {
             ['nil'] = {
@@ -58,15 +57,15 @@ return {
           },
         })
       end,
+
       ["taplo"] = function()
-        -- configure lua server (with special settings)
         lspconfig["taplo"].setup({
           cmd = { "taplo", "lsp", "stdio" },
           filetypes = { "toml" },
         })
       end,
+
       ["helm_ls"] = function()
-        -- configure lua server (with special settings)
         lspconfig["helm_ls"].setup({
           logLevel = "info",
           valuesFiles = {
@@ -86,13 +85,12 @@ return {
               },
               completion = true,
               hover = true,
-              -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
             }
           }
         })
       end,
+
       ["yamlls"] = function()
-        -- configure lua server (with special settings)
         lspconfig["yamlls"].setup(require("schema-companion").setup_client({
           filetypes = {
             "yaml",
@@ -112,35 +110,12 @@ return {
               schemaStore = { enable = true, url = "https://www.schemastore.org/api/json/catalog.json" },
               schemaDownload = { enable = true },
               schemas = {
-                -- kubernetes = {
-                --   "templates/*!(.gitlab-ci).{yml,yaml}",
-                --   "workloads/**/*!(kustomization).{yml,yaml}",
-                --   "*.k8s.{yml,yaml}",
-                --   "daemon.{yml,yaml}",
-                --   "manager.{yml,yaml}",
-                --   "restapi.{yml,yaml}",
-                --   "*namespace*.{yml,yaml}",
-                --   "role.{yml,yaml}",
-                --   "role-binding.{yml,yaml}",
-                --   "*ingress*.{yml,yaml}",
-                --   "*secret*.{yml,yaml}",
-                --   "*deployment*.{yml,yaml}",
-                --   "*service*.{yml,yaml}",
-                --   "kubectl-edit*.yaml",
-                -- },
-                -- ["http://json.schemastore.org/chart"] = { "Chart.{yml,yaml}" },
-                -- ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
-                --   ".gitlab-ci.yml",
-                -- },
-                -- ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] = {
-                --   "deploy.yml",
-                --   "provision.yml",
-                -- },
               },
             },
           },
         }))
       end,
+
     })
   end,
 }

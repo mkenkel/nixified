@@ -6,15 +6,10 @@ return {
   },
 
   config = function()
-    -- Import Mason
     local mason = require("mason")
-
-    -- Import mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
 
-    -- Enable Mason and configure the icons.
     mason.setup({
       ui = {
         icons = {
@@ -26,7 +21,6 @@ return {
     })
 
     mason_lspconfig.setup({
-      -- List of servers for Mason to install
       ensure_installed = {
         "ansiblels",
         "bashls",
