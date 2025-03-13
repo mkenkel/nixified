@@ -3,8 +3,6 @@ return {
   name = "moonfly",
   lazy = false,
   priority = 1000,
-
-  config = function()
-    vim.g.moonflyCursorColor = true
-  end
+  opts = {},
+  vim.g.moonflyCursorColor == true
 }
