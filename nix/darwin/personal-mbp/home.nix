@@ -41,7 +41,7 @@ in
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
     ".config/fastfetch".source = "${cfg}/fastfetch";
-    ".config/nvim".source = "${cfg}/nvim";
+    #    ".config/nvim".source = "${cfg}/nvim";
   };
 
   home.sessionVariables = {
