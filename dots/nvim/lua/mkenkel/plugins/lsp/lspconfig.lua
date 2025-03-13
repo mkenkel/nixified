@@ -3,6 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    { 'towolf/vim-helm',                     ft = 'helm' }, -- helm-ls
     "cenk1cenk2/schema-companion.nvim",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim",                   opts = {} },
@@ -122,6 +123,32 @@ return {
         lspconfig["taplo"].setup({
           cmd = { "taplo", "lsp", "stdio" },
           filetypes = { "toml" },
+        })
+      end,
+      ["helm-ls"] = function()
+        -- configure lua server (with special settings)
+        lspconfig["helm-ls"].setup({
+          logLevel = "info",
+          valuesFiles = {
+            mainValuesFile = "values.yaml",
+            lintOverlayValuesFile = "values.lint.yaml",
+            additionalValuesFilesGlobPattern = "values*.yaml"
+          },
+          yamlls = {
+            enabled = true,
+            enabledForFilesGlob = "*.{yaml,yml}",
+            diagnosticsLimit = 50,
+            showDiagnosticsDirectly = false,
+            path = "yaml-language-server",
+            config = {
+              schemas = {
+                kubernetes = "templates/**",
+              },
+              completion = true,
+              hover = true,
+              -- any other config from https://github.com/redhat-developer/yaml-language-server#language-server-settings
+            }
+          }
         })
       end,
       ["yamlls"] = function()
