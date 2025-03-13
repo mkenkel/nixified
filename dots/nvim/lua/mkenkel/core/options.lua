@@ -30,7 +30,7 @@ opt.signcolumn = "yes"  -- Signs on the left of the editor
 opt.backspace = "indent,eol,start" -- Allows backspace on indent, EOL or insert mode start position.
 
 -- Clipboard
-opt.clipboard:append("unnamedplus") -- Use the system clipboard as the default register when copying/pasting.
+opt.cb:append("unnamedplus") -- Use the system clipboard as the default register when copying/pasting.
 
 -- Window Management
 opt.splitright = true -- Prefer splitting to the right

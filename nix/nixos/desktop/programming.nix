@@ -27,6 +27,7 @@
     ))
     pkgs.rustup
     pkgs.vim
+    pkgs.yaml-language-server
     pkgs.zsh-autosuggestions
   ];
 }
