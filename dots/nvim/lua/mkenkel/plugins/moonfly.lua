@@ -4,5 +4,4 @@ return {
   lazy = false,
   priority = 1000,
   opts = {},
-  vim.g.moonflyCursorColor == true
 }
