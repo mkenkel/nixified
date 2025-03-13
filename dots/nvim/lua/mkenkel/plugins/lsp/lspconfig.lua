@@ -3,7 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    { 'towolf/vim-helm',                     ft = 'helm' }, -- helm-ls
+    { 'towolf/vim-helm',                     ft = 'helm' },
     "cenk1cenk2/schema-companion.nvim",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim",                   opts = {} },
