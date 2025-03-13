@@ -104,6 +104,7 @@ in
     kubectl
     my-helmfile
     my-kubernetes-helm
+    helm-ls
     # ---
     lua5_1
     lua-language-server
