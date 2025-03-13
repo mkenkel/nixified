@@ -125,9 +125,9 @@ return {
           filetypes = { "toml" },
         })
       end,
-      ["helm-ls"] = function()
+      ["helm_ls"] = function()
         -- configure lua server (with special settings)
-        lspconfig["helm-ls"].setup({
+        lspconfig["helm_ls"].setup({
           logLevel = "info",
           valuesFiles = {
             mainValuesFile = "values.yaml",
