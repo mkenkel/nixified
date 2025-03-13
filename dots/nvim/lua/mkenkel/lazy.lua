@@ -11,8 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "mkenkel.plugins" }, { import = "mkenkel.plugins.lsp" } }, {
-  lockfile = vim.fn.stdpath("config") .. "~/.config/lazy-lock.json", 
+require("lazy").setup({
+  { import = "mkenkel.plugins" },
+  { import = "mkenkel.plugins.lsp" }
+}, {
+  lockfile = vim.fn.stdpath("config") .. "~/.config/lazy-lock.json",
   change_detection = {
     notify = false, --Tells Lazy to stop asking about the changed files.
   },
