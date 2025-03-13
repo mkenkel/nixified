@@ -3,5 +3,4 @@ return {
   name = "moonfly",
   lazy = false,
   priority = 1000,
-  opts = {},
 }
