@@ -39,10 +39,10 @@
       ];
       shellAliases = {
         "ls" = "lsd";
-        "diff" = "batdiff";
-        "grep" = "batgrep";
+        #"diff" = "batdiff";
+        #"grep" = "batgrep";
         "man" = "batman";
-        "watch" = "batwatch";
+        #"watch" = "batwatch";
         "vi" = "nvim";
         "sshp" = "sshpass -f ~/.config/ssh/.sshpasswd ssh";
         "ave" =
