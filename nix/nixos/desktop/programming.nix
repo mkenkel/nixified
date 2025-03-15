@@ -14,6 +14,7 @@
     pkgs.kubectl
     pkgs.nim
     pkgs.nimble
+    pkgs.nil
     pkgs.nimlsp
     pkgs.nodejs
     pkgs.podman

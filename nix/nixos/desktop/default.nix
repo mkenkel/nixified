@@ -102,6 +102,7 @@ in
     hubble
     kompose
     kubectl
+    kustomize
     my-helmfile
     my-kubernetes-helm
     helm-ls
