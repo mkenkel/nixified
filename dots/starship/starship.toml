@@ -2,10 +2,8 @@
 
 add_newline = false
 
-format = '''
-
- $time
- $all'''
+format = """$all"""
+right_format = """$time"""
 
 [battery]
 full_symbol = '🔋 '
