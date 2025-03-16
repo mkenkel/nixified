@@ -14,6 +14,22 @@
         set-option -g terminal-overrides ',xterm-256color:RGB'
         ###############################################################
         set-option -g status-position top
+        set-option -g status-bg default
+        set-option -g status-style bg=default
+
+        set-option -g window-status-current-format " #I:#W"
+        set-option -g window-status-format " #I:#W"
+        set-option -g window-status-current-style "fg=#CCFF0B,bold"
+        set-option -g window-status-style "fg=grey"
+
+        # Undercurl support
+        set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+        set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
+
+        # Set windows to start at 1
+        set -g base-index 1
+        setw -g pane-base-index 1
+
         set -g default-command "$SHELL"
 
         set -g prefix C-a
@@ -21,13 +37,6 @@
         bind-key C-a send-prefix
 
         set-option -g allow-passthrough on
-
-        # --- 
-
-        # Set windows to start at 1
-        set -g base-index 1
-        setw -g pane-base-index 1
-        # ---
 
         # Windows
         unbind %
@@ -92,7 +101,6 @@
         # https://github.com/tmux/tmux/wiki/Getting-Started#list-of-style-and-format-options
         # General Styles
         #
-        set-option -g status-style bg=default
         # set-option -g message-style
         # set-option -g mode-style
         #

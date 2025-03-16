@@ -48,6 +48,8 @@
         "ave" =
           "ansible-vault edit {$HOME}/Repos/ansible-vault/kubernetes.yml --vault-pass-file {$HOME}/.config/ansible/vault/homelab.yml";
         "k" = "kubectl";
+        # Cilium Config
+        "cc" = "helm -n kube-system get all cilium | sed -n '/USER-SUPPLIED VALUES/,/COMPUTED VALUES/p'";
 
       };
       functions = {
