@@ -16,7 +16,8 @@
         set-option -g status-position top
         set-option -g status-bg default
         set-option -g status-style bg=default
-
+        set-option -g status-left ""
+        set-option -g status-right "#{session_name} "
         set-option -g window-status-current-format " #I:#W"
         set-option -g window-status-format " #I:#W"
         set-option -g window-status-current-style "fg=#CCFF0B,bold"
