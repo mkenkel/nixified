@@ -1,9 +1,9 @@
 # ~/.config/starship.toml
 
-add_newline = false
+add_newline = true
 
-format = """$all"""
-right_format = """$time"""
+format = """$time
+$all"""
 
 [battery]
 full_symbol = '🔋 '
@@ -168,7 +168,7 @@ symbol = "🅢 "
 
 [time]
 disabled = false
-format = '$time'
+format = '[$time ]($style)'
 time_format = '%r'
 utc_time_offset = '-4'
-
+style = "dimmed white"
