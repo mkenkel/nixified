@@ -102,6 +102,7 @@ in
     hubble
     kompose
     kubectl
+    kube-linter
     kustomize
     my-helmfile
     my-kubernetes-helm
@@ -128,6 +129,7 @@ in
     unzip
     virtiofsd
     vlc
+    vscodium
     waybar
     wget
     wl-clipboard
