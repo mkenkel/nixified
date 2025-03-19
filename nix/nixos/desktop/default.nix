@@ -107,6 +107,7 @@ in
     my-helmfile
     my-kubernetes-helm
     helm-ls
+    timoni
     # ---
     lua5_1
     lua-language-server
