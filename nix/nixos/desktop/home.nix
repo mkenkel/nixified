@@ -122,6 +122,7 @@ in
     BROWSER = "firefox";
     EDITOR = "nvim";
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
+    SOPS_AGE_KEY_FILE="${HOME}/.sops/key.txt"
     TERM = "xterm-256color";
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
