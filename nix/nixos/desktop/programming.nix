@@ -5,6 +5,7 @@
     pkgs.ansible-lint
     pkgs.ansible-navigator
     pkgs.arduino-ide
+    pkgs.cue
     pkgs.gcc
     pkgs.gh
     pkgs.gitflow

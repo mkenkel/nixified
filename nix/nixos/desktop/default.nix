@@ -163,7 +163,9 @@ in
     #   address = "192.168.10.1";
     #   interface = "enp5s0";
     # };
-    extraHosts = '''';
+    extraHosts = ''
+      bookinfo.cilium.rocks hipstershop.cilium.rocks
+    '';
   };
 
   users.users.${user} = {
