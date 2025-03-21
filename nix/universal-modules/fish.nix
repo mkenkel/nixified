@@ -50,7 +50,7 @@
         "k" = "kubectl";
         # Cilium Config
         "cc" = "helm -n kube-system get all cilium | sed -n '/USER-SUPPLIED VALUES/,/COMPUTED VALUES/p'";
-        "sops" = "sops --config=/home/matt/Repos/sops-homelab/.sops.yaml";
+        "sops" = "sops --config=/home/matt/Repos/homelab/.sops.yaml";
 
       };
       functions = {

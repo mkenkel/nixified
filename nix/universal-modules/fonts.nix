@@ -18,5 +18,7 @@ in
     helvetica-neue-lt-std
     ibm-plex
     plemoljp-nf
+    nerd-fonts.ubuntu-mono
+    maple-mono
   ];
 }

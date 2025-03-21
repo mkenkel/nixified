@@ -164,7 +164,7 @@ in
     #   interface = "enp5s0";
     # };
     extraHosts = ''
-      192.168.15.103 bookinfo.cilium.rocks hipstershop.cilium.rocks
+      192.168.15.102 bookinfo.cilium.rocks hipstershop.cilium.rocks
     '';
   };
 
