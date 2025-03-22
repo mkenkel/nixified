@@ -73,7 +73,6 @@ in
     fastfetch
     ffmpeg
     fish
-    floorp
     freecad
     fzf
     gimp
