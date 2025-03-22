@@ -73,6 +73,7 @@ in
     fastfetch
     ffmpeg
     fish
+    floorp
     freecad
     fzf
     gimp
@@ -132,7 +133,6 @@ in
   home.file = {
     ".config/alacritty".source = "${cfg}/alacritty";
     ".config/mako".source = "${cfg}/mako";
-    #    ".config/nvim".source = "${cfg}/nvim";
     ".config/pfp".source = "${cfg}/pfp";
     ".config/wallpaper".source = "${cfg}/wallpaper";
     ".config/waybar".source = "${cfg}/waybar";
