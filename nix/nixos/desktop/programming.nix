@@ -4,6 +4,7 @@
     pkgs.ansible
     pkgs.ansible-lint
     pkgs.ansible-navigator
+    pkgs.ansible-language-server
     pkgs.arduino-ide
     pkgs.cue
     pkgs.gcc

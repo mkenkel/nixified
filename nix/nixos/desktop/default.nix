@@ -106,6 +106,7 @@ in
     kustomize
     my-helmfile
     my-kubernetes-helm
+    nfs-utils
     helm-ls
     timoni
     # ---
