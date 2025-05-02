@@ -36,7 +36,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
+    # plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
+    plugins = [ ];
     xwayland = {
       enable = true;
     };
@@ -255,35 +256,35 @@
       ];
 
       plugin = {
-        dynamic-cursors = {
-          enabled = true;
-          mode = "stretch";
-          threshold = 2;
-          rotate = {
-            length = 20;
-            offset = 0.0;
-          };
-          tilt = {
-            limit = 5000;
-            function = "negative_quadratic";
-          };
-          stretch = {
-            limit = 3000;
-            function = "quadratic";
-          };
-          shake = {
-            enabled = true;
-            nearest = true;
-            threshold = 6.0;
-            base = 4.0;
-            speed = 4.0;
-            influence = 0.0;
-            limit = 0.0;
-            timeout = 2000;
-            effects = false;
-            ipc = false;
-          };
-        };
+        # dynamic-cursors = {
+        #   enabled = true;
+        #   mode = "stretch";
+        #   threshold = 2;
+        #   rotate = {
+        #     length = 20;
+        #     offset = 0.0;
+        #   };
+        #   tilt = {
+        #     limit = 5000;
+        #     function = "negative_quadratic";
+        #   };
+        #   stretch = {
+        #     limit = 3000;
+        #     function = "quadratic";
+        #   };
+        #   shake = {
+        #     enabled = true;
+        #     nearest = true;
+        #     threshold = 6.0;
+        #     base = 4.0;
+        #     speed = 4.0;
+        #     influence = 0.0;
+        #     limit = 0.0;
+        #     timeout = 2000;
+        #     effects = false;
+        #     ipc = false;
+        #   };
+        # };
       };
     };
     systemd = {
