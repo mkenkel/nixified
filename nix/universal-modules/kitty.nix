@@ -8,7 +8,7 @@
       });
       enable = true;
       font = {
-        name = "Maple Mono SC NF";
+        name = "Maple Mono NF";
         size = 16;
       };
       settings = {
