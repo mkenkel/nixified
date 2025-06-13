@@ -6,6 +6,7 @@
     pkgs.ansible-navigator
     pkgs.ansible-language-server
     pkgs.arduino-ide
+    pkgs.docker-compose-language-service
     pkgs.cue
     pkgs.gcc
     pkgs.gh
