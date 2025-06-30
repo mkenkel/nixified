@@ -8,7 +8,6 @@
     discord
     discordo
     discord-sh
-    cordless
     vesktop
   ];
 
