@@ -123,6 +123,7 @@ in
     qemu
     sshpass
     terraform
+    tftpd-hpa
     unzip
     virtiofsd
     vlc
