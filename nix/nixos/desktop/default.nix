@@ -136,7 +136,7 @@ in
     atftpd = {
       enable = true;
       root = "/var/lib/tftpboot";
-      extraOptions = [ "--bind-address 0.0.0.0:69" ];
+      extraOptions = [ ];
     };
     pipewire = {
       enable = true;
