@@ -143,7 +143,7 @@ in
           server = "${pkgs.netkittftp}/sbin/in.tftpd";
           port = 69;
           user = "nobody";
-          serverArgs = "/home/matt/brocade-01-08-2025/TFTP-Content";
+          serverArgs = "-s /home/matt/brocade-01-08-2025/TFTP-Content --verbosity 6";
           extraConfig = "flags = IPv4";
         }
       ];
