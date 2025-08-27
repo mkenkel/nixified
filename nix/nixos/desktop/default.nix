@@ -134,10 +134,9 @@ in
   ];
 
   services = {
-    atftpd = {
+    tftpd = {
       enable = true;
-      root = "/home/matt/brocade-01-08-2025/TFTP-Content";
-      extraOptions = [ "--verbose=4" ];
+      path = "/home/matt/brocade-01-08-2025/TFTP-Content";
     };
     pipewire = {
       enable = true;
