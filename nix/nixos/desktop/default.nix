@@ -135,7 +135,7 @@ in
   services = {
     atftpd = {
       enable = true;
-      root = "/var/lib/tftpboot";
+      root = "/home/matt/brocade-01-08-2025/TFTP-Content";
       extraOptions = [ ];
     };
     pipewire = {
