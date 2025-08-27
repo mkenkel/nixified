@@ -140,12 +140,10 @@ in
         {
           name = "tftp";
           protocol = "udp";
-          disable = false;
-          port = 69;
-          user = "nobody";
-          socket_type = "dgram";
-          wait = true;
           server = "${pkgs.netkittftp}/sbin/in.tftpd";
+          port = "69";
+          user = "nobody";
+          socketType = "dgram";
           serverArgs = "/home/matt/brocade-01-08-2025/TFTP-Content";
         }
       ];
