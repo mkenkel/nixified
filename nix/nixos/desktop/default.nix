@@ -136,7 +136,7 @@ in
     atftpd = {
       enable = true;
       root = "/home/matt/brocade-01-08-2025/TFTP-Content";
-      extraOptions = [ ];
+      extraOptions = [ "--verbosity 4" ];
     };
     pipewire = {
       enable = true;
