@@ -144,6 +144,7 @@ in
           port = 69;
           user = "nobody";
           serverArgs = "/home/matt/brocade-01-08-2025/TFTP-Content";
+          extraConfig = "flags = IPv4";
         }
       ];
     };
