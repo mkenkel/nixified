@@ -123,7 +123,6 @@ in
     qemu
     sshpass
     terraform
-    tftp-hpa
     unzip
     virtiofsd
     vlc
@@ -134,6 +133,11 @@ in
   ];
 
   services = {
+    atftpd = {
+      enable = true;
+      root = "/var/lib/tftpboot";
+      extraOptions = [ "--bind-address 0.0.0.0:69" ];
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;
