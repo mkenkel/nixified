@@ -141,9 +141,7 @@ in
           name = "tftp";
           protocol = "udp";
           server = "${pkgs.netkittftp}/sbin/in.tftpd";
-          port = 69;
-          user = "nobody";
-          serverArgs = "/home/matt/brocade-01-08-2025/TFTP-Content -vvvvvv";
+          serverArgs = "-s /tftpboot";
           extraConfig = "flags = IPv4";
         }
       ];
