@@ -51,7 +51,7 @@ in
 
   imports = [
     ./hyprland.nix
-    ./river.nix
+    #./river.nix
     ./programming.nix
     "${u-hm}/fish.nix"
     "${u-hm}/kitty.nix"
