@@ -39,6 +39,7 @@ in
       "visual-studio-code"
       "spotify"
       "raycast"
+      "whisky"
     ];
   };
 
