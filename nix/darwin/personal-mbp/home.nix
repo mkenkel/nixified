@@ -34,7 +34,7 @@ in
   imports = [
     "${u-hm}/fish.nix"
     "${u-hm}/kitty.nix"
-#    "${u-hm}/nvim.nix"
+    "${u-hm}/nvim.nix"
     "${u-hm}/tmux.nix"
   ];
 
@@ -52,56 +52,67 @@ in
   };
 
   home.packages = with pkgs; [
-    # Editors
-    vim
-
-    # Development
-    ansible
-    ansible-builder
-    ansible-lint
-    ansible-navigator
-    gcc
-    gnumake
-    nodejs
-    python3
-    rustup
-    yamlfmt
-
-    # Git
-    gh
-    gitflow
-
-    # Terminal
+    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     alacritty
+    ansible
+    ansible-language-server
+    ansible-lint
     bat
+    bicep
     btop
-    fastfetch
-    fzf
-    htop
-    lazygit
-    lsd
-    ripgrep
-    starship
-    tree
-    sshpass
-
-    # Fish
-    fish
-    grc
-
-    # Containerization
-    podman
-    podman-compose
-
-    # Kubernetes
     cilium-cli
-    my-kubernetes-helm
-    my-helmfile
+    deno
+    dotnet-sdk
+    fastfetch
+    fish
+    fluxcd
+    fzf
+    gcc
+    gh
+    git-lfs
+    gitflow
+    gnumake
+    go
+    grc
+    htop
+    hubble
+    json2yaml
     kompose
     kubectl
-    hubble
-    fluxcd
-
+    lazygit
+    luajit
+    lsd
+    lua-language-server
+    mark
+    my-helmfile
+    my-kubernetes-helm
+    nil
+    nodejs
+    packer
+    pandoc
+    podman
+    podman-bootc
+    podman-compose
+    putty
+    qemu
+    ripgrep
+    rustup
+    sshpass
+    starship
+    terraform
+    terraform-ls
+    tree
+    vim
+    yaml-language-server
+    yamlfmt
+    yamllint
+    (python311.withPackages (
+      p: with p; [
+        pip
+        packaging
+        ansible-builder
+      ]
+    ))
   ];
 
   programs = {
