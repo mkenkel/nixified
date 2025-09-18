@@ -78,6 +78,7 @@ in
     hubble
     json2yaml
     kompose
+    krew
     kubectl
     lazygit
     luajit
