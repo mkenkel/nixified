@@ -34,7 +34,7 @@ in
   imports = [
     "${u-hm}/fish.nix"
     "${u-hm}/kitty.nix"
-    "${u-hm}/nvim.nix"
+#    "${u-hm}/nvim.nix"
     "${u-hm}/tmux.nix"
   ];
 

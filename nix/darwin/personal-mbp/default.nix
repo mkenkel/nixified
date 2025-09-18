@@ -53,6 +53,7 @@ in
   # Set Git commit hash for darwin-version.
   # system.configurationRevision = self.rev or self.dirtyRev or null;
   system = {
+    primaryUser = "${user}";
     defaults = {
       NSGlobalDomain = {
         # 120, 90, 60, 30, 12, 6, 2
