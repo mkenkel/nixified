@@ -103,6 +103,7 @@ in
     virt-manager
     virt-viewer
     wf-recorder
+    wlr-randr
     yamlfmt
     yamllint
   ];

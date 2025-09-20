@@ -1,10 +1,6 @@
 { inputs, pkgs, ... }:
 {
 
-  home.packages = with pkgs; [
-    wlr-randr
-  ];
-
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
@@ -24,7 +20,6 @@
       bindsym Mod1+H send-layout-msg main-ratio -0.05
       bindsym Mod1+L send-layout-msg main-ratio +0.05
       bindsym Mod1+Space send-layout-msg cycle-layout
-
     '';
 
   };
