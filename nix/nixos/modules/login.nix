@@ -15,6 +15,11 @@
         enable = true;
         settings = {
           load = true;
+          border = true;
+          bigclock = true;
+          animation = "matrix";
+          poweroff = "ctrl+alt+p";
+          reboot = "ctrl+alt+r";
         };
       };
     };
