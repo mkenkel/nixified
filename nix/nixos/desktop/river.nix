@@ -4,7 +4,7 @@
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
-    programs.river.extraConfig = ''
+    extraConfig = ''
       # Set default terminal (example: foot)
       set-terminal kitty
 

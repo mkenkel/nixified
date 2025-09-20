@@ -150,14 +150,11 @@ in
         }
       ];
     };
-    xserver = {
-      enable = true;
-      displayManager = {
-        sessionPackages = with pkgs; [
-          river
-          hyprland
-        ];
-      };
+    displayManager = {
+      sessionPackages = with pkgs; [
+        river
+        hyprland
+      ];
     };
     pipewire = {
       enable = true;
