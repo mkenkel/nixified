@@ -9,7 +9,7 @@
       set-terminal kitty
 
       # Monitor Configuration
-      exec wlr-randr --output HDMI-A-1 --mode 1920x1080@144.00Hz
+      exec wlr-randr --output DP-3 --mode 3840x2160@144.00Hz
 
       # Example keybindings
       bindsym Mod1+Return spawn kitty
