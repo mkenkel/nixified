@@ -14,12 +14,13 @@
       ly = {
         enable = true;
         settings = {
-          load = true;
-          border = true;
+          animation = "gameoflife";
           bigclock = true;
-          animation = "matrix";
-          poweroff = "ctrl+alt+p";
-          reboot = "ctrl+alt+r";
+          bigclock_12hr = true;
+          border = true;
+          load = true;
+          shutdown_key = "ctrl+alt+p";
+          restart_key = "ctrl+alt+r";
         };
       };
     };

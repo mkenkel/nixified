@@ -1,4 +1,8 @@
 { inputs, pkgs, ... }:
 {
-  wayland.windowManager.river.enable = true;
+  wayland.windowManager.river = {
+    enable = true;
+    xwayland.enable = true;
+
+  };
 }
