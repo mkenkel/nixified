@@ -9,7 +9,7 @@
       exec wlr-randr --output DP-3 --mode 3840x2160@144.00Hz
 
       # Example keybindings
-      bindsym Mod1+Return spawn kitty
+      bindsym Mod4+Return spawn kitty
       bindsym Mod1+D spawn fuzzel 
       bindsym Mod1+Q close
       bindsym Mod1+Shift+Q exit
