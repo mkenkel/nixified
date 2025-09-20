@@ -133,6 +133,10 @@ in
     wl-clipboard
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
   services = {
     xinetd = {
       enable = true;
