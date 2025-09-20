@@ -150,6 +150,15 @@ in
         }
       ];
     };
+    xserver = {
+      enable = true;
+      displayManager = {
+        sessionPackages = with pkgs; [
+          river
+          hyprland
+        ];
+      };
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;

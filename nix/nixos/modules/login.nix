@@ -14,13 +14,11 @@
       ly = {
         enable = true;
         settings = {
-          animation = "gameoflife";
+          animation = "matrix";
           bigclock = true;
           bigclock_12hr = true;
           border = true;
           load = true;
-          shutdown_key = "ctrl+alt+p";
-          restart_key = "ctrl+alt+r";
         };
       };
     };
