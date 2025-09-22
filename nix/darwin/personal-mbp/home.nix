@@ -80,6 +80,7 @@ in
     kompose
     krew
     kubectl
+    kubevirt
     lazygit
     luajit
     lsd
@@ -104,6 +105,7 @@ in
     terraform-ls
     tree
     vim
+    realvnc-vnc-viewer
     yaml-language-server
     yamlfmt
     yamllint
