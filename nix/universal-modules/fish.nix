@@ -39,15 +39,13 @@
       ];
       shellAliases = {
         "ls" = "lsd";
-        #"diff" = "batdiff";
-        #"grep" = "batgrep";
         "man" = "batman";
-        #"watch" = "batwatch";
         "vi" = "nvim";
         "sshp" = "sshpass -f ~/.config/ssh/.sshpasswd ssh";
         "ave" =
           "ansible-vault edit {$HOME}/Repos/ansible-vault/kubernetes.yml --vault-pass-file {$HOME}/.config/ansible/vault/homelab.yml";
         "k" = "kubectl";
+        "tf" = "terraform";
         # Cilium Config
         "cc" = "helm -n kube-system get all cilium | sed -n '/USER-SUPPLIED VALUES/,/COMPUTED VALUES/p'";
         "sops" = "sops --config=/home/matt/Repos/homelab/.sops.yaml";
