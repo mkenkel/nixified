@@ -17,8 +17,16 @@
   };
 
   programs = {
-    steam.enable = true;
-    steam.gamescopeSession.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession = {
+        enable = true;
+        };
+      package = pkgs.steam.override {
+        extraLibraries = pkgs: [ pkgs.pkgsi686Linux.pipewire.jack ]; # Adds pipewire jack (32-bit)
+        extraPkgs = pkgs: [ pkgs.wineasio ]; # Adds wineasio
+        };
+      };
     gamemode.enable = true;
   };
 

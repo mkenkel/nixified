@@ -51,6 +51,33 @@ in
 
   system.stateVersion = "24.05"; # Did you read the comment? - DONT CHANGE UNLESS GOOGLE
   security.polkit.enable = true;
+
+  ################################## Rocksmith Configurations Start
+  security.rtkit.enable = true; # Enables rtkit (https://directory.fsf.org/wiki/RealtimeKit)
+  #
+  # domain = "@audio": This specifies that the limits apply to users in the @audio group.
+  # item = "memlock": Controls the amount of memory that can be locked into RAM.
+  # value (`unlimited`) allows members of the @audio group to lock as much memory as needed. This is crucial for audio processing to avoid swapping and ensure low latency.
+  #
+  # item = "rtprio": Controls the real-time priority that can be assigned to processes.
+  # value (`99`) is the highest real-time priority level. This setting allows audio applications to run with real-time scheduling, reducing latency and ensuring smoother performance.
+  #
+  security.pam.loginLimits = [
+    {
+      domain = "@audio";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
+    {
+      domain = "@audio";
+      item = "rtprio";
+      type = "-";
+      value = "99";
+    }
+  ];
+
+  ################################## Rocksmith Configurations End
   hardware.graphics = {
     enable = true;
   };
@@ -88,48 +115,56 @@ in
   environment.systemPackages = with pkgs; [
     age
     bashSnippets
+    cilium-cli
     curl
     envsubst
+    fluxcd
     git
     glibc
-    # Kube stuff
-    cilium-cli
-    fluxcd
+    glibc_multi
+    helm-ls
     hubble
     kompose
-    kubectl
     kube-linter
+    kubectl
     kustomize
+    lua-language-server
+    lua5_1
+    luajit
     my-helmfile
     my-kubernetes-helm
     nfs-utils
-    helm-ls
-    timoni
-    # ---
-    lua5_1
-    lua-language-server
-    luajit
     nixfmt-rfc-style
     openssl
     pa-notify
     packer
     paperkey
-    pavucontrol
+    pavucontrol # Lets you disable inputs/outputs, can help if game auto-connects to bad IOs
     pipecontrol
     podman
     podman-compose
     pw-volume
     pwvucontrol
     qemu
+    qpwgraph # Lets you view pipewire graph and connect IOs
+    rtaudio
+    slack
     sshpass
+    taplo
     terraform
+    terraform-ls
     tftp-hpa
+    timoni
     unzip
+    unzip # Used by patch-nixos.sh
     virtiofsd
     vlc
     vscodium
     waybar
     wget
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
+    winetricks
     wl-clipboard
   ];
 
@@ -159,6 +194,7 @@ in
     pipewire = {
       enable = true;
       pulse.enable = true;
+      jack.enable = true;
     };
     openssh = {
       enable = true;
@@ -189,7 +225,11 @@ in
 
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "audio"
+      "rtkit"
+    ];
     shell = pkgs.fish;
   };
 
