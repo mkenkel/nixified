@@ -101,6 +101,8 @@ in
     };
   };
 
+  xdg.portal.enable = true;
+
   programs = {
     hyprland = {
       enable = true;
@@ -218,6 +220,7 @@ in
     #   address = "192.168.10.1";
     #   interface = "enp5s0";
     # };
+    search = [ "home.arpa" ];
     extraHosts = ''
       192.168.15.202 rancher.cilium.rocks
     '';
