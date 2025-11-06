@@ -20,15 +20,17 @@
     pkgs.nil
     pkgs.nimlsp
     pkgs.nodejs
-    pkgs.podman
-    pkgs.podman-compose
-    (pkgs.python311.withPackages (
+    # pkgs.podman
+    # pkgs.podman-compose
+    (pkgs.python312.withPackages (
       ps: with ps; [
         pip
         packaging
-        ansible-builder
+        tkinter
+        paramiko
       ]
     ))
+    pkgs.pyright
     pkgs.rustup
     pkgs.vim
     pkgs.yaml-language-server
