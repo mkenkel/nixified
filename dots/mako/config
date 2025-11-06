@@ -4,68 +4,40 @@
 #on-button-left=
 
 #[Style Options]
-font=JetBrainsMono 12
 background-color=#000000CC
-#text-color=#00000000
-width=450
-height=300
-outer-margin=30
-border-size=5
-#border-color=color
 border-radius=5
-#progress-color=[over|source] color
-icons=1
-max-icon-size=128
-icon-location=right
-format=<sup><i>%a</i></sup>\n<b>%s</b>\n<sub>%b</sub>
-#format=(%g) <b>%s</b>\n%b
-text-alignment=center
+border-size=5
 default-timeout=8000
+font=JetBrainsMono 12
+format=<sup><i>%a</i></sup>\n<b>%s</b>\n<sub>%b</sub>
+height=300
+icon-location=right
+icons=1
 ignore-timeout=1
+layer=overlay
+max-icon-size=128
 max-visible=5
+outer-margin=30
+sort=-time
+text-alignment=center
+width=450
 
-# Rules - match specific notifications and override settings.
-# The exact matching keys (app-name / summary / body / urgency) are supported by mako.
-# Below are two example rules: one for Spotify (music) and one for persistent/urgent alerts.
-#
-# Syntax note: rules are specified as blocks in the config. If your mako version
-# requires slightly different key names, adapt accordingly (check mako docs/man).
-#
-# Music/Spotify rule: make album art larger, keep visible a bit longer (or persist),
-# emphasize title, show artist/album on second line.
-rule {
-    app-name = "Spotify"
-    icon-size = 64
-    timeout = 0                 # 0 = persistent until dismissed (useful for currently playing)
-    format = "%i  <b>%s</b>\n<i>%b</i>"
-    # Optionally you can make these sticky only for "now playing" style notifications
-    # by matching summary/body content (e.g. summary contains "Now playing").
-}
+# Low urgency: shorter timeout
+[urgency=low]
+default-timeout=3
 
-# Another useful rule: urgent notifications (e.g., errors) should stand out
-rule {
-    urgency = "critical"
-    background-color = "#BF616A"
-    text-color = "#ECEFF4"
-    border-color = "#D08770"
-    timeout = 0                # make critical notifications persistent until dismissed
-    format = "<b>%a — %s</b>\n%b"
-}
+# Urgent notifications should stand out and stay until dismissed
+[urgency=critical]
+background-color=#BF616A
+text-color=#ECEFF4
+border-color=#D08770
+default-timeout=0
+format="<b>%a — %s</b>\n%b"
 
-# Optional: reduce timeouts for low-importance notifications
-rule {
-    urgency = "low"
-    timeout = 3
-}
-
-# Tips:
-# - For music, many players include artist/title in summary or body. The above format
-#   shows summary (title) bold and body (artist/album) italic. If your music notifications
-#   use a different field layout, tweak format accordingly.
-# - Increase icon-size for music (64+) to get a good-looking album-art thumbnail.
-# - If you prefer notifications for music to stay until you change tracks, set timeout=0
-#   for the Spotify rule. Otherwise use a longer timeout like 10–15 seconds.
-# - If you use a compositor with rounded corners or a global theme, match border-radius/colors
-#   so notifications integrate visually.
-
-# End of example config
+# Spotify / music notifications: larger album art, clearer layout, persist while playing
+[app-name=Spotify]
+layer=overlay
+history=0
+default-timeout=8000
+border-color=#1DB954
+background-color=#191414
