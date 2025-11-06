@@ -19,5 +19,6 @@ in
     ibm-plex
     plemoljp-nf
     nerd-fonts.ubuntu-mono
+    nerd-fonts.hack
   ];
 }
