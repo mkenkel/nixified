@@ -23,3 +23,49 @@ text-alignment=center
 default-timeout=8000
 ignore-timeout=1
 max-visible=5
+
+# Rules - match specific notifications and override settings.
+# The exact matching keys (app-name / summary / body / urgency) are supported by mako.
+# Below are two example rules: one for Spotify (music) and one for persistent/urgent alerts.
+#
+# Syntax note: rules are specified as blocks in the config. If your mako version
+# requires slightly different key names, adapt accordingly (check mako docs/man).
+#
+# Music/Spotify rule: make album art larger, keep visible a bit longer (or persist),
+# emphasize title, show artist/album on second line.
+rule {
+    app-name = "Spotify"
+    icon-size = 64
+    timeout = 0                 # 0 = persistent until dismissed (useful for currently playing)
+    format = "%i  <b>%s</b>\n<i>%b</i>"
+    # Optionally you can make these sticky only for "now playing" style notifications
+    # by matching summary/body content (e.g. summary contains "Now playing").
+}
+
+# Another useful rule: urgent notifications (e.g., errors) should stand out
+rule {
+    urgency = "critical"
+    background-color = "#BF616A"
+    text-color = "#ECEFF4"
+    border-color = "#D08770"
+    timeout = 0                # make critical notifications persistent until dismissed
+    format = "<b>%a — %s</b>\n%b"
+}
+
+# Optional: reduce timeouts for low-importance notifications
+rule {
+    urgency = "low"
+    timeout = 3
+}
+
+# Tips:
+# - For music, many players include artist/title in summary or body. The above format
+#   shows summary (title) bold and body (artist/album) italic. If your music notifications
+#   use a different field layout, tweak format accordingly.
+# - Increase icon-size for music (64+) to get a good-looking album-art thumbnail.
+# - If you prefer notifications for music to stay until you change tracks, set timeout=0
+#   for the Spotify rule. Otherwise use a longer timeout like 10–15 seconds.
+# - If you use a compositor with rounded corners or a global theme, match border-radius/colors
+#   so notifications integrate visually.
+
+# End of example config
