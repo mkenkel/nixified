@@ -17,7 +17,6 @@
     pkgs.mako
     pkgs.waybar
     pkgs.wl-clipboard
-    pkgs.swaync
   ];
 
   services.hyprpaper.enable = true;
