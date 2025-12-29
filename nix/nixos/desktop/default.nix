@@ -125,8 +125,12 @@ in
     git
     glibc
     glibc_multi
+    google-chrome
+    go
+    gopls
     helm-ls
     hubble
+    json2yaml
     kompose
     kube-linter
     kubectl
@@ -162,6 +166,7 @@ in
     unzip # Used by patch-nixos.sh
     virtiofsd
     vlc
+    vscode
     vscodium
     waybar
     wget

@@ -24,10 +24,17 @@
     # pkgs.podman-compose
     (pkgs.python312.withPackages (
       ps: with ps; [
-        pip
+        beautifulsoup4
         packaging
-        tkinter
+        pandas
+        selenium
         paramiko
+        pip
+        pylint
+        regex
+        requests
+        setuptools
+        tkinter
       ]
     ))
     pkgs.pyright
