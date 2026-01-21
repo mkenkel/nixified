@@ -76,7 +76,7 @@ in
     fastfetch
     ffmpeg
     fish
-    freecad
+    #freecad
     fzf
     gimp
     giph

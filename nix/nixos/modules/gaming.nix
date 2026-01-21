@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    protonup
+    protonup-ng
     lutris
     vulkan-tools # Troubleshooting Mangohud w/ vkcube
     mesa-demos # OpenGL Troubleshooting
@@ -21,12 +21,12 @@
       enable = true;
       gamescopeSession = {
         enable = true;
-        };
+      };
       package = pkgs.steam.override {
         extraLibraries = pkgs: [ pkgs.pkgsi686Linux.pipewire.jack ]; # Adds pipewire jack (32-bit)
         extraPkgs = pkgs: [ pkgs.wineasio ]; # Adds wineasio
-        };
       };
+    };
     gamemode.enable = true;
   };
 

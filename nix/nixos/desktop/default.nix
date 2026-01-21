@@ -147,7 +147,7 @@ in
     my-helmfile
     my-kubernetes-helm
     nfs-utils
-    nixfmt-rfc-style
+    nixfmt
     openssl
     pa-notify
     packer
@@ -201,7 +201,7 @@ in
     };
     displayManager = {
       sessionPackages = with pkgs; [
-        river
+        river-classic
         hyprland
       ];
     };
