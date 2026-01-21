@@ -93,6 +93,7 @@ in
     nwg-look
     obsidian
     playerctl
+    prismlauncher
     qalculate-qt
     ripgrep
     slurp

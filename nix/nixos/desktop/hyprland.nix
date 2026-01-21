@@ -251,8 +251,11 @@
       windowrulev2 = [
         "float, class:^(io.github.Qalculate.qalculate-qt)$"
         "size 850 500,class:^(io.github.Qalculate.qalculate-qt)$"
+
         "float,class:^(org.pulseaudio.pavucontrol)$"
         "size 850 500,class:^(org.pulseaudio.pavucontrol)$"
+
+        "float,size 2560 1440,class:^(Minecraft. *)$"
       ];
 
       plugin = {
