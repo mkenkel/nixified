@@ -20,7 +20,6 @@
           nixos-wsl.nixosModules.default
 	  home-manager.nixosModules.home-manager
 	  ./wsl.nix
-        ]
 	{
 	home-manager = {
 	  extraSpecialArgs = {
@@ -34,8 +33,9 @@
 	      ];
 	  };
 	};
-      };
+      }
+      ];
     };
   };
+};
 }
-
