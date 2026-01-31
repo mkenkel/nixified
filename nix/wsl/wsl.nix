@@ -17,12 +17,15 @@ in
     isNormalUser = true;
     home = "/home/matt";
     group = "matt";
-    uid = 1001;  # Add this line
-    extraGroups = [ "wheel" "networkmanager" ]; # wheel gives sudo access
+    uid = 1001; # Add this line
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ]; # wheel gives sudo access
     shell = pkgs.fish; # or pkgs.zsh, pkgs.fish, etc.
   };
 
-  users.groups.matt = {};
+  users.groups.matt = { };
 
   nix.settings = {
     experimental-features = [
@@ -44,7 +47,7 @@ in
     zsh.enable = true;
     fish.enable = true;
   };
-  
+
   environment.systemPackages = with pkgs; [
     age
     bashSnippets
@@ -108,5 +111,6 @@ in
     wineWowPackages.waylandFull
     winetricks
     wl-clipboard
+    yazi
   ];
 }
