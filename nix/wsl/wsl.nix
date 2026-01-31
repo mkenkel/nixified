@@ -19,7 +19,7 @@ in
     group = "matt";
     uid = 1001;  # Add this line
     extraGroups = [ "wheel" "networkmanager" ]; # wheel gives sudo access
-    shell = pkgs.bash; # or pkgs.zsh, pkgs.fish, etc.
+    shell = pkgs.fish; # or pkgs.zsh, pkgs.fish, etc.
   };
 
   users.groups.matt = {};
@@ -39,4 +39,74 @@ in
       allowUnfree = true;
     };
   };
+
+  programs = {
+    zsh.enable = true;
+    fish.enable = true;
+  };
+  
+  environment.systemPackages = with pkgs; [
+    age
+    bashSnippets
+    bottles
+    cilium-cli
+    curl
+    envsubst
+    fluxcd
+    fzf
+    git
+    glibc
+    glibc_multi
+    google-chrome
+    go
+    gopls
+    grc
+    helm-ls
+    hubble
+    json2yaml
+    kompose
+    kube-linter
+    kubectl
+    kustomize
+    lua-language-server
+    lua5_1
+    luajit
+    lsd
+    neovim
+    nfs-utils
+    nixfmt
+    openssl
+    pa-notify
+    packer
+    paperkey
+    pavucontrol # Lets you disable inputs/outputs, can help if game auto-connects to bad IOs
+    pipecontrol
+    podman
+    podman-compose
+    pw-volume
+    pwvucontrol
+    qemu
+    qpwgraph # Lets you view pipewire graph and connect IOs
+    rtaudio
+    slack
+    sshpass
+    taplo
+    terraform
+    terraform-ls
+    tftp-hpa
+    timoni
+    unzip
+    unzip # Used by patch-nixos.sh
+    vim
+    virtiofsd
+    vlc
+    vscode
+    vscodium
+    waybar
+    wget
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
+    winetricks
+    wl-clipboard
+  ];
 }
