@@ -12,10 +12,12 @@ let
 in
 {
   # Define the user account
+  wsl.defaultUser = "matt";
   users.users.matt = {
     isNormalUser = true;
     home = "/home/matt";
     group = "matt";
+    uid = 1001;  # Add this line
     extraGroups = [ "wheel" "networkmanager" ]; # wheel gives sudo access
     shell = pkgs.bash; # or pkgs.zsh, pkgs.fish, etc.
   };
