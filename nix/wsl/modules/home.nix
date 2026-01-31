@@ -99,6 +99,7 @@ in
       settings = {
         user.name = "mkenkel";
         user.email = "mattsnoopy2@gmail.com";
+        credential.helper = "/mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe";
       };
     };
     gpg = {
