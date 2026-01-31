@@ -9,7 +9,6 @@ let
   hostname = "updog";
   nos = ./../modules; # NixOS
   universal = ./../../universal-modules; # Cross-platform modules
-  };
 in
 {
   nix.settings = {

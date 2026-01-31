@@ -11,7 +11,7 @@
   in
   {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      updog = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
 	};
@@ -21,18 +21,13 @@
 	  home-manager.nixosModules.home-manager
 	  ./wsl.nix
 	{
-	home-manager = {
-	  extraSpecialArgs = {
-	      inherit inputs;
-	    };
-	  useGlobalPkgs = true;
-          useUserPackages = true;
-	  users.${user} = {
-	    imports = [
-	      ./modules/home.nix
-	      ];
-	  };
-	};
+	home-manager.useGlobalPkgs = true;
+	home-manager.useUserPackages = true;
+	home-manager.users.${user} = true;
+
+	# Optionally, use home-manager.extraSpecialArgs to pass
+        # arguments to home.nix
+
       }
       ];
     };
