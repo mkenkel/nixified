@@ -248,14 +248,14 @@
         "${pkgs.waybar}/bin/waybar"
       ];
 
-      windowrulev2 = [
-        "float, class:^(io.github.Qalculate.qalculate-qt)$"
-        "size 850 500,class:^(io.github.Qalculate.qalculate-qt)$"
+      windowrule = [
+        "float 1, match:class ^(io.github.Qalculate.qalculate-qt)$"
+        "size 850 500,match:class ^(io.github.Qalculate.qalculate-qt)$"
 
-        "float,class:^(org.pulseaudio.pavucontrol)$"
-        "size 850 500,class:^(org.pulseaudio.pavucontrol)$"
+        "float 1,match:class ^(org.pulseaudio.pavucontrol)$"
+        "size 850 500,match:class ^(org.pulseaudio.pavucontrol)$"
 
-        "float,size 2560 1440,class:^(Minecraft. *)$"
+        "float 1,size 2560 1440,match:class ^(Minecraft. *)$"
       ];
 
       plugin = {
