@@ -73,6 +73,8 @@ in
     btop
     chafa
     cmatrix
+    claude-code
+    github-copilot-cli
     fastfetch
     ffmpeg
     fish
@@ -160,8 +162,10 @@ in
     };
     git = {
       enable = true;
-      userName = "mkenkel";
-      userEmail = "mattsnoopy2@gmail.com";
+      settings = {
+        user.name = "mkenkel";
+        user.email = "mattsnoopy2@gmail.com";
+      };
     };
     gpg = {
       enable = true;

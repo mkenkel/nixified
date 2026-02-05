@@ -96,6 +96,7 @@ button:hover {
     color: @foreground;
     background-color: @background;
     padding: 1px 10px 1px 10px;
+    font-size: 16px;
 }
 
 

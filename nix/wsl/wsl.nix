@@ -75,7 +75,6 @@ in
     lua5_1
     luajit
     lsd
-    neovim
     nfs-utils
     nixfmt
     openssl

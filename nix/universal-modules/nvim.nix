@@ -3,9 +3,8 @@ let
   cfg = ../../dots;
 in
 {
-  home.file =
-    {
-    };
+  home.file = {
+  };
 
   home.sessionVariables = {
     # Fixes Rust Compiling the LSP
