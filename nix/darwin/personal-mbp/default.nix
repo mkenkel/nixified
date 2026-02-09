@@ -32,6 +32,7 @@ in
     enable = true;
     casks = [
       "aerospace"
+      "autodesk-fusion"
       "firefox"
       "font-sarasa-nerd"
       "keeper-password-manager"
