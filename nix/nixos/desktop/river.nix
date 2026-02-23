@@ -115,9 +115,23 @@
           "Super+Shift Period" = "send-to-output next";
           "Super+Shift Space" = "send-to-output next";
 
+          # Mod+H and Mod+L to decrease/increase the main ratio of rivercarro
+          "Alt H" = "send-layout-cmd rivercarro 'main-ratio -0.05'";
+          "Alt L" = "send-layout-cmd rivercarro 'main-ratio +0.05'";
+
+          # Mod+Shift+H and Mod+Shift+L to increment/decrement the main count of rivercarro
+          "Alt+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
+          "Alt+Shift L" = "send-layout-cmd rivercarro 'main-count -1'";
+
+          # Mod+{Up,Right,Down,Left} to change layout orientation
+          "Alt Up" = "send-layout-cmd rivercarro 'main-location top'";
+          "Alt Right" = "send-layout-cmd rivercarro 'main-location right'";
+          "Alt Down" = "send-layout-cmd rivercarro 'main-location bottom'";
+          "Alt Left" = "send-layout-cmd rivercarro 'main-location left'";
+          # And for monocle
           "Alt M" = "send-layout-cmd rivercarro 'main-location monocle'";
-          "Super+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
-          "Super+Shift L" = "send-layout-cmd rivercarro 'main-count -1'";
+          # Cycle through layout
+          "Alt W" = "send-layout-cmd rivercarro 'main-location-cycle left,monocle'";
 
           "Control+Alt+Shift E" = "exit";
           "Alt D" = "spawn '${pkgs.fuzzel}/bin/fuzzel'";
@@ -125,10 +139,10 @@
           "Alt Q" = "close";
           "Alt Return" = "spawn '${pkgs.kitty}/bin/kitty'";
 
-          "Alt+Control H" = "snap left";
-          "Alt+Control J" = "snap down";
-          "Alt+Control K" = "snap up";
-          "Alt+Control L" = "snap right";
+          # "Alt+Control H" = "snap left";
+          # "Alt+Control J" = "snap down";
+          # "Alt+Control K" = "snap up";
+          # "Alt+Control L" = "snap right";
         };
       };
       map-pointer = {
@@ -148,7 +162,7 @@
       set-repeat = "50 300";
       spawn = [
         "pkill waybar; waybar &"
-        "rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-location top -main-count 1 -main-ratio 0.5"
+        "pkill rivercarro; rivercarro -outer-gaps 0 -per-tag &"
       ];
       xcursor-theme = "someGreatTheme 12";
     };
