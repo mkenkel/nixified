@@ -14,7 +14,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 32;
         output = [
           "DP-3"
         ];
@@ -67,7 +67,6 @@
     enable = true;
     extraConfig = ''
       riverctl spawn "wlr-randr --output DP-3 --mode 3840x2160@143.962997Hz"
-      riverctl spawn "pkill waybar; waybar &"
     '';
     settings = {
       border-width = 2;
@@ -76,6 +75,7 @@
         "normal"
         "passthrough"
       ];
+      default-layout = "rivercarro";
       focus-follows-cursor = "normal";
       input = {
         pointer-foo-bar = {
@@ -141,18 +141,14 @@
       };
       rule-add = {
         "-app-id" = {
-          "'bar'" = "csd";
-          "'float*'" = {
-            "-title" = {
-              "'foo'" = "float";
-            };
-          };
+          "'waybar'" = "ssd";
         };
       };
       set-cursor-warp = "on-output-change";
       set-repeat = "50 300";
       spawn = [
-
+        "pkill waybar; waybar &"
+        "rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-location top -main-count 1 -main-ratio 0.5"
       ];
       xcursor-theme = "someGreatTheme 12";
     };
