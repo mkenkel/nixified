@@ -35,7 +35,6 @@
           "Super K" = "focus-view previous";
           "Super M" = "send-layout-cmd rivercarro 'main-location monocle'";
           "Super O" = "spawn '${pkgs.swaynotificationcenter}/bin/swaync-client -t'";
-          "Super P" = "spawn '${pkgs.pavucontrol}/bin/pavucontrol'";
           "Super Period" = "focus-output next";
           "Super Q" = "close";
           "Super Space" = "focus-output next";
@@ -45,10 +44,6 @@
           "Super+Alt J" = "move down 100";
           "Super+Alt K" = "move up 100";
           "Super+Alt L" = "move right 100";
-          "Super+Alt+Control H" = "snap left";
-          "Super+Alt+Control J" = "snap down";
-          "Super+Alt+Control K" = "snap up";
-          "Super+Alt+Control L" = "snap right";
           "Super+Alt+Shift H" = "resize horizontal -100";
           "Super+Alt+Shift J" = "resize vertical 100";
           "Super+Alt+Shift K" = "resize vertical -100";
@@ -57,7 +52,6 @@
           "Super+Control+Shift Space" = "send-to-output previous";
           "Super+Shift 0" = "set-view-tags 2147483647";
           "Super+Shift Comma" = "send-to-output previous";
-          "Super+Shift E" = "exit";
           "Super+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
           "Super+Shift J" = "swap next";
           "Super+Shift K" = "swap previous";
@@ -65,9 +59,16 @@
           "Super+Shift Period" = "send-to-output next";
           "Super+Shift Space" = "send-to-output next";
 
-          "Alt Q" = "close";
+          "Control+Alt+Shift E" = "exit";
           "Alt D" = "spawn '${pkgs.fuzzel}/bin/fuzzel'";
+          "Alt P" = "spawn '${pkgs.pavucontrol}/bin/pavucontrol'";
+          "Alt Q" = "close";
           "Alt Return" = "spawn '${pkgs.kitty}/bin/kitty'";
+
+          "Alt+Control H" = "snap left";
+          "Alt+Control J" = "snap down";
+          "Alt+Control K" = "snap up";
+          "Alt+Control L" = "snap right";
         };
       };
       rule-add = {
