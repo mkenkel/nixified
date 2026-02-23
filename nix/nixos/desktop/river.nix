@@ -67,6 +67,7 @@
     enable = true;
     extraConfig = ''
       riverctl spawn "wlr-randr --output DP-3 --mode 3840x2160@143.962997Hz"
+      riverctl spawn "pkill waybar; waybar &"
     '';
     settings = {
       border-width = 2;
@@ -151,6 +152,7 @@
       set-cursor-warp = "on-output-change";
       set-repeat = "50 300";
       spawn = [
+
       ];
       xcursor-theme = "someGreatTheme 12";
     };
