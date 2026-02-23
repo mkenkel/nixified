@@ -11,6 +11,10 @@
     #   inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
     # };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    waybar-module-music = {
+      url = "github:Andeskjerf/waybar-module-music";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,6 +23,7 @@
       hyprland,
       nixpkgs,
       self,
+      waybar-module-music,
       ...
     }@inputs:
     let
@@ -35,6 +40,7 @@
             home-manager.nixosModules.home-manager
             ./desktop
             {
+              nixpkgs.overlays = [ waybar-module-music.overlays.default ];
               home-manager = {
                 extraSpecialArgs = {
                   inherit inputs;
