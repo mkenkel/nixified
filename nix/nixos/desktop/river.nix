@@ -124,10 +124,10 @@
           "Alt+Shift L" = "send-layout-cmd rivercarro 'main-count -1'";
 
           # Mod+{Up,Right,Down,Left} to change layout orientation
-          "Alt Up" = "send-layout-cmd rivercarro 'main-location top'";
-          "Alt Right" = "send-layout-cmd rivercarro 'main-location right'";
-          "Alt Down" = "send-layout-cmd rivercarro 'main-location bottom'";
-          "Alt Left" = "send-layout-cmd rivercarro 'main-location left'";
+          "Alt K" = "send-layout-cmd rivercarro 'main-location top'";
+          "Alt L" = "send-layout-cmd rivercarro 'main-location right'";
+          "Alt J" = "send-layout-cmd rivercarro 'main-location bottom'";
+          "Alt H" = "send-layout-cmd rivercarro 'main-location left'";
           # And for monocle
           "Alt M" = "send-layout-cmd rivercarro 'main-location monocle'";
           # Cycle through layout
@@ -148,15 +148,19 @@
       map-pointer = {
         # mouse bindings
         normal = {
-          "Alt BTN_LEFT" = "move-view";
-          "Alt BTN_RIGHT" = "resize-view";
-          "ButtonMiddle" = "toggle-float";
+          # "Alt BTN_LEFT" = "move-view";
+          # "Alt BTN_RIGHT" = "resize-view";
+          # "ButtonMiddle" = "toggle-float";
         };
       };
       rule-add = {
         "-app-id" = {
           "'waybar'" = "ssd";
         };
+        "-app-id" = {
+          "'pavucontrol'" = "float";
+        };
+
       };
       set-cursor-warp = "on-output-change";
       set-repeat = "50 300";
