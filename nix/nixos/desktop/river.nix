@@ -116,8 +116,8 @@
           "Super+Shift Space" = "send-to-output next";
 
           # Mod+H and Mod+L to decrease/increase the main ratio of rivercarro
-          "Alt H" = "send-layout-cmd rivercarro 'main-ratio -0.05'";
-          "Alt L" = "send-layout-cmd rivercarro 'main-ratio +0.05'";
+          "Control+Alt H" = "send-layout-cmd rivercarro 'main-ratio -0.05'";
+          "Control+Alt L" = "send-layout-cmd rivercarro 'main-ratio +0.05'";
 
           # Mod+Shift+H and Mod+Shift+L to increment/decrement the main count of rivercarro
           "Alt+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
