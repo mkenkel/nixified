@@ -3,8 +3,65 @@
 
   home.packages = [
     pkgs.river-classic
+    pkgs.rivercarro
     pkgs.vicinae
+    pkgs.waybar
   ];
+
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 30;
+        output = [
+          "DP-3"
+        ];
+        modules-left = [
+          "sway/workspaces"
+          "sway/mode"
+          "wlr/taskbar"
+        ];
+        modules-center = [
+          "sway/window"
+          "custom/hello-from-waybar"
+        ];
+        modules-right = [
+          "mpd"
+          "custom/mymodule#with-css-id"
+          "temperature"
+        ];
+
+        "sway/workspaces" = {
+          disable-scroll = true;
+          all-outputs = true;
+        };
+        "custom/hello-from-waybar" = {
+          format = "hello {}";
+          max-length = 40;
+          interval = "once";
+          exec = pkgs.writeShellScript "hello-from-waybar" ''
+            echo "from within waybar"
+          '';
+        };
+      };
+    };
+    style = ''
+      * {
+        border: none;
+        border-radius: 0;
+        font-family: Source Code Pro;
+      }
+      window#waybar {
+        background: #16191C;
+        color: #AAB2BF;
+      }
+      #workspaces button {
+        padding: 0 5px;
+      }
+    '';
+  };
 
   wayland.windowManager.river = {
     enable = true;
@@ -34,7 +91,6 @@
           "Super F" = "toggle-fullscreen";
           "Super J" = "focus-view next";
           "Super K" = "focus-view previous";
-          "Super M" = "send-layout-cmd rivercarro 'main-location monocle'";
           "Super O" = "spawn '${pkgs.swaynotificationcenter}/bin/swaync-client -t'";
           "Super Period" = "focus-output next";
           "Super Q" = "close";
@@ -53,12 +109,14 @@
           "Super+Control+Shift Space" = "send-to-output previous";
           "Super+Shift 0" = "set-view-tags 2147483647";
           "Super+Shift Comma" = "send-to-output previous";
-          "Super+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
           "Super+Shift J" = "swap next";
           "Super+Shift K" = "swap previous";
-          "Super+Shift L" = "send-layout-cmd rivercarro 'main-count -1'";
           "Super+Shift Period" = "send-to-output next";
           "Super+Shift Space" = "send-to-output next";
+
+          "Alt M" = "send-layout-cmd rivercarro 'main-location monocle'";
+          "Super+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
+          "Super+Shift L" = "send-layout-cmd rivercarro 'main-count -1'";
 
           "Control+Alt+Shift E" = "exit";
           "Alt D" = "spawn '${pkgs.fuzzel}/bin/fuzzel'";
@@ -75,8 +133,8 @@
       map-pointer = {
         # mouse bindings
         normal = {
-          "Alt ButtonLeft" = "move-view";
-          "Alt ButtonRight" = "resize-view";
+          "Alt BTN_LEFT" = "move-view";
+          "Alt BTN_RIGHT" = "resize-view";
           "ButtonMiddle" = "toggle-float";
         };
       };

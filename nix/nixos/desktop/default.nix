@@ -174,7 +174,6 @@ in
     vlc
     vscode
     vscodium
-    waybar
     wget
     wineWowPackages.stable
     wineWowPackages.waylandFull
