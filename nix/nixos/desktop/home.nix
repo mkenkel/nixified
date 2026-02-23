@@ -128,7 +128,6 @@ in
     ".config/mako".source = "${cfg}/mako";
     ".config/pfp".source = "${cfg}/pfp";
     ".config/wallpaper".source = "${cfg}/wallpaper";
-    ".config/waybar".source = "${cfg}/waybar";
     ".config/scripts".source = "${cfg}/scripts";
   };
 
