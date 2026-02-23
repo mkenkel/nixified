@@ -18,6 +18,7 @@
         "normal"
         "passthrough"
       ];
+      focus-follows-cursor = "normal";
       input = {
         pointer-foo-bar = {
           accel-profile = "flat";
@@ -69,6 +70,14 @@
           "Alt+Control J" = "snap down";
           "Alt+Control K" = "snap up";
           "Alt+Control L" = "snap right";
+        };
+      };
+      map-pointer = {
+        # mouse bindings
+        normal = {
+          "Alt ButtonLeft" = "move-view";
+          "Alt ButtonRight" = "resize-view";
+          "ButtonMiddle" = "toggle-float";
         };
       };
       rule-add = {
