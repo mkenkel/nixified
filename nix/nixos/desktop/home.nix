@@ -19,8 +19,8 @@ in
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    name = "Vanilla-DMZ";
-    package = pkgs.posy-cursor;
+    name = "Posy_Cursor_125_175";
+    package = pkgs.posy-cursors;
     size = 48;
   };
 
@@ -32,9 +32,9 @@ in
       package = pkgs.kdePackages.breeze;
     };
     cursorTheme = {
-      name = "capitaine-cursors";
-      package = pkgs.capitaine-cursors;
-      size = 30;
+      name = "Posy_Cursor_125_175";
+      package = pkgs.posy-cursors;
+      size = 48;
     };
     gtk3 = {
       extraConfig = {
@@ -132,6 +132,7 @@ in
     claude-code
     github-copilot-cli
     fastfetch
+    feh
     ffmpeg
     fish
     #freecad

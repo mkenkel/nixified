@@ -1,13 +1,48 @@
 { inputs, pkgs, ... }:
 {
 
-  home.packages = [
-    pkgs.river-classic
-    pkgs.rivercarro
-    pkgs.vicinae
-    pkgs.waybar
-    pkgs.waybar-module-music
+  home.packages = with pkgs; [
+    river-classic
+    rivercarro
+    vicinae
+    waybar
+    waybar-module-music
+    wayland-pipewire-idle-inhibit
   ];
+
+  services = {
+    swayidle = {
+      enable = true;
+      events.before-sleep = "${pkgs.swaylock-effects}/bin/swaylock";
+      events.lock = "${pkgs.swaylock-effects}/bin/swaylock";
+      timeouts = [
+        {
+          timeout = 300;
+          command = "${pkgs.swaylock-effects}/bin/swaylock";
+        }
+      ];
+
+    };
+    vicinae = {
+      enable = true;
+      systemd.enable = true;
+    };
+  };
+
+  # Configure swaylock
+  programs.swaylock = {
+    enable = true;
+    package = pkgs.swaylock-effects;
+    settings = {
+      daemonize = true;
+      clock = true;
+      timestr = "%k:%M";
+      datestr = "%Y-%m-%d";
+      show-failed-attempts = true;
+    };
+  };
+
+  wayland.systemd.target = "river-session.target";
 
   programs.waybar = {
     enable = true;
@@ -292,7 +327,7 @@
         ##### "pkill rivercarro; rivercarro -outer-gaps 0 -per-tag &"
         "pkill swaybg; ${pkgs.swaybg}/bin/swaybg -i ~/wallpaper.jpg -m fill &"
       ];
-      xcursor-theme = "posy-cursors 45";
+      xcursor-theme = "Posy_Cursor_125_175 45";
     };
   };
 }
