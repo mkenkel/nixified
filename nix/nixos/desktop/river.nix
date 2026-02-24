@@ -66,6 +66,13 @@
             };
           };
         };
+
+        "custom/music" = {
+          format = "{}";
+          return-type = "json";
+          exec = "waybar-module-music";
+        };
+
         "custom/hello-from-waybar" = {
           format = "hello {}";
           max-length = 40;
@@ -74,14 +81,9 @@
             echo "from within waybar"
           '';
         };
-        "custom/music" = {
-          format = "{🎵 %artist% | %title%}";
-          return-type = "json";
-          exec = "waybar-module-music";
-        };
       };
-    };
 
+    };
     style = ''
       * {
         border: none;
@@ -113,8 +115,23 @@
         padding: 0 10px;
       }
       #custom-music {
-        padding: 0 10px;
-        margin: 0 5px;
+      padding: 0 10px;
+      margin: 0 5px;
+      }
+
+      #custom-music.playing {
+      color: #a6e3a1;
+      background: #1e1e2e;
+      }
+
+      #custom-music.paused {
+      color: #f9e2af;
+      background: #1e1e2e;
+      }
+
+      #custom-music.stopped {
+      color: #6c7086;
+      background: #1e1e2e;
       }
     '';
   };
