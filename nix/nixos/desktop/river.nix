@@ -60,9 +60,9 @@
           calendar = {
             mode = "month";
             format = {
-              months = "<span color='#ffead3'><b>{}</b></span>";
-              days = "<span color='#ecc6d9'>{}</span>";
-              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+              months = "<span color='#fad07a'><b>{}</b></span>";
+              days = "<span color='#e8e8d3'>{}</span>";
+              today = "<span color='#cf6a4c'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -91,55 +91,75 @@
         font-family: Source Code Pro;
       }
       window#waybar {
-        background: #16191C;
-        color: #AAB2BF;
+        background: #151515;
+        color: #e8e8d3;
       }
       #tags button {
         padding: 0 5px;
-        color: #AAB2BF;
+        color: #888888;
       }
       #tags button.occupied {
-        background: #2a2e33;
+        background: #1f1f1f;
+        color: #e8e8d3;
       }
       #tags button.focused {
-        background: #007bc0;
-        color: #fafef9;
+        background: #597bc5;
+        color: #151515;
       }
       #tray {
         padding: 0 10px;
+        color: #e8e8d3;
       }
       #pulseaudio {
         padding: 0 10px;
+        color: #99ad6a;
       }
       #clock {
         padding: 0 10px;
+        color: #8fbfdc;
       }
       #custom-music {
-      padding: 0 10px;
-      margin: 0 5px;
+        padding: 0 10px;
+        margin: 0 5px;
       }
 
       #custom-music.playing {
-      color: #a6e3a1;
-      background: #1e1e2e;
+        color: #99ad6a;
+        background: #1f1f1f;
       }
 
       #custom-music.paused {
-      color: #f9e2af;
-      background: #1e1e2e;
+        color: #fad07a;
+        background: #1f1f1f;
       }
 
       #custom-music.stopped {
-      color: #6c7086;
-      background: #1e1e2e;
+        color: #888888;
+        background: #1f1f1f;
       }
     '';
   };
 
   wayland.windowManager.river = {
     enable = true;
+    systemd.enable = true;
+    systemd.variables = [
+      "DISPLAY"
+      "WAYLAND_DISPLAY"
+      "XDG_SESSION_TYPE"
+      "XDG_CURRENT_DESKTOP"
+      "XDG_SESSION_DESKTOP"
+      "NIXOS_OZONE_WL"
+      "XCURSOR_THEME"
+      "XCURSOR_SIZE"
+    ];
+    systemd.extraCommands = [
+      "systemctl --user stop river-session.target"
+      "systemctl --user start river-session.target"
+      "rivercarro -inner-gaps 3 -outer-gaps 3 -no-smart-gaps -per-tag -main-ratio 0.63"
+    ];
     extraConfig = ''
-      riverctl spawn "wlr-randr --output DP-3 --mode 3840x2160@143.962997Hz"
+      riverctl spawn "wlr-randr --output DP-3 --mode 3840x2160@143.962997Hz --scale 1.25"
     '';
     settings = {
       declare-mode = [
@@ -259,18 +279,18 @@
       rule-add = {
         "-app-id" = {
           "'waybar'" = "ssd";
+          "'org.pulseaudio.pavucontrol'" = "float";
+          "'firefox'" = "ssd";
+          "'steam'" = "ssd";
         };
-        "-app-id" = {
-          "'pavucontrol'" = "float";
-        };
-
       };
       set-cursor-warp = "on-output-change";
       focus-follows-cursor = "normal";
       set-repeat = "50 300";
       spawn = [
         "pkill waybar; waybar &"
-        "pkill rivercarro; rivercarro -outer-gaps 0 -per-tag &"
+        ##### "pkill rivercarro; rivercarro -outer-gaps 0 -per-tag &"
+        "pkill swaybg; ${pkgs.swaybg}/bin/swaybg -i ~/wallpaper.jpg -m fill &"
       ];
       xcursor-theme = "BreezeX-Dark 45";
     };
