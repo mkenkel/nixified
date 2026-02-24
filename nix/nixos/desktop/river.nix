@@ -292,7 +292,7 @@
         ##### "pkill rivercarro; rivercarro -outer-gaps 0 -per-tag &"
         "pkill swaybg; ${pkgs.swaybg}/bin/swaybg -i ~/wallpaper.jpg -m fill &"
       ];
-      xcursor-theme = "BreezeX-Dark 45";
+      xcursor-theme = "posy-cursors 45";
     };
   };
 }

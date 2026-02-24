@@ -13,16 +13,71 @@ in
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.05"; # Pls google before changing this
 
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
     name = "Vanilla-DMZ";
-    package = pkgs.vanilla-dmz;
+    package = pkgs.posy-cursor;
     size = 48;
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  gtk = {
+    enable = true;
+    colorScheme = "light";
+    theme = {
+      name = "Breeze-light";
+      package = pkgs.kdePackages.breeze;
+    };
+    cursorTheme = {
+      name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
+      size = 30;
+    };
+    gtk3 = {
+      extraConfig = {
+        Settings = ''
+          gtk-application-prefer-dark-theme=0
+          gtk-dialogs-use-header=false
+        '';
+        extraCss = ''
+          headerbar.default-decoration {
+            margin-bottom: 50px;
+            margin-top: -100px;
+          }
+          window.csd,             /* gtk4? */
+          window.csd decoration { /* gtk3 */
+            box-shadow: none;
+          }
+        '';
+      };
+    };
+    gtk4 = {
+      extraConfig = {
+        Settings = ''
+          gtk-application-prefer-dark-theme=0
+          gtk-dialogs-use-header=false
+        '';
+      };
+      extraCss = ''
+        headerbar.default-decoration {
+          margin-bottom: 50px;
+          margin-top: -100px;
+        }
+        window.csd,             /* gtk4? */
+        window.csd decoration { /* gtk3 */
+          box-shadow: none;
+        }
+      '';
+    };
+    font = {
+      name = "Monaspace Neon NF";
+      package = pkgs.monaspace;
+      size = 12;
+    };
+  };
 
   services = {
     # All valuVes except 'enable' are optional.
