@@ -206,28 +206,28 @@
           "Super+Alt+Shift L" = "resize horizontal 100";
           "Super+Control Space" = "focus-output previous";
           "Super+Control+Shift Space" = "send-to-output previous";
-          # Tag bindings (Alt+1-9 to focus tags, Alt+Shift+1-9 to move windows to tags)
-          "Alt 1" = "set-focused-tags 1";
-          "Alt 2" = "set-focused-tags 2";
-          "Alt 3" = "set-focused-tags 4";
-          "Alt 4" = "set-focused-tags 8";
-          "Alt 5" = "set-focused-tags 16";
-          "Alt 6" = "set-focused-tags 32";
-          "Alt 7" = "set-focused-tags 64";
-          "Alt 8" = "set-focused-tags 128";
-          "Alt 9" = "set-focused-tags 256";
-          "Alt 0" = "set-focused-tags 2147483647"; # Show all tags
+          # Tag bindings (Super+1-9 to focus tags, Super+Shift+1-9 to move windows to tags)
+          "None F1" = "set-focused-tags 1";
+          "None F2" = "set-focused-tags 2";
+          "None F3" = "set-focused-tags 4";
+          "None F4" = "set-focused-tags 8";
+          "None F5" = "set-focused-tags 16";
+          "None F6" = "set-focused-tags 32";
+          "None F7" = "set-focused-tags 64";
+          "None F8" = "set-focused-tags 128";
+          "None F9" = "set-focused-tags 256";
+          "None F10" = "set-focused-tags 2147483647"; # Show all tags
 
-          "Alt+Shift 1" = "set-view-tags 1";
-          "Alt+Shift 2" = "set-view-tags 2";
-          "Alt+Shift 3" = "set-view-tags 4";
-          "Alt+Shift 4" = "set-view-tags 8";
-          "Alt+Shift 5" = "set-view-tags 16";
-          "Alt+Shift 6" = "set-view-tags 32";
-          "Alt+Shift 7" = "set-view-tags 64";
-          "Alt+Shift 8" = "set-view-tags 128";
-          "Alt+Shift 9" = "set-view-tags 256";
-          "Alt+Shift 0" = "set-view-tags 2147483647";
+          "Shift F1" = "set-view-tags 1";
+          "Shift F2" = "set-view-tags 2";
+          "Shift F3" = "set-view-tags 4";
+          "Shift F4" = "set-view-tags 8";
+          "Shift F5" = "set-view-tags 16";
+          "Shift F6" = "set-view-tags 32";
+          "Shift F7" = "set-view-tags 64";
+          "Shift F8" = "set-view-tags 128";
+          "Shift F9" = "set-view-tags 256";
+          "Shift F10" = "set-view-tags 2147483647"; # Show all tags
 
           "Super+Shift Comma" = "send-to-output previous";
           "Super+Shift J" = "swap next";

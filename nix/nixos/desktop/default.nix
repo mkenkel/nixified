@@ -88,6 +88,8 @@ in
     enable = true;
   };
 
+  hardware.keyboard.qmk.enable = true;
+
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;

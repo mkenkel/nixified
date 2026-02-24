@@ -34,6 +34,7 @@ in
       };
       latitude = "39";
       longitude = "-84.5";
+      systemdTarget = "graphical-session-pre.target"; # Systemd Bigbrain
     };
     gpg-agent = {
       enable = true;
@@ -97,14 +98,18 @@ in
     playerctl
     prismlauncher
     qalculate-qt
+    qmk
     ripgrep
     slurp
+    showmethekey
     sops
     spotify
     starship
     tree
+    via
     virt-manager
     virt-viewer
+    wev
     wf-recorder
     wlr-randr
     yamlfmt
