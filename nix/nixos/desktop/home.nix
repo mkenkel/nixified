@@ -213,7 +213,7 @@ in
           use-bold = "yes";
           match-mode = "fzf";
           show-actions = "yes";
-          terminal = "foot";
+          terminal = "kitty";
           width = 30;
         };
         border.width = 1;

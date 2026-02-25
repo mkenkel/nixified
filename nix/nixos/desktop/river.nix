@@ -21,11 +21,6 @@
           command = "${pkgs.swaylock-effects}/bin/swaylock";
         }
       ];
-
-    };
-    vicinae = {
-      enable = true;
-      systemd.enable = true;
     };
   };
 
@@ -50,20 +45,21 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 32;
+        height = 40;
+        spacing = 5;
         output = [
           "DP-3"
         ];
         modules-left = [
           "river/tags"
+          "custom/music"
+          "pulseaudio"
         ];
         modules-center = [
-          "custom/music"
+          "clock"
         ];
         modules-right = [
           "tray"
-          "pulseaudio"
-          "clock"
         ];
 
         "river/tags" = {
@@ -159,7 +155,7 @@
       }
 
       #custom-music.playing {
-        color: #99ad6a;
+        color: #6fcf97;
         background: #1f1f1f;
       }
 
@@ -221,7 +217,7 @@
       map = {
         normal = {
           "Alt+Shift X" = "spawn 'mylock'";
-          "None Print" = "spawn '${pkgs.sway-contrib.grimshot}/bin/grimshot copy area'";
+          "Alt+Shift S" = "spawn '${pkgs.grim}/bin/grim -g \"$(slurp)\" - | wl-copy'";
           "Super F" = "toggle-fullscreen";
           "Super J" = "focus-view next";
           "Super K" = "focus-view previous";
@@ -230,6 +226,7 @@
           "Super Q" = "close";
           "Super Space" = "focus-output next";
           "Super T" = "toggle-float";
+          "Alt Escape" = "spawn '${pkgs.swaylock-effects}/bin/swaylock'";
           "Super Tab" = "spawn 'notify'";
           "Super+Alt H" = "move left 100";
           "Super+Alt J" = "move down 100";
