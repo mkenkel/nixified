@@ -109,7 +109,19 @@ in
     };
   };
 
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    config.common.default = [
+      "wlr"
+      "gtk"
+    ];
+    config.common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+  };
 
   programs = {
     hyprland = {
