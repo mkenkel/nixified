@@ -106,7 +106,7 @@ in
   };
 
   imports = [
-    ./hyprland.nix
+    # ./hyprland.nix
     ./river.nix
     ./programming.nix
     "${u-hm}/fish.nix"

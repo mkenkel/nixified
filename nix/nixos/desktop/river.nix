@@ -2,12 +2,17 @@
 {
 
   home.packages = with pkgs; [
+    fuzzel
+    glib
+    libnotify
+    mako
     river-classic
     rivercarro
     vicinae
     waybar
     waybar-module-music
     wayland-pipewire-idle-inhibit
+    wl-clipboard
   ];
 
   services = {
