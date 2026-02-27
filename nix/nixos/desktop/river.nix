@@ -118,16 +118,23 @@
     style = ''
       * {
         border: none;
-        border-radius: 0;
+        border-radius: 5px;
         font-family: Source Code Pro;
       }
       window#waybar {
-        background: #151515;
+        background: transparent;
         color: #e8e8d3;
+      }
+      #tags {
+        background: #151515;
+        border: 1px solid #1f1f1f;
+        margin: 5px;
+        padding: 2px;
       }
       #tags button {
         padding: 0 5px;
         color: #888888;
+        border-radius: 3px;
       }
       #tags button.occupied {
         background: #1f1f1f;
@@ -138,35 +145,47 @@
         color: #151515;
       }
       #tray {
+        background: #151515;
+        border: 1px solid #1f1f1f;
         padding: 0 10px;
+        margin: 5px;
         color: #e8e8d3;
       }
       #pulseaudio {
+        background: #151515;
+        border: 1px solid #1f1f1f;
         padding: 0 10px;
+        margin: 5px;
         color: #99ad6a;
       }
       #clock {
+        background: #151515;
+        border: 1px solid #1f1f1f;
         padding: 0 10px;
+        margin: 5px;
         color: #8fbfdc;
       }
       #custom-music {
         padding: 0 10px;
-        margin: 0 5px;
+        margin: 5px;
       }
 
       #custom-music.playing {
         color: #6fcf97;
-        background: #1f1f1f;
+        background: #151515;
+        border: 1px solid #1f1f1f;
       }
 
       #custom-music.paused {
         color: #fad07a;
-        background: #1f1f1f;
+        background: #151515;
+        border: 1px solid #1f1f1f;
       }
 
       #custom-music.stopped {
         color: #888888;
-        background: #1f1f1f;
+        background: #151515;
+        border: 1px solid #1f1f1f;
       }
     '';
   };
@@ -187,6 +206,8 @@
     systemd.extraCommands = [
       "systemctl --user stop river-session.target"
       "systemctl --user start river-session.target"
+      "dbus-update-activation-environment --systemd --all"
+      "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "rivercarro -inner-gaps 3 -outer-gaps 3 -no-smart-gaps -per-tag -main-ratio 0.63"
     ];
     extraConfig = ''
