@@ -211,6 +211,7 @@
       "systemctl --user stop river-session.target"
       "systemctl --user start river-session.target"
       "dbus-update-activation-environment --systemd --all"
+      "systemctl --user set-environment XDG_CURRENT_DESKTOP=river"
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "rivercarro -inner-gaps 3 -outer-gaps 3 -no-smart-gaps -per-tag -main-ratio 0.63"
     ];
