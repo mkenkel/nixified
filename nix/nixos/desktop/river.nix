@@ -195,13 +195,17 @@
     systemd.enable = true;
     systemd.variables = [
       "DISPLAY"
+      "GDK_BACKEND,wayland"
+      "NIXOS_OZONE_WL,1"
+      "QT_QPA_PLATFORM,wayland"
+      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      "SDL_VIDEODRIVER,wayland"
       "WAYLAND_DISPLAY"
-      "XDG_SESSION_TYPE"
-      "XDG_CURRENT_DESKTOP"
-      "XDG_SESSION_DESKTOP"
-      "NIXOS_OZONE_WL"
-      "XCURSOR_THEME"
       "XCURSOR_SIZE"
+      "XCURSOR_THEME"
+      "XDG_CURRENT_DESKTOP,river"
+      "XDG_SESSION_DESKTOP,river"
+      "XDG_SESSION_TYPE,wayland"
     ];
     systemd.extraCommands = [
       "systemctl --user stop river-session.target"

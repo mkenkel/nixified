@@ -117,10 +117,12 @@ in
       "wlr"
       "gtk"
     ];
-    config.common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+    config.common."org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+    config.common."org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-luminous
     ];
   };
 
