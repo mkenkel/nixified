@@ -216,6 +216,15 @@ in
           terminal = "kitty";
           width = 30;
         };
+        colors = {
+          background = "151515ff";
+          text = "e8e8d3ff";
+          match = "fad07aff";
+          selection = "404040ff";
+          selection-text = "e8e8d3ff";
+          selection-match = "fad07aff";
+          border = "8197bfff";
+        };
         border.width = 1;
         border.radius = 10;
       };

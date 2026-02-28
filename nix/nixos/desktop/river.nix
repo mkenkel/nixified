@@ -317,6 +317,10 @@
           "Alt M" = "send-layout-cmd rivercarro 'main-location monocle'";
           # Cycle through layout
           "Alt W" = "send-layout-cmd rivercarro 'main-location-cycle left,monocle'";
+          "Alt Shift H" =
+            "pkill fuzzel || cliphist list | fuzzel --no-fuzzy --dmenu | cliphist decode | wl-copy"; # Not Working yet
+          "Alt C" =
+            "spawn 'cat ~/.config/river/init | grep -i map | sed -e 's/riverctl//g' -e 's/map//g' -e 's/normal//g'| fuzzel  --cache \"($XDG_CACHE_HOME/unicode)\" -w 100 --horizontal-pad 20 -di) || exit 0'"; # Not working yet
 
           "Control+Alt+Shift E" = "exit";
           "Alt D" = "spawn '${pkgs.fuzzel}/bin/fuzzel'";
