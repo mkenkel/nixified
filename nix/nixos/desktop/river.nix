@@ -294,8 +294,6 @@
           "Shift F10" = "set-view-tags 2147483647"; # Show all tags
 
           "Super+Shift Comma" = "send-to-output previous";
-          "Super+Shift J" = "swap next";
-          "Super+Shift K" = "swap previous";
           "Super+Shift Period" = "send-to-output next";
           "Super+Shift Space" = "send-to-output next";
 
@@ -303,10 +301,12 @@
           "Control+Alt H" = "send-layout-cmd rivercarro 'main-ratio -0.025'";
           "Control+Alt L" = "send-layout-cmd rivercarro 'main-ratio +0.025'";
 
+          "Alt N" = "swap next";
+          "Alt P" = "swap previous";
           # Mod+Shift+H and Mod+Shift+L to increment/decrement the main count of rivercarro
           # Is there a way I can see the current count displayed as I'm changing the number????
-          "Alt+Shift H" = "send-layout-cmd rivercarro 'main-count +1'";
-          "Alt+Shift L" = "send-layout-cmd rivercarro 'main-count -1'";
+          "Alt+Shift K" = "send-layout-cmd rivercarro 'main-count +1'";
+          "Alt+Shift J" = "send-layout-cmd rivercarro 'main-count -1'";
 
           # Mod+{Up,Right,Down,Left} to change layout orientation
           "Alt K" = "send-layout-cmd rivercarro 'main-location top'";
@@ -324,7 +324,7 @@
 
           "Control+Alt+Shift E" = "exit";
           "Alt D" = "spawn '${pkgs.fuzzel}/bin/fuzzel'";
-          "Alt P" = "spawn '${pkgs.pavucontrol}/bin/pavucontrol'";
+          "Alt Shift P" = "spawn '${pkgs.pavucontrol}/bin/pavucontrol'";
           "Alt Q" = "close";
           "Alt Return" = "spawn '${pkgs.kitty}/bin/kitty'";
 
