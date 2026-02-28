@@ -113,15 +113,12 @@ in
     enable = true;
     xdgOpenUsePortal = true;
     wlr.enable = true;
-    config.common.default = [
-      "wlr"
-      "gtk"
-    ];
-    config.common."org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
-    config.common."org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+    config.common.default = [ "gtk" ];
+    config.river."org.freedesktop.impl.portal.Screenshot" = [ "luminous" ];
+    config.river."org.freedesktop.impl.portal.ScreenCast" = [ "luminous" ];
     extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
       xdg-desktop-portal-luminous
     ];
   };
@@ -187,6 +184,7 @@ in
     timoni
     unzip
     unzip # Used by patch-nixos.sh
+    vial
     virtiofsd
     vlc
     vscode

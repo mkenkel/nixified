@@ -5,6 +5,7 @@
     fuzzel
     glib
     libnotify
+    lswt
     mako
     river-classic
     rivercarro
