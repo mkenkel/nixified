@@ -205,6 +205,7 @@ in
     };
     firefox = {
       enable = true;
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
     };
     fuzzel = {
       enable = true;
