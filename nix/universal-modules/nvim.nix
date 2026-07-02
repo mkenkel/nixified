@@ -21,5 +21,7 @@ in
     extraPackages = [
       pkgs.imagemagick
     ];
+    withPython3 = false;
+    withRuby = false;
   };
 }
