@@ -158,6 +158,11 @@ in
     lua-language-server
     lua5_1
     luajit
+    (pkgs.luaPackages.withPackages (
+      ps: with ps; [
+        tree-sitter-cli
+      ]
+    ))
     my-helmfile
     my-kubernetes-helm
     nfs-utils
