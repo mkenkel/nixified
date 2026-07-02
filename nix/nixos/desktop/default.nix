@@ -167,7 +167,6 @@ in
     packer
     paperkey
     pavucontrol # Lets you disable inputs/outputs, can help if game auto-connects to bad IOs
-    pipecontrol
     podman
     podman-compose
     pw-volume
