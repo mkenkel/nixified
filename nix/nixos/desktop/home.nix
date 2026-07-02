@@ -11,7 +11,7 @@ in
 {
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
-  home.stateVersion = "24.05"; # Pls google before changing this
+  home.stateVersion = "24.05";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -150,6 +150,7 @@ in
     libvirt
     lsd
     lsof
+    neovim
     nwg-look
     obsidian
     playerctl
@@ -274,7 +275,7 @@ in
       # settings = builtins.readFile ("${cfg}/mangohud/mangohud.conf");
     };
     neovim = {
-      enable = true;
+      enable = false;
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
