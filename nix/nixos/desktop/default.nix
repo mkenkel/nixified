@@ -158,7 +158,7 @@ in
     lua-language-server
     lua5_1
     luajit
-    (pkgs.luaPackages.withPackages (
+    (luaPackages.withPackages (
       ps: with ps; [
         tree-sitter-cli
       ]
