@@ -40,7 +40,13 @@
             home-manager.nixosModules.home-manager
             ./desktop
             {
-              nixpkgs.overlays = [ waybar-module-music.overlays.default ];
+              nixpkgs.overlays = [
+                waybar-module-music.overlays.default
+                (final: _prev: {
+                  pnpm_10_29_2 = final.pnpm_10;
+                })
+
+              ];
               home-manager = {
                 extraSpecialArgs = {
                   inherit inputs;
