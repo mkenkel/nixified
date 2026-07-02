@@ -189,8 +189,8 @@ in
     vscode
     vscodium
     wget
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
+    # wineWowPackages.stable
+    # wineWowPackages.waylandFull
     winetricks
     wl-clipboard
   ];
