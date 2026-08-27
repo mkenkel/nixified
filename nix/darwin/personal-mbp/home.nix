@@ -55,7 +55,6 @@ in
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     alacritty
     ansible
-    ansible-language-server
     ansible-lint
     bat
     bicep
