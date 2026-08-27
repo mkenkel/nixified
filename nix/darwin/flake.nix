@@ -2,10 +2,8 @@
   description = "Configuration Hub - Darwin Master Flake";
 
   inputs = {
-    aerospace-tap.flake = false;
-    aerospace-tap.url = "github:nikitabobko/homebrew-tap";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     homebrew-bundle.flake = false;
     homebrew-bundle.url = "github:homebrew/homebrew-bundle";
     homebrew-cask.flake = false;
@@ -20,7 +18,6 @@
 
   outputs =
     {
-      aerospace-tap,
       home-manager,
       homebrew-bundle,
       homebrew-cask,
@@ -55,7 +52,6 @@
                   "homebrew/homebrew-bundle" = homebrew-bundle;
                   "homebrew/homebrew-cask" = homebrew-cask;
                   "homebrew/homebrew-core" = homebrew-core;
-                  "nikitabobko/homebrew-tap" = aerospace-tap;
                 };
                 mutableTaps = false;
               };

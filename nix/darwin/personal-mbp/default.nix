@@ -31,7 +31,6 @@ in
   homebrew = {
     enable = true;
     casks = [
-      "aerospace"
       "autodesk-fusion"
       "firefox"
       "font-sarasa-nerd"
