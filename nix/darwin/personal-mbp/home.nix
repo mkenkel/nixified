@@ -104,7 +104,6 @@ in
     terraform-ls
     tree
     vim
-    realvnc-vnc-viewer
     yaml-language-server
     yamlfmt
     yamllint
