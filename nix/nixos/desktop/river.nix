@@ -18,7 +18,7 @@
 
   services = {
     swayidle = {
-      enable = true;
+      enable = false;
       events.before-sleep = "${pkgs.swaylock-effects}/bin/swaylock";
       events.lock = "${pkgs.swaylock-effects}/bin/swaylock";
       timeouts = [
