@@ -23,6 +23,14 @@
     # pkgs.podman-compose
     (pkgs.python312.withPackages (
       ps: with ps; [
+        asyncssh
+        asyncssh
+        fastapi
+        uvicorn
+        aiomqtt
+        sounddevice
+        soundfile
+        pyyaml
         beautifulsoup4
         packaging
         pandas
