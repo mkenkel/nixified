@@ -224,6 +224,7 @@ in
       #     load = true;
       #   };
       # };
+
       dms-greeter = {
         compositor.name = "niri";
         configHome = "/home/${user}";
