@@ -4,6 +4,7 @@
 }:
 {
   programs.niri = {
+    enable = true;
     # package = pkgs.niri-unstable;
     settings = {
       outputs."DP-3".scale = 2.0;
