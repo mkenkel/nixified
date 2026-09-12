@@ -11,6 +11,10 @@
     #   inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
     # };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     waybar-module-music = {
       url = "github:Andeskjerf/waybar-module-music";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +26,7 @@
       home-manager,
       hyprland,
       nixpkgs,
+      niri,
       self,
       waybar-module-music,
       ...
@@ -57,7 +62,9 @@
                   imports = [
                     ./desktop/home.nix
                   ];
-
+                  sharedModules = [
+                    niri.homeModules.niri
+                  ];
                 };
               };
             }
