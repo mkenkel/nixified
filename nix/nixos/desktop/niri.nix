@@ -12,10 +12,16 @@
       outputs = {
         "DP-3" = {
           scale = 1.25;
+          mode = {
+            width = 3840;
+            height = 2160;
+            refresh = 143.962997;
+          };
         };
       };
 
-      # Keybinds (ported from river.nix)
+      # Keybinds
+      # https://github.com/sodiboo/niri-flake/blob/main/docs.md#overlaysniri
       binds = {
         # Spawning apps / utilities
         "Alt+Shift+X".action.spawn = "mylock";
