@@ -8,7 +8,6 @@
     settings = {
       outputs = {
         "DP-3" = {
-          mode = "3840x2160@143.962997";
           scale = 1.25;
         };
       };
