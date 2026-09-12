@@ -6,7 +6,7 @@
 {
   nixpkgs.overlays = [ niri.overlays.niri ];
   programs.niri = {
-    package = pkgs.niri-unstable;
+    # package = pkgs.niri-unstable;
     settings = {
       outputs."DP-3".scale = 2.0;
 
