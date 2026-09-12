@@ -58,12 +58,12 @@
                 };
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                sharedModules = [
+                  niri.homeModules.niri
+                ];
                 users.${user} = {
                   imports = [
                     ./desktop/home.nix
-                  ];
-                  sharedModules = [
-                    niri.homeModules.niri
                   ];
                 };
               };
