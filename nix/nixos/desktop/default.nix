@@ -42,6 +42,8 @@ in
   };
 
   imports = [
+
+    inputs.dank-greeter.nixosModules.default
     # Universal Modules (OS-Agnostic, Nix-centric, non-home-manager modules)
     "${universal}/fonts.nix"
 
@@ -241,9 +243,9 @@ in
       #   };
       # };
       dms-greeter = {
-        enable = true;
         compositor.name = "niri";
-        package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        configHome = "/home/${user}";
+        enable = true;
       };
     };
     pipewire = {
