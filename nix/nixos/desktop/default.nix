@@ -125,14 +125,6 @@ in
   };
 
   programs = {
-    hyprland = {
-      enable = false;
-      # set the flake package
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # make sure to also set the portal package, so that they are in sync
-      # portalPackage =
-      # inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
     niri = {
       enable = true;
     };
@@ -220,18 +212,8 @@ in
     displayManager = {
       sessionPackages = with pkgs; [
         river-classic
-        # hyprland
       ];
 
-      # greetd = {
-      #   enable = true;
-      #   settings = {
-      #     default_session = {
-      #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red;' --cmd Hyprland";
-      #       user = "greeter";
-      #     };
-      #   };
-      # };
       # ly = {
       #   enable = true;
       #   settings = {
