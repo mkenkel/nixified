@@ -14,6 +14,10 @@
       url = "github:AvengeMedia/dank-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     waybar-module-music = {
       url = "github:Andeskjerf/waybar-module-music";
       inputs.nixpkgs.follows = "nixpkgs";

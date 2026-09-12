@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -107,6 +108,8 @@ in
   };
 
   imports = [
+
+    inputs.dms.homeModules.dank-material-shell
     ./river.nix
     ./niri.nix
     ./programming.nix

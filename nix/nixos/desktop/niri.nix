@@ -4,6 +4,7 @@
 }:
 
 {
+  programs.dank-material-shell.enable = false;
 
   programs.niri = {
     package = pkgs.niri-unstable;
