@@ -25,6 +25,7 @@
     dms-greeter = {
       enable = true;
       compositor.name = "niri";
+      package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
   };
 }
