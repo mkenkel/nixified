@@ -6,7 +6,12 @@
   programs.niri = {
     enable = true;
     settings = {
-      outputs."DP-3".scale = 2.0;
+      outputs = {
+        "DP-3" = {
+          mode = "3840x2160@143.962997";
+          scale = 1.25;
+        };
+      };
 
       # Keybinds (ported from river.nix)
       binds = {
