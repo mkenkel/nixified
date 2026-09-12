@@ -49,7 +49,6 @@ in
     "${nos}/environment.nix"
     "${nos}/foot.nix"
     "${nos}/gaming.nix"
-    "${nos}/login.nix"
     "${nos}/programs.nix"
 
     ./hardware-configuration.nix
@@ -131,6 +130,10 @@ in
       # make sure to also set the portal package, so that they are in sync
       # portalPackage =
       # inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
+    niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
     };
   };
 
@@ -218,6 +221,31 @@ in
         river-classic
         # hyprland
       ];
+
+      # greetd = {
+      #   enable = true;
+      #   settings = {
+      #     default_session = {
+      #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red;' --cmd Hyprland";
+      #       user = "greeter";
+      #     };
+      #   };
+      # };
+      # ly = {
+      #   enable = true;
+      #   settings = {
+      #     animation = "matrix";
+      #     bigclock = true;
+      #     bigclock_12hr = true;
+      #     border = true;
+      #     load = true;
+      #   };
+      # };
+      dms-greeter = {
+        enable = true;
+        compositor.name = "niri";
+        package = inputs.dank-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      };
     };
     pipewire = {
       enable = true;
