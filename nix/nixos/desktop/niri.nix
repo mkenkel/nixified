@@ -1,19 +1,13 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 
 {
-  imports = [
-    inputs.niri.nixosModules.niri
-  ];
-
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
   programs.niri = {
+    package = pkgs.niri-unstable;
     enable = true;
-    programs.niri.package = pkgs.niri-unstable;
     settings = {
       outputs = {
         "DP-3" = {

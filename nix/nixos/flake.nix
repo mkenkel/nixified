@@ -45,6 +45,7 @@
             {
               nixpkgs.overlays = [
                 waybar-module-music.overlays.default
+                inputs.niri.overlays.niri
                 (final: _prev: {
                   pnpm_10_29_2 = final.pnpm_10;
                 })
