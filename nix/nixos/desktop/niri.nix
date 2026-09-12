@@ -1,10 +1,8 @@
 {
-  niri,
   pkgs,
   ...
 }:
 {
-  nixpkgs.overlays = [ niri.overlays.niri ];
   programs.niri = {
     # package = pkgs.niri-unstable;
     settings = {
