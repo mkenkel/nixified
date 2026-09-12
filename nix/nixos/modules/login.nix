@@ -10,17 +10,21 @@
     #     };
     #   };
     # };
-    displayManager = {
-      ly = {
-        enable = true;
-        settings = {
-          animation = "matrix";
-          bigclock = true;
-          bigclock_12hr = true;
-          border = true;
-          load = true;
-        };
-      };
+    # displayManager = {
+    #   ly = {
+    #     enable = true;
+    #     settings = {
+    #       animation = "matrix";
+    #       bigclock = true;
+    #       bigclock_12hr = true;
+    #       border = true;
+    #       load = true;
+    #     };
+    #   };
+    # };
+    dms-greeter = {
+      enable = true;
+      compositor.name = "niri";
     };
   };
 }
