@@ -16,14 +16,6 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    name = "Posy_Cursor_125_175";
-    package = pkgs.posy-cursors;
-    size = 48;
-  };
-
   gtk = {
     enable = true;
     colorScheme = "light";

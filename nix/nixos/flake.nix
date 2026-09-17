@@ -14,10 +14,6 @@
       url = "github:AvengeMedia/dank-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    waybar-module-music = {
-      url = "github:Andeskjerf/waybar-module-music";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -26,7 +22,6 @@
       nixpkgs,
       niri,
       self,
-      waybar-module-music,
       ...
     }@inputs:
     let
@@ -44,12 +39,7 @@
             ./desktop
             {
               nixpkgs.overlays = [
-                waybar-module-music.overlays.default
                 inputs.niri.overlays.niri
-                (final: _prev: {
-                  pnpm_10_29_2 = final.pnpm_10;
-                })
-
               ];
               home-manager = {
                 extraSpecialArgs = {

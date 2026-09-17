@@ -11,7 +11,6 @@
     rivercarro
     vicinae
     waybar
-    waybar-module-music
     wayland-pipewire-idle-inhibit
     wl-clipboard
   ];
@@ -102,12 +101,6 @@
               today = "<span color='#cf6a4c'><b><u>{}</u></b></span>";
             };
           };
-        };
-
-        "custom/music" = {
-          format = "{}";
-          return-type = "json";
-          exec = "waybar-module-music";
         };
 
         "custom/hello-from-waybar" = {

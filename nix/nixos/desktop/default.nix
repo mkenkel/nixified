@@ -132,7 +132,7 @@ in
 
   environment.systemPackages = with pkgs; [
     age
-    bashSnippets
+    bash-snippets
     bottles
     cilium-cli
     curl
