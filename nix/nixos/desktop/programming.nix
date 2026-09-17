@@ -21,7 +21,7 @@
     pkgs.nodejs
     # pkgs.podman
     # pkgs.podman-compose
-    (pkgs.python312.withPackages (
+    (pkgs.python313.withPackages (
       ps: with ps; [
         asyncssh
         asyncssh
