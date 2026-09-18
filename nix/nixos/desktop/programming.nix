@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = [
     pkgs.ansible
     pkgs.ansible-lint
@@ -22,27 +21,28 @@
     # pkgs.podman
     # pkgs.podman-compose
     (pkgs.python313.withPackages (
-      ps: with ps; [
-        asyncssh
-        asyncssh
-        fastapi
-        uvicorn
-        aiomqtt
-        sounddevice
-        soundfile
-        pyyaml
-        beautifulsoup4
-        packaging
-        pandas
-        selenium
-        paramiko
-        pip
-        pylint
-        regex
-        requests
-        setuptools
-        tkinter
-      ]
+      ps:
+        with ps; [
+          asyncssh
+          asyncssh
+          fastapi
+          uvicorn
+          aiomqtt
+          sounddevice
+          soundfile
+          pyyaml
+          beautifulsoup4
+          packaging
+          pandas
+          selenium
+          paramiko
+          pip
+          pylint
+          regex
+          requests
+          setuptools
+          tkinter
+        ]
     ))
     pkgs.pyright
     pkgs.rustup

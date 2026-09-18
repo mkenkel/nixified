@@ -2,13 +2,11 @@
   config,
   pkgs,
   ...
-}:
-let
+}: let
   cfg = ../../../dots;
   u-hm = ./../../universal-modules; # universal Home Manager
   user = "matt";
-in
-{
+in {
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
   home.stateVersion = "24.05";
@@ -291,5 +289,4 @@ in
       extraConfig = builtins.readFile "${cfg}/wezterm/wezterm.lua";
     };
   };
-
 }

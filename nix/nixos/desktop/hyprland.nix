@@ -1,10 +1,13 @@
-{ inputs, pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   nix.settings = {
     # Cachix for Hyprland
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
   home.packages = [
@@ -37,7 +40,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     # plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
-    plugins = [ ];
+    plugins = [];
     xwayland = {
       enable = true;
     };
@@ -222,7 +225,6 @@
 
         # End GIF Recording
         "$mod SHIFT, P, exec, /home/matt/.config/scripts/pt2sc.sh"
-
       ];
 
       bindm = [

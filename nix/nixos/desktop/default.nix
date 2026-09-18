@@ -4,15 +4,13 @@
   pkgs,
   lib,
   ...
-}:
-let
+}: let
   user = "matt";
   hostname = "upshot";
   nos = ./../modules; # NixOS
   universal = ./../../universal-modules; # Cross-platform modules
 
-  my-kubernetes-helm =
-    with pkgs;
+  my-kubernetes-helm = with pkgs;
     wrapHelm kubernetes-helm {
       plugins = with pkgs.kubernetes-helmPlugins; [
         helm-secrets
@@ -25,9 +23,7 @@ let
   my-helmfile = pkgs.helmfile-wrapped.override {
     inherit (my-kubernetes-helm) pluginsDir;
   };
-in
-{
-
+in {
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -42,7 +38,6 @@ in
   };
 
   imports = [
-
     inputs.dank-greeter.nixosModules.default
     # Universal Modules (OS-Agnostic, Nix-centric, non-home-manager modules)
     "${universal}/fonts.nix"
@@ -114,9 +109,9 @@ in
     enable = true;
     xdgOpenUsePortal = true;
     wlr.enable = true;
-    config.common.default = [ "gtk" ];
-    config.river."org.freedesktop.impl.portal.Screenshot" = [ "luminous" ];
-    config.river."org.freedesktop.impl.portal.ScreenCast" = [ "luminous" ];
+    config.common.default = ["gtk"];
+    config.river."org.freedesktop.impl.portal.Screenshot" = ["luminous"];
+    config.river."org.freedesktop.impl.portal.ScreenCast" = ["luminous"];
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
@@ -132,6 +127,7 @@ in
 
   environment.systemPackages = with pkgs; [
     age
+    alejandra
     bash-snippets
     bottles
     cilium-cli
@@ -258,7 +254,7 @@ in
     #   address = "192.168.10.1";
     #   interface = "enp5s0";
     # };
-    search = [ "home.arpa" ];
+    search = ["home.arpa"];
     extraHosts = ''
       192.168.15.202 rancher.cilium.rocks
     '';

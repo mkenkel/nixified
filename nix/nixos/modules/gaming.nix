@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     protonup-ng
     lutris
@@ -23,14 +22,14 @@
         enable = true;
       };
       package = pkgs.steam.override {
-        extraLibraries = pkgs: [ pkgs.pkgsi686Linux.pipewire.jack ]; # Adds pipewire jack (32-bit)
-        extraPkgs = pkgs: [ pkgs.wineasio ]; # Adds wineasio
+        extraLibraries = pkgs: [pkgs.pkgsi686Linux.pipewire.jack]; # Adds pipewire jack (32-bit)
+        extraPkgs = pkgs: [pkgs.wineasio]; # Adds wineasio
       };
     };
     gamemode.enable = true;
   };
 
   services = {
-    xserver.videoDrivers = [ "amdgpu" ];
+    xserver.videoDrivers = ["amdgpu"];
   };
 }

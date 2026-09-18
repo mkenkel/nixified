@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   environment = {
     variables = {
       EDITOR = "nvim";

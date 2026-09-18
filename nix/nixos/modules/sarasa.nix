@@ -4,7 +4,6 @@
   fetchurl,
   unzip,
 }:
-
 stdenvNoCC.mkDerivation rec {
   pname = "sarasa-term-sc-nerd";
   version = "v1.1.0";
@@ -16,7 +15,7 @@ stdenvNoCC.mkDerivation rec {
 
   sourceRoot = ".";
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [unzip];
 
   installPhase = ''
     runHook preInstall
@@ -36,7 +35,7 @@ stdenvNoCC.mkDerivation rec {
     This font is especially suitable for Simplified Chinese users to use in terminal or code editor.";
     homepage = "https://github.com/laishulu/Sarasa-Term-SC-Nerd";
     license = licenses.ofl;
-    maintainers = with maintainers; [ mkenkel ];
+    maintainers = with maintainers; [mkenkel];
     platforms = platforms.all;
   };
 }

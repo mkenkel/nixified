@@ -16,49 +16,46 @@
     };
   };
 
-  outputs =
-    {
-      home-manager,
-      nixpkgs,
-      niri,
-      self,
-      ...
-    }@inputs:
-    let
-      user = "matt";
-    in
-    {
-      # $ nixos-rebuild --flake .#upshot switch
-      nixosConfigurations = {
-        upshot = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            home-manager.nixosModules.home-manager
-            ./desktop
-            {
-              nixpkgs.overlays = [
-                inputs.niri.overlays.niri
-              ];
-              home-manager = {
-                extraSpecialArgs = {
-                  inherit inputs;
-                };
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                sharedModules = [
-                  niri.homeModules.niri
-                ];
-                users.${user} = {
-                  imports = [
-                    ./desktop/home.nix
-                  ];
-                };
-              };
-            }
-          ];
+  outputs = {
+    home-manager,
+    nixpkgs,
+    niri,
+    self,
+    ...
+  } @ inputs: let
+    user = "matt";
+  in {
+    # $ nixos-rebuild --flake .#upshot switch
+    nixosConfigurations = {
+      upshot = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
         };
+        modules = [
+          home-manager.nixosModules.home-manager
+          ./desktop
+          {
+            nixpkgs.overlays = [
+              inputs.niri.overlays.niri
+            ];
+            home-manager = {
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              sharedModules = [
+                niri.homeModules.niri
+              ];
+              users.${user} = {
+                imports = [
+                  ./desktop/home.nix
+                ];
+              };
+            };
+          }
+        ];
       };
     };
+  };
 }
