@@ -34,7 +34,7 @@ in
   imports = [
     "${u-hm}/fish.nix"
     "${u-hm}/kitty.nix"
-    "${u-hm}/nvim.nix"
+    #"${u-hm}/nvim.nix"
     "${u-hm}/tmux.nix"
   ];
 
@@ -87,6 +87,7 @@ in
     mark
     my-helmfile
     my-kubernetes-helm
+    neovim
     nil
     nodejs
     packer
@@ -124,6 +125,18 @@ in
         batman
         batgrep
         batwatch
+      ];
+    };
+    neovim = {
+      enable = false;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      extraLuaPackages = ps: [
+        ps.magick
+      ];
+      extraPackages = [
+        pkgs.imagemagick
       ];
     };
     starship = {

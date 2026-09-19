@@ -48,6 +48,7 @@ in
   environment.systemPackages = [
     pkgs.chafa
     pkgs.nixfmt-rfc-style # Nixfmt
+    pkgs.alejandra
   ];
 
   # Set Git commit hash for darwin-version.
