@@ -1,14 +1,9 @@
-{
-  pkgs,
-  ...
-}:
-let
+{pkgs, ...}: let
   cfg = ../../../dots;
   u-hm = ./../../universal-modules; # universal Home Manager modules
   nd = ./../modules;
 
-  my-kubernetes-helm =
-    with pkgs;
+  my-kubernetes-helm = with pkgs;
     wrapHelm kubernetes-helm {
       plugins = with pkgs.kubernetes-helmPlugins; [
         helm-secrets
@@ -21,9 +16,7 @@ let
   my-helmfile = pkgs.helmfile-wrapped.override {
     inherit (my-kubernetes-helm) pluginsDir;
   };
-in
-{
-
+in {
   home = {
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
@@ -52,7 +45,7 @@ in
   };
 
   home.packages = with pkgs; [
-    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     alacritty
     ansible
     ansible-lint
@@ -60,6 +53,7 @@ in
     bicep
     btop
     cilium-cli
+    claude-code
     deno
     dotnet-sdk
     fastfetch
@@ -109,11 +103,12 @@ in
     yamlfmt
     yamllint
     (python311.withPackages (
-      p: with p; [
-        pip
-        packaging
-        ansible-builder
-      ]
+      p:
+        with p; [
+          pip
+          packaging
+          ansible-builder
+        ]
     ))
   ];
 
